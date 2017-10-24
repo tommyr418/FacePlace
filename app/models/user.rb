@@ -1,5 +1,21 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  fname           :string           not null
+#  lname           :string           not null
+#  email           :string           not null
+#  birthdate       :string           not null
+#  sex             :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
-  validates :fname, :lname, :email, :birthdate, :sex, :password_disgest,
+  validates :fname, :lname, :email, :birthdate, :sex, :password_digest,
             :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
@@ -9,7 +25,7 @@ class User < ApplicationRecord
 
   def password=(password)
     @password = password
-    self.password_disgest = BCrypt::Password.create(password)
+    self.password_digest = BCrypt::Password.create(password)
   end
 
   def self.find_by_credentials(email, password)
@@ -19,7 +35,7 @@ class User < ApplicationRecord
   end
 
   def valid_password?(password)
-    BCrypt::Password.new(self.password_disgest).is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def reset_session_token!
