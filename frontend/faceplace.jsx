@@ -4,6 +4,7 @@ import configureStore from './store/store';
 
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
+  window.store = store;
   const root = document.getElementById("root");
   ReactDOM.render(<h1>FacePlace!</h1>, root);
 });
