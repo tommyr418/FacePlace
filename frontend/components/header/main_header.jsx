@@ -15,8 +15,8 @@ class MainHeader extends React.Component {
       );
     } else {
       return (
-        <header>
-          <h1>FacePlace!!</h1>
+        <header id="header-main">
+          <h1>facePlace</h1>
 
           <LoginForm login={ this.props.login }/>
         </header>
