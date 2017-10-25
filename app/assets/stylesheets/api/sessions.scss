@@ -1,3 +1,60 @@
 // Place all the styles related to the Api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#header-main {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
+  min-height: 42px
+}
+
+#header-main h1 {
+  color: white;
+  margin: 25px 0 10px 35px;
+  font-family: arial;
+  font-size: 42px;
+}
+
+#login-form {
+  display: flex;
+  margin: 12px 35px 18px 0;
+  color: white;
+}
+
+#login-form div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  min-height: 40px;
+}
+
+#login-form input {
+  width: 150px;
+}
+
+#login-form button {
+  height: 22px;
+  margin: 22px 0 8px 0;
+  background-color: #4267b2;
+  color: white;
+  border: 1px solid #29487d;
+}
+
+#login-form label {
+  font-family: arial;
+  font-size: 12px;
+  margin: 5px;
+}
+
+#user-nav {
+  margin: auto 35px;
+  color: white;
+}
+
+#session-errors {
+  color: red;
+  float: left;
+}
