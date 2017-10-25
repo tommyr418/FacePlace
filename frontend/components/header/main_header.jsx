@@ -18,7 +18,7 @@ class MainHeader extends React.Component {
         <header id="header-main">
           <h1>facePlace</h1>
 
-          <LoginForm login={ this.props.login }/>
+          <LoginForm login={ this.props.login } errors={ this.props.errors }/>
         </header>
       );
     }

@@ -6,6 +6,7 @@ import MainHeader from './main_header';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
+    errors: state.errors.session,
   };
 };
 

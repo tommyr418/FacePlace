@@ -22,6 +22,13 @@
   display: flex;
   margin: 12px 35px 18px 0;
   color: white;
+  font-family: arial;
+  font-size: 12px;
+}
+
+#login-form strong {
+  margin: auto 0;
+  color: yellow;
 }
 
 #login-form div {
@@ -43,9 +50,7 @@
   border: 1px solid #29487d;
 }
 
-#login-form label {
-  font-family: arial;
-  font-size: 12px;
+#login-form label{
   margin: 5px;
 }
 
@@ -55,6 +60,7 @@
 }
 
 #session-errors {
+  list-style: none;
+  margin: 40px auto;
   color: red;
-  float: left;
 }

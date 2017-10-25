@@ -5,7 +5,7 @@ import {
 const SessionErrorsReducer = (state = [], action) => {
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS: {
-      return [].concat(state).concat(action.errors);
+      return [].concat(action.errors);
     }
     case RECEIVE_CURRENT_USER: {
       return [];
