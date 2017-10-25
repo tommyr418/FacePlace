@@ -5,13 +5,13 @@ class Main extends React.Component {
   render() {
     if(this.props.currentUser) {
       return (
-        <div>
+        <div id="main">
 
         </div>
       );
     } else {
       return (
-        <div>
+        <div id="main">
           <SignupForm signup={ this.props.signup }/>
         </div>
       );
