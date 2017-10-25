@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginFormContainer from './login_form_container';
-import UserNavContainer from './user_nav_container';
+import LoginForm from './login_form';
+import UserNav from './user_nav';
 
 class MainHeader extends React.Component {
   render () {
@@ -9,7 +9,8 @@ class MainHeader extends React.Component {
         <header id="header-main">
           <h1>FacePlace!!</h1>
 
-          <UserNavContainer />
+          <UserNav currentUser={ this.props.currentUser }
+            logout={ this.props.logout }/>
         </header>
       );
     } else {
@@ -17,7 +18,7 @@ class MainHeader extends React.Component {
         <header>
           <h1>FacePlace!!</h1>
 
-          <LoginFormContainer />
+          <LoginForm login={ this.props.login }/>
         </header>
       );
     }
