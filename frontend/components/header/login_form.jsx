@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={ this.handleSubmit }>
+      <form onSubmit={ this.handleSubmit } id="login-form">
         <label>Email
           <input type="text"
             value={ this.state.email }
