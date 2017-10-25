@@ -24,8 +24,14 @@ class LoginForm extends React.Component {
   }
 
   render () {
+    let errors = "";
+    if (this.props.errors.length > 0 &&
+      this.props.errors[0].responseJSON[0] === "Invalid Email or Password") {
+      errors = "Invalid Email or Password";
+    }
     return (
       <form onSubmit={ this.handleSubmit } id="login-form">
+        <strong>{errors}</strong>
         <div>
           <label>Email</label>
           <input type="text"

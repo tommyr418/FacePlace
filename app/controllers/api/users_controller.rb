@@ -5,7 +5,11 @@ class Api::UsersController < ApplicationController
       login(@user)
       render '/api/sessions/show.json.jbuilder'
     else
-      render json: @user.errors.full_messages, status: 422
+      user_errors = []
+      @user.errors.full_messages.each do |error|
+        user_errors << error
+      end
+      render json: user_errors, status: 422
     end
   end
 
