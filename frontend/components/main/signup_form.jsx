@@ -40,6 +40,9 @@ class SignupForm extends React.Component {
     if (e.currentTarget.value === e.currentTarget.defaultValue) {
       e.currentTarget.value = "";
       e.currentTarget.style.color = "#333";
+      if (e.currentTarget.defaultValue === "password") {
+        e.currentTarget.type = "password";
+      }
     }
   }
 
@@ -47,6 +50,9 @@ class SignupForm extends React.Component {
     if (e.currentTarget.value === "") {
       e.currentTarget.style.color = "#a6a6a6";
       e.currentTarget.value = e.currentTarget.defaultValue;
+      if (e.currentTarget.defaultValue === "password") {
+        e.currentTarget.type = "text";
+      }
     }
   }
 
@@ -58,7 +64,6 @@ class SignupForm extends React.Component {
 
         <div>
           <input type="text" className="signup-form-name"
-            value={ this.state.fname }
             onChange={ this.handleInputChange('fname')}
             defaultValue="first name"
             onFocus={ this.handleFocus }
@@ -66,7 +71,6 @@ class SignupForm extends React.Component {
           </input>
 
           <input type="text" className="signup-form-name"
-            value={ this.state.lname }
             onChange={ this.handleInputChange('lname')}
             defaultValue="last name"
             onFocus={ this.handleFocus }
@@ -75,15 +79,13 @@ class SignupForm extends React.Component {
         </div>
 
         <input type="text"
-          value={ this.state.email }
           onChange={ this.handleInputChange('email')}
           defaultValue="email"
           onFocus={ this.handleFocus }
           onBlur={ this.handleBlur }>
         </input>
 
-        <input type="password"
-          value={ this.state.password }
+        <input type="text"
           onChange={ this.handleInputChange('password')}
           defaultValue="password"
           onFocus={ this.handleFocus }
