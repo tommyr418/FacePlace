@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,6 +25,12 @@ class SignupForm extends React.Component {
   handleInputChange(feild){
     return (e) => this.setState({
       [feild]: e.currentTarget.value
+    });
+  }
+
+  handleOptionChange(e) {
+    this.setState({
+      sex: e.currentTarget.value,
     });
   }
 
@@ -49,17 +56,21 @@ class SignupForm extends React.Component {
           onChange={ this.handleInputChange('password')}></input>
 
         <label>Birthday
-          <input type="date"></input>
+          <input type="date"
+            value={ this.state.birthdate }
+            onChange={ this.handleInputChange('birthdate')}></input>
         </label>
 
-        <div>
+        <div className="radio">
           <label>
-            <input type="radio" value="male"/>
+            <input type="radio" name="sex" value="male"
+              onChange={ this.handleOptionChange }/>
             Male
           </label>
 
           <label>
-            <input type="radio" value="female"/>
+            <input type="radio" name="sex" value="female"
+              onChange={ this.handleOptionChange }/>
             Female
           </label>
         </div>
