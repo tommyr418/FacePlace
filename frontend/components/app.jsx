@@ -1,29 +1,11 @@
 import React from 'react';
-import LoginFormContainer from './header/login_form_container';
-import UserNavContainer from './header/user_nav_container';
 
-const App = ({ store } ) => {
-  if(store.getState().session.currentUser){
-    return (
-      <div>
-        <header id="header-main">
-          <h1>FacePlace!!</h1>
+import MainHeaderContainer from './header/main_header_container';
 
-          <UserNavContainer />
-        </header>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <header>
-          <h1>FacePlace!!</h1>
-
-          <LoginFormContainer />
-        </header>
-      </div>
-    );
-  }
-};
+const App = () => (
+  <div>
+    <MainHeaderContainer />
+  </div>
+);
 
 export default App;
