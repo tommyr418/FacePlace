@@ -14,6 +14,8 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleSubmit(e) {
@@ -34,26 +36,58 @@ class SignupForm extends React.Component {
     });
   }
 
+  handleFocus(e) {
+    if (e.currentTarget.value === e.currentTarget.defaultValue) {
+      e.currentTarget.value = "";
+      e.currentTarget.style.color = "#333";
+    }
+  }
+
+  handleBlur(e) {
+    if (e.currentTarget.value === "") {
+      e.currentTarget.style.color = "#a6a6a6";
+      e.currentTarget.value = e.currentTarget.defaultValue;
+    }
+  }
+
   render () {
     return (
       <form onSubmit={ this.handleSubmit } id="signup-form">
         <h1> Create a New Account </h1>
         <h2> It's free and always will be. </h2>
-        <input type="text"
-          value={ this.state.fname }
-          onChange={ this.handleInputChange('fname')}></input>
 
-        <input type="text"
-          value={ this.state.lname }
-          onChange={ this.handleInputChange('lname')}></input>
+        <div>
+          <input type="text" className="signup-form-name"
+            value={ this.state.fname }
+            onChange={ this.handleInputChange('fname')}
+            defaultValue="first name"
+            onFocus={ this.handleFocus }
+            onBlur={ this.handleBlur }>
+          </input>
+
+          <input type="text" className="signup-form-name"
+            value={ this.state.lname }
+            onChange={ this.handleInputChange('lname')}
+            defaultValue="last name"
+            onFocus={ this.handleFocus }
+            onBlur={ this.handleBlur }>
+          </input>
+        </div>
 
         <input type="text"
           value={ this.state.email }
-          onChange={ this.handleInputChange('email')}></input>
+          onChange={ this.handleInputChange('email')}
+          defaultValue="email"
+          onFocus={ this.handleFocus }
+          onBlur={ this.handleBlur }>
+        </input>
 
         <input type="password"
           value={ this.state.password }
-          onChange={ this.handleInputChange('password')}></input>
+          onChange={ this.handleInputChange('password')}
+          defaultValue="password"
+          onFocus={ this.handleFocus }
+          onBlur={ this.handleBlur }></input>
 
         <label>Birthday
           <input type="date"
