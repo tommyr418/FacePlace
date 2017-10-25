@@ -1,15 +1,21 @@
 import { connect } from 'react-redux';
 
-import { login } from '../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 import UserNav from './user_nav';
+
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.session.currentUser,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => (
   {
-    login: (user) => dispatch(login(user)),
+    logout: () => dispatch(logout()),
   }
 );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
-)(LoginForm);
+)(UserNav);
