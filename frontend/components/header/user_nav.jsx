@@ -1,14 +1,12 @@
 import React from 'react';
 
-class UserNav extends React.Component {
-  render() {
-    return (
-      <nav>
-        <span>{this.props.currentUser.fname}</span>
-        <button onClick={ this.props.logout }>Logout</button>
-      </nav>
-    );
-  }
-}
+const UserNav = ({ logout, currentUser }) => {
+  return (
+    <nav>
+      <span>{ currentUser.fname }</span>
+      <button onClick={ logout }>Logout</button>
+    </nav>
+  );
+};
 
 export default UserNav;
