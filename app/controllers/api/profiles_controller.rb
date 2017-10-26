@@ -1,10 +1,10 @@
 class Api::ProfilesController < ApplicationController
   def create
-    @profile = profile.new(profile_params)
+    @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
 
     if @profile.save
-      render :show
+      render json: ["sucess"]
     else
       render json: @profile.errors.full_messages, status: 422
     end
@@ -14,8 +14,8 @@ class Api::ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
 
     if @profile.user_id == current_user.id
-      if @profile.update
-        render :show
+      if @profile.update(profile_params)
+        render json: ["sucess"]
       else
         render json: @profile.errors.full_messages, status: 422
       end
@@ -24,7 +24,7 @@ class Api::ProfilesController < ApplicationController
     end
   end
 
-  def destrroy
+  def destroy
     @profile = Profile.find(params[:id])
 
     if @profile.user_id == current_user.id
