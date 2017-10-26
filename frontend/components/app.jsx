@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import MainHeaderContainer from './header/main_header_container';
 import MainContainer from './main/main_container';
-import MainShowContainer from './main/main_show_container';
+import MainShowContainer from './main-show/main_show_container';
 import { ProtectedRoute } from '../util/route_util';
 
 const App = () => (

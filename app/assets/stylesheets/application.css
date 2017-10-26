@@ -24,6 +24,11 @@ body {
   background-color: #e9ebee;
 }
 
+#main-show {
+  display: flex;
+  background-color: #e9ebee;
+}
+
 #main h1 {
   margin: 0;
 }
@@ -90,4 +95,11 @@ body {
   height: 20px;
   margin: auto 5px;
   width: 200px;
+}
+
+#cover-photo {
+  margin: 0 40px;
+  height: 200px;
+  width: 800px;
+  background-color: black;
 }
