@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { login, signup, logout } from './actions/session_actions';
+import { requestUser,
+  addProfile,
+  updateProfile,
+  removeProfile } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -16,9 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
+  window.requestUser = requestUser;
+  window.addProfile = addProfile;
+  window.updateProfile = updateProfile;
+  window.remove = removeProfile;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={ store } />, root);
 });
