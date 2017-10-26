@@ -11,6 +11,15 @@
   min-height: 42px
 }
 
+#header-main-logged-in {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4267b2;
+  border-bottom: 1px solid #29487d;
+  color: #fff;
+  min-height: 42px
+}
+
 #header-main h1 {
   color: white;
   margin: 25px 0 10px 35px;

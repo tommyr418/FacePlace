@@ -85,3 +85,9 @@ body {
 .radio {
   padding: 10px;
 }
+
+#search-bar {
+  height: 20px;
+  margin: auto 5px;
+  width: 200px;
+}

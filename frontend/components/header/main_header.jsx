@@ -6,8 +6,8 @@ class MainHeader extends React.Component {
   render () {
     if(this.props.currentUser){
       return (
-        <header id="header-main">
-          <h1>FacePlace!!</h1>
+        <header id="header-main-logged-in">
+          <input type="text" id="search-bar"></input>
 
           <UserNav currentUser={ this.props.currentUser }
             logout={ this.props.logout }/>
