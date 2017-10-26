@@ -28,11 +28,6 @@ body {
   margin: 0;
 }
 
-#main ul {
-  list-style: none;
-  margin: 20px auto;
-}
-
 #signup-form {
   display: flex;
   flex-direction: column;
