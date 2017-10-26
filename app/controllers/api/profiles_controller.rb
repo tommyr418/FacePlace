@@ -4,7 +4,7 @@ class Api::ProfilesController < ApplicationController
     @profile.user_id = current_user.id
 
     if @profile.save
-      render json: ["sucess"]
+      render partial: 'api/users/profile', locals: { user: @profile.user }
     else
       render json: @profile.errors.full_messages, status: 422
     end
