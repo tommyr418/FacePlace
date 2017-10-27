@@ -22,6 +22,8 @@
   bottom: -27px;
   background-color: #fff;
   border-radius: 3px;
+  height: 168px;
+  border: 1px solid #d2d6da;
 }
 
 #profile-picture{
@@ -40,8 +42,10 @@
   width: 648px;
   background-color: white;
   padding-left: 201px;
-  border: 1px solid #e9eaed;
+  border: 1px solid #d2d6da;
   font-family: arial;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 #profile-nav a {
@@ -65,8 +69,27 @@
 }
 
 #main-about {
-  min-height: 400px;
-  width: 851px;
+  min-height: 350px;
+  width: 849px;
   margin: 15px 40px;
   background-color: #fff;
+  border: 1px solid #d2d6da;
+  border-radius: 3px;
+}
+
+#main-about-title {
+  height: 29px;
+  padding: 16px 0 12px 0;
+  border-bottom: 1px solid #d2d6da;
+  background-color: #f6f7f9;
+}
+
+#main-about-title a {
+  color: #4b4f56;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 40px;
 }
