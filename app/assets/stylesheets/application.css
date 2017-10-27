@@ -41,14 +41,10 @@ body {
   height: 42px;
 }
 
-#header-left-logged-in button {
-  height: 25px;
-  width: 40px;
-  border: none;
-  vertical-align: middle;
-  background-color: #e9eaed;
+#logo {
+  background-color: white
+  color: #3b5998;
 }
-
 
 #search-bar {
   height: 23px;
@@ -58,4 +54,21 @@ body {
   padding-right: 5px;
   border: none;
   color: #1d2129;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#header-left-logged-in button {
+  height: 25px;
+  width: 45px;
+  border: none;
+  vertical-align: middle;
+  background-color: #e9eaed;
+  font-size: 15px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.fa-search {
+  color: #4b4f56;
 }
