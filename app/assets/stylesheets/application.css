@@ -37,6 +37,8 @@ body {
 
 
 #header-left-logged-in {
+  display: flex;
+  align-items: center;
   margin-left: 40px;
   height: 42px;
 }
@@ -44,13 +46,17 @@ body {
 #logo {
   background-color: white;
   color: #3b5998;
+  height: 25px;
+  width: 28px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 2px;
 }
 
 #search-bar {
   height: 23px;
   width: 400px;
-  margin-left: 5px;
-  margin-top: 9px;
+  margin-left: 10px;
   padding-right: 5px;
   border: none;
   color: #1d2129;
