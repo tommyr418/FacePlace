@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 
-import { signup } from '../../actions/session_actions';
+import { requestUser } from '../../actions/user_actions';
 import MainShow from './main_show';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser,
+    user: state.entities.users[ownProps.match.params.userId],
+    userId: ownProps.match.params.userId
   };
 };
 
 const mapDispatchToProps = (dispatch) => (
   {
-    signup: (user) => dispatch(signup(user)),
+    requestUser: (userId) => dispatch(requestUser(userId)),
   }
 );
 

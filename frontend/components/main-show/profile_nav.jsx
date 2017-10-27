@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProfileNav = ({ currentUser }) => {
+const ProfileNav = ({ user }) => {
   return (
     <nav id="profile-nav">
-      <Link to={`/users/${currentUser.id}`}>
+      <Link to={`/users/${user.id}`}>
       Timeline
       </Link>
-      <Link to={`/users/${currentUser.id}/about`}>
+      <Link to={`/users/${user.id}/about`}>
       About
       </Link>
-      <Link to={`/users/${currentUser.id}/friends`}>
+      <Link to={`/users/${user.id}/friends`}>
       Friends
       </Link>
-      <Link to={`/users/${currentUser.id}/photos`}>
+      <Link to={`/users/${user.id}/photos`}>
       Photos
       </Link>
-      <Link to={`/users/${currentUser.id}`}>
+      <Link to={`/users/${user.id}`}>
       More
       </Link>
     </nav>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProfilePicture = ({ currentUser }) => {
+const ProfilePicture = ({ user}) => {
   return (
     <div id="profile-picture-div">
       <img id="profile-picture" />
