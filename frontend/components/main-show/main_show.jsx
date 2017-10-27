@@ -1,6 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
 import CoverPhoto from './cover_photo';
 import ProfileNav from './profile_nav';
+import MainAboutContainer from './about/main_about_container';
 
 class MainShow extends React.Component {
   componentDidMount() {
@@ -18,6 +21,8 @@ class MainShow extends React.Component {
       <div id="main-show">
         <CoverPhoto user={ this.props.user }/>
         <ProfileNav user={ this.props.user }/>
+
+        <Route path="/users/:userId/about" component={ MainAboutContainer }/>
       </div>
     );
   }

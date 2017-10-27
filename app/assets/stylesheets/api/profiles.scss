@@ -5,6 +5,7 @@
 #main-show {
   display: flex;
   flex-direction: column;
+  padding-top: 43px;
 }
 
 #cover-photo {
@@ -61,4 +62,11 @@
 
 #profile-nav a:first-of-type {
   border-left: 1px solid #e9eaed;
+}
+
+#main-about {
+  min-height: 400px;
+  width: 851px;
+  margin: 15px 40px;
+  background-color: #fff;
 }
