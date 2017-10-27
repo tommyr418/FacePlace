@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 const ProfileNav = ({ currentUser }) => {
   return (
     <nav id="profile-nav">
-      <Link to={`users/${currentUser.id}`}>
+      <Link to={`/users/${currentUser.id}`}>
       Timeline
       </Link>
-      <Link to={`users/${currentUser.id}/about`}>
+      <Link to={`/users/${currentUser.id}/about`}>
       About
       </Link>
-      <Link to={`users/${currentUser.id}/friends`}>
+      <Link to={`/users/${currentUser.id}/friends`}>
       Friends
       </Link>
-      <Link to={`users/${currentUser.id}/photos`}>
+      <Link to={`/users/${currentUser.id}/photos`}>
       Photos
       </Link>
-      <Link to={`users/${currentUser.id}`}>
+      <Link to={`/users/${currentUser.id}`}>
       More
       </Link>
     </nav>

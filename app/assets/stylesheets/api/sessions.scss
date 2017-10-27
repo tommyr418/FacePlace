@@ -69,17 +69,16 @@
 }
 
 #user-nav a {
-  border-right: 1px solid #e9eaed;
+  display: flex;
+  align-items: center;
   float: left;
   font-size: 13px;
-  height: 14px;
-  line-height: 3.05;
-  padding: 0 17px;
-  position: relative;
+  height: 28px;
+  padding: 0 10px;
   vertical-align: middle;
+  text-align: center;
   white-space: nowrap;
   color: #fff;
-  cursor: pointer;
   text-decoration: none
 }
 

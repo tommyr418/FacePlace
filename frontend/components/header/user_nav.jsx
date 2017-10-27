@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 const UserNav = ({ logout, currentUser }) => {
   return (
     <nav id="user-nav">
-      <Link to={`users/${currentUser.id}`}>
-      { currentUser.fname }
+      <Link to={`/users/${currentUser.id}`}>
+      <span>{ currentUser.fname }</span>
       </Link>
 
       <Link to="/">
-        Home
+        <span>Home</span>
       </Link>
 
       <Link to="/find-friends">
-        Find Friends
+        <span>Find Friends</span>
       </Link>
 
       <button onClick={ logout }>Logout</button>
