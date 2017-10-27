@@ -6,11 +6,8 @@ class Main extends React.Component {
     let errors = "";
     if (this.props.errors.length > 0 &&
       this.props.errors[0].responseJSON[0] !== "Invalid Email or Password") {
-      errors = this.props.errors[0].responseJSON.map((error, index) => {
-        return (
-          <li key={ index }>{error}</li>
-        );
-      });
+      errors = this.props.errors[0].responseJSON.join("\n");
+      alert(errors);
     }
 
     if(this.props.currentUser) {
@@ -22,9 +19,6 @@ class Main extends React.Component {
     } else {
       return (
         <div id="main">
-          <ul id="session-errors">
-            {errors}
-          </ul>
 
           <SignupForm signup={ this.props.signup }/>
         </div>
