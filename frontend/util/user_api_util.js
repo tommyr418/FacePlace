@@ -16,7 +16,7 @@ export const addProfile = (profile) => {
 export const updateProfile = (profile) => {
   return $.ajax({
     method: "PATCH",
-    url: `/api/pofiles/${profile.id}`,
+    url: `/api/profiles/${profile.id}`,
     data: { profile },
   });
 };
@@ -24,6 +24,6 @@ export const updateProfile = (profile) => {
 export const removeProfile = (profileId) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/pofiles/${profileId}`,
+    url: `/api/profiles/${profileId}`,
   });
 };

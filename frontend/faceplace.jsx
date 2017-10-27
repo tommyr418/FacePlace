@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.requestUser = requestUser;
   window.addProfile = addProfile;
   window.updateProfile = updateProfile;
-  window.remove = removeProfile;
+  window.removeProfile = removeProfile;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={ store } />, root);
 });

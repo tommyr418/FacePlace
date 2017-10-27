@@ -38,3 +38,16 @@ export const addProfile = profile => dispatch => (
     errors => dispatch(receiveUserError(errors))
   )
 );
+
+export const updateProfile = profile => dispatch => (
+  UserAPIUtil.updateProfile(profile).then(
+    data => dispatch(receiveProfile(data)),
+    errors => dispatch(receiveUserError(errors))
+  )
+);
+export const removeProfile = profileId => dispatch => (
+  UserAPIUtil.removeProfile(profileId).then(
+    data => dispatch(receiveProfile(data)),
+    errors => dispatch(receiveUserError(errors))
+  )
+);

@@ -15,7 +15,7 @@ class Api::ProfilesController < ApplicationController
 
     if @profile.user_id == current_user.id
       if @profile.update(profile_params)
-        render json: ["sucess"]
+        render partial: 'api/users/profile', locals: { user: @profile.user }
       else
         render json: @profile.errors.full_messages, status: 422
       end
@@ -29,7 +29,7 @@ class Api::ProfilesController < ApplicationController
 
     if @profile.user_id == current_user.id
       @profile.destroy
-      render json: {}
+      render partial: 'api/users/profile', locals: { user: @profile.user }
     else
       render json: ["Users can only edit own profile"], status: 401
     end

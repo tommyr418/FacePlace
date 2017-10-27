@@ -10,7 +10,8 @@ user.profiles.each do |profile|
     profile_hash[profile.category][profile.sub_category] = []
   end
 
-  profile_hash[profile.category][profile.sub_category] << profile.value
+  profile_hash[profile.category][profile.sub_category] <<
+    { id: profile.id, value: profile.value }
 end
 
 json.profile profile_hash
