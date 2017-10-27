@@ -7,6 +7,15 @@ const UserNav = ({ logout, currentUser }) => {
       <Link to={`users/${currentUser.id}`}>
       { currentUser.fname }
       </Link>
+
+      <Link to="/">
+        Home
+      </Link>
+
+      <Link to="/find-friends">
+        Find Friends
+      </Link>
+
       <button onClick={ logout }>Logout</button>
     </nav>
   );

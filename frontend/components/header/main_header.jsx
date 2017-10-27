@@ -8,10 +8,10 @@ class MainHeader extends React.Component {
       return (
         <header id="header-main-logged-in">
           <div id="header-left-logged-in">
-            <span id="logo">P</span>
+            <span id="logo">f</span>
             <input type="text" id="search-bar"></input>
             <button>
-              <i class="fa fa-search" aria-hidden="true"></i>
+              <i className="fa fa-search" aria-hidden="true"></i>
             </button>
           </div>
 
