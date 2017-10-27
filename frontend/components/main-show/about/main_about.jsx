@@ -1,6 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import AboutCategories from './about_categories';
+import AboutOverveiwContainer from './about_overveiw_container';
 
 class MainAbout extends React.Component {
   render() {
@@ -13,6 +15,8 @@ class MainAbout extends React.Component {
 
         <div>
           <AboutCategories userId={this.props.userId}/>
+          <Route path="/users/:userId/about"
+            component={ AboutOverveiwContainer }/>
         </div>
       </div>
     );
