@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AboutCategories from './about_categories';
+
 class MainAbout extends React.Component {
   render() {
     return (
@@ -10,13 +12,7 @@ class MainAbout extends React.Component {
         </div>
 
         <div>
-          <div>
-
-          </div>
-
-          <div>
-
-          </div>
+          <AboutCategories userId={this.props.userId}/>
         </div>
       </div>
     );
