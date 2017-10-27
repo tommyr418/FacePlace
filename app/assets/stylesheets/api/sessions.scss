@@ -62,11 +62,17 @@
   border: 1px solid #29487d;
 }
 
+#login-form button:hover {
+  background-color: #415e9a;
+}
+
 #login-form label{
   margin: 5px;
 }
 
 #user-nav {
+  display: flex;
+  align-items: center;
   margin: auto 35px;
   color: white;
 }
@@ -83,6 +89,17 @@
   white-space: nowrap;
   color: #fff;
   text-decoration: none
+}
+
+#user-nav button {
+  height: 22px;
+  background-color: #4267b2;
+  color: white;
+  border: 1px solid #29487d;
+}
+
+#user-nav button:hover {
+  background-color: #415e9a;
 }
 
 #signup-form {
