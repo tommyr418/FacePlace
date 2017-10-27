@@ -8,6 +8,7 @@ class Main extends React.Component {
       this.props.errors[0].responseJSON[0] !== "Invalid Email or Password") {
       errors = this.props.errors[0].responseJSON.join("\n");
       alert(errors);
+      this.props.clearSessionErrors();
     }
 
     if(this.props.currentUser) {

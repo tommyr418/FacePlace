@@ -28,6 +28,7 @@ class LoginForm extends React.Component {
     if (this.props.errors.length > 0 &&
       this.props.errors[0].responseJSON[0] === "Invalid Email or Password") {
       alert("Invalid Email or Password");
+      this.props.clearSessionErrors();
     }
     return (
       <form onSubmit={ this.handleSubmit } id="login-form">
