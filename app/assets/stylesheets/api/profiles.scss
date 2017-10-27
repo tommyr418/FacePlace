@@ -1,3 +1,64 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#main-show {
+  display: flex;
+  flex-direction: column;
+}
+
+#cover-photo {
+  margin: 0 40px;
+  height: 205px;
+  width: 851px;
+  background-color: black;
+  position: relative;
+}
+
+#profile-picture-div {
+  position: absolute;
+  left: 16px;
+  bottom: -27px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+#profile-picture{
+  width: 160px;
+  height: 160px;
+  background: lightgray;
+  border: 4px solid #fff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#profile-nav {
+  display: flex;
+  margin: 0 40px;
+  height: 43px;
+  width: 648px;
+  background-color: white;
+  padding-left: 201px;
+  border: 1px solid #e9eaed;
+  font-family: arial;
+}
+
+#profile-nav a {
+  border-right: 1px solid #e9eaed;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  height: 43px;
+  line-height: 3.05;
+  padding: 0 17px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #365899;
+  cursor: pointer;
+  text-decoration: none
+}
+
+#profile-nav a:first-of-type {
+  border-left: 1px solid #e9eaed;
+}

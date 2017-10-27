@@ -16,6 +16,9 @@ const ProfileNav = ({ currentUser }) => {
       <Link to={`users/${currentUser.id}/photos`}>
       Photos
       </Link>
+      <Link to={`users/${currentUser.id}`}>
+      More
+      </Link>
     </nav>
   );
 };

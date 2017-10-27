@@ -12,10 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 body {
   margin: 0;
+  font-family: arial;
 }
 
 #main {
@@ -33,73 +35,27 @@ body {
   margin: 0;
 }
 
-#signup-form {
-  display: flex;
-  flex-direction: column;
-  min-height: 500px;
-  padding: 20px 40px;
-  font-family: arial;
-  color: #333;
-  width: 400px;
+
+#header-left-logged-in {
+  margin-left: 40px;
+  height: 42px;
 }
 
-#signup-form h1 {
-  font-size: 36px;
+#header-left-logged-in button {
+  height: 25px;
+  width: 40px;
+  border: none;
+  vertical-align: middle;
+  background-color: #e9eaed;
 }
 
-#signup-form h2 {
-  font-size: 18px;
-  font-weight: lighter;
-}
-
-#signup-form div {
-  display: flex;
-}
-
-#signup-form input {
-  margin: 5px;
-  font-size: 18px;
-  padding: 5px;
-  border: 1px solid #bdc7d8;
-  border-radius: 5px;
-  color: #a6a6a6;
-}
-
-#signup-form button {
-  border: 1px solid;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-  background: linear-gradient(#67ae55, #578843);
-  background-color: #69a74e;
-  font-size: 19px;
-  box-shadow: inset 0 1px 1px #a4e388;
-  border-color: #3b6e22 #3b6e22 #2c5115;
-  height: 40px;
-  width: 200px;
-  margin: 10px 0;
-  padding: 7px 20px;
-}
-
-.signup-form-name {
-  width: 50%;
-}
-
-.radio {
-  padding: 10px;
-}
 
 #search-bar {
-  height: 20px;
-  margin: auto 5px;
-  width: 200px;
-}
-
-#cover-photo {
-  margin: 0 40px;
-  height: 200px;
-  width: 800px;
-  background-color: black;
+  height: 23px;
+  width: 400px;
+  margin-left: 5px;
+  margin-top: 9px;
+  padding-right: 5px;
+  border: none;
+  color: #1d2129;
 }
