@@ -61,7 +61,7 @@
   white-space: nowrap;
   color: #365899;
   cursor: pointer;
-  text-decoration: none
+  text-decoration: none;
 }
 
 #profile-nav a:first-of-type {
@@ -92,4 +92,26 @@
   cursor: pointer;
   text-decoration: none;
   margin-left: 40px;
+}
+
+#about-categories {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #d2d6da;
+  width: 240px;
+  min-height: 280px;
+  padding-top: 10px;
+}
+
+#about-categories a{
+  font-size: 14px;
+  height: 42px;
+  line-height: 3.05;
+  padding: 0 17px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #8f949b;
+  cursor: pointer;
+  text-decoration: none;
 }
