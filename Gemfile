@@ -31,8 +31,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'annotate'
+gem 'aws-sdk', '< 3.0'
+gem 'figaro'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
+gem 'paperclip', '~> 5.0.0'
 gem 'pry-rails'
 
 group :development, :test do

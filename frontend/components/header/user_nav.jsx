@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 const UserNav = ({ logout, currentUser }) => {
   return (
     <nav id="user-nav">
+
       <Link to={`/users/${currentUser.id}`}>
-      <span>{ currentUser.fname }</span>
+        <div id="header-image">
+          <img src={ currentUser.image_url }/>
+        </div>
+        <span>{ currentUser.fname }</span>
       </Link>
 
       <Link to="/">

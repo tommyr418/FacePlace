@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   has_many :profiles
 
+  has_attached_file :profile_pic,
+                    default_url: "default-profile-picture.png"
+  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
+
 
   def password=(password)
     @password = password

@@ -91,6 +91,10 @@
   text-decoration: none
 }
 
+#user-nav a:hover {
+  background-color: #415e9a;
+}
+
 #user-nav button {
   height: 22px;
   background-color: #4267b2;
@@ -100,6 +104,18 @@
 
 #user-nav button:hover {
   background-color: #415e9a;
+}
+
+#header-image {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+#header-image img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
 
 #signup-form {
