@@ -70,6 +70,14 @@
   margin: 5px;
 }
 
+#login-error {
+  background-color: #bd4c4a;
+  color: #fff;
+  height: 14px;
+  padding: 10px;
+  margin: auto 0;
+}
+
 #user-nav {
   display: flex;
   align-items: center;
@@ -126,6 +134,7 @@
   font-family: arial;
   color: #333;
   width: 400px;
+  position: relative;
 }
 
 #signup-form h1 {
@@ -173,5 +182,21 @@
 }
 
 .radio {
+  padding: 10px;
+}
+
+#signup-errors {
+  position: absolute;
+  z-index: 4;
+  background-color: #bd4c4a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: -350px;
+  top: 100px;
+}
+
+#signup-errors span {
   padding: 10px;
 }

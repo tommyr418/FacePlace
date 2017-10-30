@@ -6,9 +6,11 @@ class LoginForm extends React.Component {
     this.state = {
       email: "",
       password: "",
+      errors: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.removeErrors = this.removeErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -23,15 +25,35 @@ class LoginForm extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors.length > 0 &&
+      newProps.errors[0].responseJSON[0] === "Invalid Email or Password") {
+      this.setState({
+        email: "",
+        password: "",
+        errors: "Invalid Email or Password",
+      });
+    }
+  }
+
+  removeErrors() {
+    setTimeout(() => {
+      this.setState({errors: ""});
+    }, 2500);
+  }
+
   render () {
-    let errors = "";
-    if (this.props.errors.length > 0 &&
-      this.props.errors[0].responseJSON[0] === "Invalid Email or Password") {
-      alert("Invalid Email or Password");
-      this.props.clearSessionErrors();
+    if (this.state.errors) {
+      this.removeErrors();
     }
     return (
       <form onSubmit={ this.handleSubmit } id="login-form">
+        { this.state.errors ?
+          <span id="login-error">{ this.state.errors }</span>
+          :
+          ""
+        }
+
         <div>
           <label>Email</label>
           <input type="email"
@@ -44,6 +66,7 @@ class LoginForm extends React.Component {
           <input type="password"
             value={ this.state.password }
             onChange={ this.handleInputChange('password')}></input>
+          <label>forgot account?</label>
         </div>
 
         <button>Log In</button>

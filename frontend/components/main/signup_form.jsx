@@ -10,12 +10,15 @@ class SignupForm extends React.Component {
       lname: "",
       birthdate: "",
       sex: "",
+      errors: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.removeErrors = this.removeErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -56,7 +59,36 @@ class SignupForm extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors.length > 0 &&
+      newProps.errors[0].responseJSON[0] !== "Invalid Email or Password") {
+      this.setState({
+        errors: newProps.errors[0].responseJSON.map((error, index) => {
+        return (
+          <span key={ index }>{ error }</span>
+        );
+      })});
+    }
+  }
+
+  renderErrors() {
+    return (
+      <div id="signup-errors">
+        { this.state.errors }
+      </div>
+    );
+  }
+
+  removeErrors() {
+    setTimeout(() => {
+      this.setState({errors: ""});
+    }, 2500);
+  }
+
   render () {
+    if (this.state.errors) {
+      this.removeErrors();
+    }
     return (
       <form onSubmit={ this.handleSubmit } id="signup-form">
         <h1> Create a New Account </h1>
@@ -112,6 +144,8 @@ class SignupForm extends React.Component {
         </div>
 
         <button>Create Account</button>
+
+        { this.state.errors ? this.renderErrors() : "" }
       </form>
     );
   }

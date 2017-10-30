@@ -3,14 +3,6 @@ import SignupForm from './signup_form';
 
 class Main extends React.Component {
   render() {
-    let errors = "";
-    if (this.props.errors.length > 0 &&
-      this.props.errors[0].responseJSON[0] !== "Invalid Email or Password") {
-      errors = this.props.errors[0].responseJSON.join("\n");
-      alert(errors);
-      this.props.clearSessionErrors();
-    }
-
     if(this.props.currentUser) {
       return (
         <div id="main">
@@ -38,11 +30,12 @@ class Main extends React.Component {
             <div>
               <i className="fa fa-share-alt" aria-hidden="true"></i>
               <h2>Find more</h2>
-              <h3>of what you're looking for with Facebook Search.</h3>
+              <h3>of what you're looking for with FacePlace Search.</h3>
             </div>
           </div>
 
-          <SignupForm signup={ this.props.signup }/>
+          <SignupForm signup={ this.props.signup }
+            errors={ this.props.errors }/>
         </div>
       );
     }
