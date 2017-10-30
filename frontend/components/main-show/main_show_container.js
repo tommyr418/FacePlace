@@ -6,7 +6,8 @@ import MainShow from './main_show';
 const mapStateToProps = (state, ownProps) => {
   return {
     user: state.entities.users[ownProps.match.params.userId],
-    userId: ownProps.match.params.userId
+    userId: ownProps.match.params.userId,
+    currentUser: state.session.currentUser
   };
 };
 

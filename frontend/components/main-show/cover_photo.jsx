@@ -2,13 +2,27 @@ import React from 'react';
 
 import ProfilePicture from './profile_picture';
 
-const CoverPhoto = ({ user }) => (
-  <div id="cover-photo">
-    <button>Add Cover Photo</button>
+const CoverPhoto = ({ user, currentUser}) => {
+  if (currentUser.id === user.id || currentUser.friends.includes(user.id)) {
+    return (
+      <div id="cover-photo">
+        <button>Add Cover Photo</button>
 
-    <ProfilePicture user={ user } />
-    <img />
-  </div>
-);
+        <ProfilePicture user={ user } />
+        <img />
+      </div>
+    );
+  } else {
+    return (
+      <div id="cover-photo">
+        <button>Add Cover Photo</button>
+
+        <ProfilePicture user={ user } />
+        <img />
+        <button>Add Friend</button>
+      </div>
+    );
+  }
+};
 
 export default CoverPhoto;

@@ -10,6 +10,15 @@ class MainShow extends React.Component {
     this.props.requestUser(this.props.userId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.match.params.userId !== this.props.userId) {
+      this.props.requestUser(newProps.match.params.userId);
+    }
+  }
+
+  componentDidUpdate() {
+  }
+
   render() {
     if(!this.props.user) {
       return (
@@ -19,7 +28,8 @@ class MainShow extends React.Component {
 
     return (
       <div id="main-show">
-        <CoverPhoto user={ this.props.user }/>
+        <CoverPhoto user={ this.props.user }
+          currentUser={ this.props.currentUser }/>
         <ProfileNav user={ this.props.user }/>
 
         <Route path="/users/:userId/about" component={ MainAboutContainer }/>
