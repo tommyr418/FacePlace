@@ -4,7 +4,7 @@ import { requestUser,
   addProfile,
   updateProfile,
   removeProfile } from '../../../actions/user_actions';
-import AboutOverveiw from './about_overveiw';
+import AboutOverview from './about_overview';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AboutOverveiw);
+)(AboutOverview);

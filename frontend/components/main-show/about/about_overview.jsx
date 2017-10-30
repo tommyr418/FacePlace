@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AboutOverveiw = ({ profile, userId }) => {
+const AboutOverview = ({ profile, userId }) => {
   const keys = Object.keys(profile);
   const categories = keys.slice(1);
   const subCategories = categories.map((category) => {
@@ -32,4 +32,4 @@ const AboutOverveiw = ({ profile, userId }) => {
   );
 };
 
-export default AboutOverveiw;
+export default AboutOverview;
