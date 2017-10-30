@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: friends
+#
+#  id          :integer          not null, primary key
+#  friender_id :integer          not null
+#  friendee_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  friender_id: 1
+  friendee_id: 1
+
+two:
+  friender_id: 1
+  friendee_id: 1
