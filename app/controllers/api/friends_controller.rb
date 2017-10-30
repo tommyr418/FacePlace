@@ -10,9 +10,17 @@ class Api::FriendsController < ApplicationController
   end
 
   def destroy
-    @friend = Friend.find(params[:id])
+    @friend = Friend.find(
+      params[:friend][:friender_id],
+      params[:friend][:friendee_id]
+    )
 
-    
+    if @friend
+      @friend.destroy
+      render json: ["sucess"]
+    else
+      render json: ["User is not your friend"], status: 422
+    end
   end
 
   private
