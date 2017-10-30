@@ -17,14 +17,14 @@ const AboutOverview = ({ profile, userId }) => {
   const overview = items.map((item, index) => {
     return (
       <li key={ index }>
-        { item[0]["value"] }
+        <span>{ item[0]["value"] }</span>
       </li>
     );
   });
 
 
   return (
-    <div className="about-overveiw">
+    <div className="about-details">
       <ul>
         {overview}
       </ul>

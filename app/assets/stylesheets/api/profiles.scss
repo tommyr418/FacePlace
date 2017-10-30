@@ -132,3 +132,23 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-details label {
+  margin: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #d2d6da;
+  padding-bottom: 5px;
+  width: 560px;
+  color: #8f949b;
+  font-weight: bold;
+}
+
+.about-details span {
+  margin-left: 20px;
+  color: #8f949b;
+}

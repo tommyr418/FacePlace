@@ -22,10 +22,6 @@ const AboutCategories = ({ userId }) => (
     <Link to={`/users/${userId}/about/detailsAboutYou`}>
       <span>Details About You</span>
     </Link>
-
-    <Link to={`/users/${userId}/about/lifeEvents`}>
-      <span>Life Events</span>
-    </Link>
   </div>
 );
 
