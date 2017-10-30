@@ -13,9 +13,9 @@ class MainAbout extends React.Component {
           <a>About</a>
         </div>
 
-        <div>
+        <div id="main-about-content">
           <AboutCategories userId={this.props.userId}/>
-          <Route path="/users/:userId/about"
+          <Route exact path="/users/:userId/about"
             component={ AboutOverveiwContainer }/>
         </div>
       </div>

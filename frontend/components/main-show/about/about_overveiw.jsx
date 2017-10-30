@@ -9,14 +9,25 @@ const AboutOverveiw = ({ profile, userId }) => {
   const items = [];
 
   for (var i = 0; i < categories.length; i++) {
-    for (var j = 0; j < subCategories.length; j++) {
-      items.push(profile[categories[i]][subCategories[j]]);
+    for (var j = 0; j < subCategories[i].length; j++) {
+      items.push(profile[categories[i]][subCategories[i][j]]);
     }
   }
 
-  return (
-    <div className="about-details">
+  const overview = items.map((item, index) => {
+    return (
+      <li key={ index }>
+        { item[0]["value"] }
+      </li>
+    );
+  });
 
+
+  return (
+    <div className="about-overveiw">
+      <ul>
+        {overview}
+      </ul>
     </div>
   );
 };

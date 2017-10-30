@@ -94,6 +94,23 @@
   margin-left: 40px;
 }
 
+#main-about-content {
+  display: flex;
+}
+
+#main-about-content ul {
+  list-style: none;
+}
+
+#main-about-content li {
+  padding: 20px;
+  align-items: center;
+  border-bottom: 1px solid #d2d6da;
+  width: 325px;
+  font-size: 16px;
+  color: #8f949b;
+}
+
 #about-categories {
   display: flex;
   flex-direction: column;
