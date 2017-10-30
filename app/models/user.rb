@@ -28,10 +28,38 @@ class User < ApplicationRecord
 
   has_many :profiles
 
+  has_many :outgoing_requests,
+           foreign_key: :requester_id,
+           class_name: :FriendRequest
+
+  has_many :incoming_requests,
+           foreign_key: :recipient_id,
+           class_name: :FriendRequest
+
+  has_many :sent_friendings,
+           foreign_key: :friender_id,
+           class_name: :Friend
+
+  has_many :received_friendings,
+           foreign_key: :friendee_id,
+           class_name: :Friend
+
+  has_many :sent_friends,
+           through: :sent_friendings,
+           source: :friendee
+
+  has_many :received_friends,
+           through: :received_friendings,
+           source: :friender
+
   has_attached_file :profile_pic,
                     default_url: "default-profile-picture.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
+  def friends
+    sent_friends.pluck(:friendee_id)
+      .concat(received_friends.pluck(:friender_id))
+  end
 
   def password=(password)
     @password = password

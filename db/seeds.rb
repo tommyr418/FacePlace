@@ -45,3 +45,7 @@ Profile.create(user_id: User.all[2], category: "placesYouveLived",
 Profile.create(user_id: User.all[2], category: "familyAndRelationships",
                sub_category: "familyMembers",
                value: "Cousin: Tommy Ren")
+
+Friend.destroy_all
+Friend.create(friender_id: User.first.id, friendee_id: User.last.id)
+Friend.create(friender_id: User.all[1].id, friendee_id: User.first.id)
