@@ -10,7 +10,7 @@ class Api::FriendsController < ApplicationController
   end
 
   def destroy
-    @friend = Friend.find(
+    @friend = Friend.find_by_ids(
       params[:friend][:friender_id],
       params[:friend][:friendee_id]
     )
