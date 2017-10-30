@@ -4,7 +4,7 @@ import { requestUser,
   addProfile,
   updateProfile,
   removeProfile } from '../../../actions/user_actions';
-import AboutWorkAndEducation from './about_work_and_education';
+import AboutPlacesYouveLived from './about_places_youve_lived';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AboutWorkAndEducation);
+)(AboutPlacesYouveLived);
