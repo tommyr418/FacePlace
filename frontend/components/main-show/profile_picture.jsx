@@ -35,9 +35,14 @@ class ProfilePicture extends React.Component {
           onClick={ this.openModal }/>
 
         { this.state.modalOpen ?
-          <div>
-            <button onClick={ this.closeModal }>close</button>
-            <ProfilePictureUpload />
+          <div className="modal">
+            <div className="modal-content">
+              <button onClick={ this.closeModal }
+                className="close">
+                close
+              </button>
+              <ProfilePictureUpload />
+            </div>
           </div>
           : ""}
       </div>
