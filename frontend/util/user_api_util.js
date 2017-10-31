@@ -5,6 +5,25 @@ export const fetchUser = (userId) => {
   });
 };
 
+export const updateUser = (user) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/users/${user.id}`,
+    data: { user }
+  });
+};
+
+export const updateProfilePic = (formData) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/users/${formData.get("user[id]")}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+  });
+};
+
 export const addProfile = (profile) => {
   return $.ajax({
     method: "POST",

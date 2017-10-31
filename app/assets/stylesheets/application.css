@@ -125,7 +125,8 @@ body {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 810px;
+  width: 600px;
+  min-height: 300px;
 }
 
 .close {

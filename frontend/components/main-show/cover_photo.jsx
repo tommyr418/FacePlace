@@ -2,14 +2,15 @@ import React from 'react';
 
 import ProfilePicture from './profile_picture';
 
-const CoverPhoto = ({ user, currentUser}) => {
+const CoverPhoto = ({ user, currentUser, updateProfilePic }) => {
   if (currentUser.id === user.id) {
     return (
       <div id="cover-photo">
         <button>Add/Update Cover Photo</button>
 
         <ProfilePicture user={ user }
-          currentUser={ currentUser }/>
+          currentUser={ currentUser }
+          updateProfilePic={ updateProfilePic }/>
         <img />
       </div>
     );
@@ -17,7 +18,8 @@ const CoverPhoto = ({ user, currentUser}) => {
     return (
       <div id="cover-photo">
         <ProfilePicture user={ user }
-          currentUser={ currentUser }/>
+          currentUser={ currentUser }
+          updateProfilePic={ updateProfilePic }/>
         <img />
       </div>
     );
@@ -26,7 +28,8 @@ const CoverPhoto = ({ user, currentUser}) => {
       <div id="cover-photo">
 
         <ProfilePicture user={ user }
-          currentUser={ currentUser }/>
+          currentUser={ currentUser }
+          updateProfilePic={ updateProfilePic }/>
         <img />
         <button>Add Friend</button>
       </div>

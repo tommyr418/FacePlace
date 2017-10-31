@@ -32,6 +32,20 @@ export const requestUser = userId => dispatch => (
   )
 );
 
+export const updateUser = user => dispatch => (
+  UserAPIUtil.updateUser(user).then(
+    data => dispatch(receiveUser(data)),
+    errors => dispatch(receiveUserError(errors))
+  )
+);
+
+export const updateProfilePic = formData => dispatch => (
+  UserAPIUtil.updateProfilePic(formData).then(
+    data => dispatch(receiveUser(data)),
+    errors => dispatch(receiveUserError(errors))
+  )
+);
+
 export const addProfile = profile => dispatch => (
   UserAPIUtil.addProfile(profile).then(
     data => dispatch(receiveProfile(data)),

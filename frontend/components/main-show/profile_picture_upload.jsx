@@ -24,16 +24,21 @@ class ProfilePictureUpload extends React.Component {
     }
   }
 
-  handleSubmit() {
-    
+  handleSubmit(e) {
+    e.preventDefault();
+    const file = this.state.imageFile;
+    const formData = new FormData();
+    formData.append("user[id]", this.props.currentUser.id);
+    if (file) formData.append("user[profile_pic]", file);
+    this.props.updateProfilePic(formData);
   }
 
   render() {
     return (
-      <form id="profile-picture-upload">
+      <form id="profile-picture-upload"
+        onSubmit={ this.handleSubmit }>
         <input type="file"
-          onChange={ this.handleFile }
-          onSubmit={ this.handleSubmit }>
+          onChange={ this.handleFile }>
         </input>
         <img src={ this.state.imageUrl }/>
         <button>Submit</button>

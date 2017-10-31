@@ -110,7 +110,7 @@ class SignupForm extends React.Component {
           </input>
         </div>
 
-        <input type="text"
+        <input type="email"
           onChange={ this.handleInputChange('email')}
           defaultValue="email"
           onFocus={ this.handleFocus }
