@@ -43,7 +43,8 @@ class ProfilePicture extends React.Component {
               </button>
               <ProfilePictureUpload
                 updateProfilePic={ this.props.updateProfilePic }
-                currentUser= { this.props.currentUser }/>
+                currentUser= { this.props.currentUser }
+                closeModal={ this.closeModal }/>
             </div>
           </div>
           : ""}
