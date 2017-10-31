@@ -11,7 +11,7 @@ const CoverPhoto = ({ user, currentUser, updateProfilePic }) => {
         <ProfilePicture user={ user }
           currentUser={ currentUser }
           updateProfilePic={ updateProfilePic }/>
-        <img />
+        <img src={ user.cover_image_url }/>
       </div>
     );
   } else if (currentUser.friends.includes(user.id)) {
@@ -20,7 +20,7 @@ const CoverPhoto = ({ user, currentUser, updateProfilePic }) => {
         <ProfilePicture user={ user }
           currentUser={ currentUser }
           updateProfilePic={ updateProfilePic }/>
-        <img />
+        <img src={ user.cover_image_url }/>
       </div>
     );
   } else {
@@ -30,7 +30,7 @@ const CoverPhoto = ({ user, currentUser, updateProfilePic }) => {
         <ProfilePicture user={ user }
           currentUser={ currentUser }
           updateProfilePic={ updateProfilePic }/>
-        <img />
+        <img src={ user.cover_image_url }/>
         <button>Add Friend</button>
       </div>
     );

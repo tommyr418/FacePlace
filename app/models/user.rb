@@ -56,9 +56,9 @@ class User < ApplicationRecord
                     default_url: "default-profile-picture.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
-  # has_attached_file :cover_photo,
-  #                   default_url: "default-profile-picture.png"
-  # validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/
+  has_attached_file :cover_photo,
+                    default_url: ""
+  validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/
 
   def friends
     sent_friends.pluck(:friendee_id)
