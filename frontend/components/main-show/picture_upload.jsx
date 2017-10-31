@@ -37,7 +37,7 @@ class PictureUpload extends React.Component {
 
   render() {
     return (
-      <form id="profile-picture-upload"
+      <form id="picture-upload"
         onSubmit={ this.handleSubmit }>
         <input type="file"
           onChange={ this.handleFile }>

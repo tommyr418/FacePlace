@@ -106,6 +106,26 @@
   border-left: 1px solid #e9eaed;
 }
 
+#picture-upload {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: inherit;
+}
+
+#picture-upload button {
+  position: absolute;
+  bottom: 0px;
+  height: 22px;
+  background-color: #4267b2;
+  color: white;
+  border: 1px solid #29487d;
+}
+
+#picture-upload input {
+  color: #4267b2;
+}
+
 #main-about {
   min-height: 350px;
   width: 849px;

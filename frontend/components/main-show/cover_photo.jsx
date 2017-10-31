@@ -32,7 +32,7 @@ class CoverPhoto extends React.Component {
     const addCover = (this.props.currentUser.id === this.props.user.id) ?
       <button id="add-cover-button"
         onClick={ this.openModal }>
-        <i class="fa fa-camera" aria-hidden="true"></i>
+        <i className="fa fa-camera" aria-hidden="true"></i>
         Add Cover Photo
       </button>
       :
@@ -43,7 +43,7 @@ class CoverPhoto extends React.Component {
       ""
       :
       <button id="add-friend-button">
-        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i className="fa fa-plus" aria-hidden="true"></i>
         Add Friend
       </button>;
 
