@@ -19,6 +19,10 @@ const AboutCategories = ({ userId }) => (
       <span>Contact and Basic Info</span>
     </Link>
 
+    <Link to={`/users/${userId}/about/familyAndRelationships`}>
+      <span>Family and Relationships</span>
+    </Link>
+
     <Link to={`/users/${userId}/about/detailsAboutYou`}>
       <span>Details About You</span>
     </Link>

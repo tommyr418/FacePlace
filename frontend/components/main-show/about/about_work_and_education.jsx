@@ -5,22 +5,48 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
     return (
       <div className="about-details">
         <label>Work</label>
-        <span>{ profile["workAndEducation"]["work"].map(
-          item => item["value"]) }</span>
+        {
+          profile["workAndEducation"]["work"] ?
+          <span>
+            { profile["workAndEducation"]["work"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>Professional Skills</label>
-        <span>
-          { profile["workAndEducation"]["professionalSkills"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["workAndEducation"]["professionalSkills"] ?
+          <span>
+            { profile["workAndEducation"]["professionalSkills"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>College</label>
-        <span>{ profile["workAndEducation"]["college"].map(
-          item => item["value"]) }</span>
+        {
+          profile["workAndEducation"]["college"] ?
+          <span>
+            { profile["workAndEducation"]["college"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>High School</label>
-        <span>{ profile["workAndEducation"]["highSchool"].map(
-          item => item["value"]) }</span>
+        {
+          profile["workAndEducation"]["highSchool"] ?
+          <span>
+            { profile["workAndEducation"]["highSchool"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
       </div>
     );
   } else{

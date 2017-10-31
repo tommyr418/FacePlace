@@ -10,6 +10,8 @@ import AboutPlacesYouveLivedContainer from
 import AboutContactContainer from './about_contact_container';
 import AboutDetailsAboutYouContainer from
   './about_details_about_you_container';
+import AboutFamilyAndRelationshipsContainer from
+  './about_family_and_relationships_container';
 import AboutForm from './about_form';
 
 class MainAbout extends React.Component {
@@ -42,9 +44,14 @@ class MainAbout extends React.Component {
         <div id="main-about-title">
           <a>About</a>
 
-          <button onClick={ this.openModal }>
-            Add Info
-          </button>
+          {
+            this.props.currentUser.id === this.props.user.id ?
+            <button onClick={ this.openModal }>
+              Add Info
+            </button>
+            :
+            null
+          }
         </div>
 
         <div id="main-about-content">
@@ -57,6 +64,8 @@ class MainAbout extends React.Component {
             component={ AboutPlacesYouveLivedContainer }/>
           <Route path="/users/:userId/about/contactAndBasicInfo"
             component={ AboutContactContainer }/>
+          <Route path="/users/:userId/about/familyAndRelationships"
+            component={ AboutFamilyAndRelationshipsContainer }/>
           <Route path="/users/:userId/about/detailsAboutYou"
             component={ AboutDetailsAboutYouContainer }/>
         </div>
@@ -68,7 +77,8 @@ class MainAbout extends React.Component {
                 className="close">
                 close
               </button>
-              <AboutForm />
+              <AboutForm addProfile={ this.props.addProfile }
+                closeModal={ this.closeModal }/>
             </div>
           </div>
           : ""}

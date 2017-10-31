@@ -10,6 +10,8 @@ class AboutForm extends React.Component {
     };
     this.handleCategory = this.handleCategory.bind(this);
     this.handleSubCategory = this.handleSubCategory.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCategory(e) {
@@ -27,9 +29,24 @@ class AboutForm extends React.Component {
     });
   }
 
+  handleInput(e) {
+    this.setState({
+      value: e.currentTarget.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.addProfile(this.state).then(
+      this.props.closeModal
+    );
+
+  }
+
   render(){
     return (
-      <form id="about-form">
+      <form id="about-form"
+        onSubmit={ this.handleSubmit }>
         <select onChange={ this.handleCategory }
           defaultValue = "">
           <option value="" disabled>Please Choose a Category</option>
@@ -44,6 +61,10 @@ class AboutForm extends React.Component {
           <option
             value="contactAndBasicInfo">
             Contacts And Basic Info
+          </option>
+          <option
+            value="familyAndRelationships">
+            Family and Relationships
           </option>
           <option
             value="detailsAboutYou">
@@ -121,6 +142,25 @@ class AboutForm extends React.Component {
           null
         }
         {
+          (this.state.category === "familyAndRelationships") ?
+          <select onChange={ this.handleSubCategory }
+            defaultValue="">
+            <option value="" disabled>
+              Please Choose a Sub-category
+            </option>
+            <option
+              value="relationship">
+              Relationship
+            </option>
+            <option
+              value="familyMembers">
+              Family Members
+            </option>
+          </select>
+          :
+          null
+        }
+        {
           (this.state.category === "detailsAboutYou") ?
           <select onChange={ this.handleSubCategory }
             defaultValue="">
@@ -148,6 +188,15 @@ class AboutForm extends React.Component {
           null
         }
 
+        {
+          this.state.sub_category ?
+          <input onChange={ this.handleInput }
+            type="text"></input>
+          :
+          null
+        }
+
+        <button>Submit</button>
       </form>
     );
   }
