@@ -8,7 +8,8 @@ const CoverPhoto = ({ user, currentUser}) => {
       <div id="cover-photo">
         <button>Add Cover Photo</button>
 
-        <ProfilePicture user={ user } />
+        <ProfilePicture user={ user }
+          currentUser={ currentUser }/>
         <img />
       </div>
     );
@@ -17,7 +18,8 @@ const CoverPhoto = ({ user, currentUser}) => {
       <div id="cover-photo">
         <button>Add Cover Photo</button>
 
-        <ProfilePicture user={ user } />
+        <ProfilePicture user={ user }
+          currentUser={ currentUser }/>
         <img />
         <button>Add Friend</button>
       </div>
