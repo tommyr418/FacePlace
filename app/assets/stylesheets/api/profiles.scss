@@ -225,3 +225,12 @@
   margin-left: 20px;
   color: #8f949b;
 }
+
+#about-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#about-form select {
+  margin: 20px;
+}

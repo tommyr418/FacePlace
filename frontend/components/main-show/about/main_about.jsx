@@ -10,6 +10,7 @@ import AboutPlacesYouveLivedContainer from
 import AboutContactContainer from './about_contact_container';
 import AboutDetailsAboutYouContainer from
   './about_details_about_you_container';
+import AboutForm from './about_form';
 
 class MainAbout extends React.Component {
   constructor(props) {
@@ -67,6 +68,7 @@ class MainAbout extends React.Component {
                 className="close">
                 close
               </button>
+              <AboutForm />
             </div>
           </div>
           : ""}
