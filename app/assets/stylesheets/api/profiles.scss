@@ -136,6 +136,8 @@
 }
 
 #main-about-title {
+  display: flex;
+  justify-content: space-between;
   height: 29px;
   padding: 16px 0 12px 0;
   border-bottom: 1px solid #d2d6da;
@@ -150,6 +152,18 @@
   cursor: pointer;
   text-decoration: none;
   margin-left: 40px;
+}
+
+#main-about-title button {
+  margin-right: 40px;
+  height: 28px;
+  background-color: #fff;
+  border: 1px solid #d1d6da;
+  border-radius: 2px;
+  color: #4c4f57;
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 #main-about-content {

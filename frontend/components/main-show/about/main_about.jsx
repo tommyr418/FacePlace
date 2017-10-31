@@ -12,12 +12,38 @@ import AboutDetailsAboutYouContainer from
   './about_details_about_you_container';
 
 class MainAbout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    if(this.props.currentUser.id === this.props.user.id) {
+      this.setState({
+        modalOpen: true,
+      });
+    }
+  }
+
+  closeModal(){
+    this.setState({
+      modalOpen: false,
+    });
+  }
+
   render() {
     return (
       <div id="main-about">
         <div id="main-about-title">
-
           <a>About</a>
+
+          <button onClick={ this.openModal }>
+            Add Info
+          </button>
         </div>
 
         <div id="main-about-content">
@@ -33,6 +59,17 @@ class MainAbout extends React.Component {
           <Route path="/users/:userId/about/detailsAboutYou"
             component={ AboutDetailsAboutYouContainer }/>
         </div>
+
+        { this.state.modalOpen ?
+          <div className="modal">
+            <div className="modal-content">
+              <button onClick={ this.closeModal }
+                className="close">
+                close
+              </button>
+            </div>
+          </div>
+          : ""}
       </div>
     );
   }
