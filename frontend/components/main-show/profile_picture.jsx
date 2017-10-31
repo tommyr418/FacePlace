@@ -10,7 +10,7 @@ class ProfilePicture extends React.Component {
       modalOpen: false,
     };
     this.openModal = this.openModal.bind(this);
-    this.closeModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
