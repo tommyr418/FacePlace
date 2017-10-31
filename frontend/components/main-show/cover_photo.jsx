@@ -42,7 +42,15 @@ class CoverPhoto extends React.Component {
       this.props.user.id)) ?
       ""
       :
-      <button id="add-friend-button">Add Friend</button>;
+      <button id="add-friend-button">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Add Friend
+      </button>;
+
+    const coverImage = this.props.user.cover_image_url ?
+      <img id="cover-photo-img" src={ this.props.user.cover_image_url }/>
+      :
+      "";
 
     return (
       <div id="cover-photo">
@@ -51,7 +59,8 @@ class CoverPhoto extends React.Component {
         <ProfilePicture user={ this.props.user }
           currentUser={ this.props.currentUser }
           updatePhoto={ this.props.updatePhoto }/>
-        <img id="cover-photo-img" src={ this.props.user.cover_image_url }/>
+
+        { coverImage }
 
         { addFriend }
 

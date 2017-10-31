@@ -22,7 +22,17 @@
 }
 
 #add-friend-button {
+  right: 20px;
+  bottom: 15px;
   position: absolute;
+  height: 28px;
+  background-color: #f6f7f9;
+  border: 1px solid #4d381e;
+  border-radius: 2px;
+  color: #4c4f57;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+  font-size: 12px;
+  padding: 5px 10px;
 }
 
 #add-cover-button {
@@ -39,7 +49,7 @@
   padding: 5px 10px;
 }
 
-#add-cover-button i {
+#cover-photo i {
   font-size: 14px;
   margin-right: 10px;
 }
