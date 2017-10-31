@@ -124,6 +124,7 @@ class SignupForm extends React.Component {
           onBlur={ this.handleBlur }></input>
 
         <label>Birthday
+          <br/>
           <input type="date"
             value={ this.state.birthdate }
             onChange={ this.handleInputChange('birthdate')}></input>
