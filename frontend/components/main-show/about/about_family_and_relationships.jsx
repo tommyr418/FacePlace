@@ -7,23 +7,23 @@ const AboutFamilyAndRelationships = ({ profile, userId }) => {
         <label>Relationship</label>
         {
           profile["familyAndRelationships"]["relationship"] ?
-          <span>
+          <ul>
             { profile["familyAndRelationships"]["relationship"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           : null
         }
 
         <label>Family Members</label>
         {
           profile["familyAndRelationships"]["familyMembers"] ?
-          <span>
+          <ul>
             { profile["familyAndRelationships"]["familyMembers"].map(
-              item => item["value"]) }
-          </span>
-          :
-          null
-        }
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+            </ul>
+            :
+            null
+          }
       </div>
     );
   } else{

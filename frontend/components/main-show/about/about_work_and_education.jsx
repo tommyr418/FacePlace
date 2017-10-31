@@ -7,10 +7,10 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
         <label>Work</label>
         {
           profile["workAndEducation"]["work"] ?
-          <span>
+          <ul>
             { profile["workAndEducation"]["work"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -18,10 +18,10 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
         <label>Professional Skills</label>
         {
           profile["workAndEducation"]["professionalSkills"] ?
-          <span>
+          <ul>
             { profile["workAndEducation"]["professionalSkills"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -29,10 +29,10 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
         <label>College</label>
         {
           profile["workAndEducation"]["college"] ?
-          <span>
+          <ul>
             { profile["workAndEducation"]["college"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -40,10 +40,10 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
         <label>High School</label>
         {
           profile["workAndEducation"]["highSchool"] ?
-          <span>
+          <ul>
             { profile["workAndEducation"]["highSchool"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }

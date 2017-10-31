@@ -170,18 +170,23 @@
   display: flex;
 }
 
-#main-about-content ul {
+#about-overview ul {
   list-style: none;
   padding-left: 20px;
+  margin: 0;
 }
 
-#main-about-content li {
+#about-overview li {
   padding: 20px 0;
   align-items: center;
   border-bottom: 1px solid #d2d6da;
   width: 325px;
   font-size: 16px;
-  color: #8f949b;
+  color: #4b4f56;
+}
+
+#main-about-content li:last-of-type {
+  border-bottom: none;
 }
 
 #about-categories {
@@ -212,7 +217,7 @@
 }
 
 .about-details label {
-  margin: 20px;
+  margin: 30px 20px 10px 20px;
   font-size: 14px;
   border-bottom: 1px solid #d2d6da;
   padding-bottom: 5px;
@@ -221,9 +226,15 @@
   font-weight: bold;
 }
 
-.about-details span {
-  margin-left: 20px;
-  color: #8f949b;
+.about-details ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.about-details li {
+  color: #4b4f56;
+  margin-bottom: 10px;
 }
 
 #about-form {

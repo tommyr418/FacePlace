@@ -7,10 +7,10 @@ const AboutContact = ({ profile, userId }) => {
         <label>Contact Information</label>
         {
           profile["contactAndBasicInfo"]["contactInformation"] ?
-          <span>
+          <ul>
             { profile["contactAndBasicInfo"]["contactInformation"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -18,10 +18,10 @@ const AboutContact = ({ profile, userId }) => {
         <label>Websites and Social links</label>
         {
           profile["contactAndBasicInfo"]["websitesAndSocialLinks"] ?
-          <span>
+          <ul>
             { profile["contactAndBasicInfo"]["websitesAndSocialLinks"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -29,10 +29,10 @@ const AboutContact = ({ profile, userId }) => {
         <label>Basic Information</label>
         {
           profile["contactAndBasicInfo"]["basicIformation"] ?
-          <span>
+          <ul>
             { profile["contactAndBasicInfo"]["basicIformation"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }

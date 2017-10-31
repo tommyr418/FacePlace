@@ -7,10 +7,10 @@ const AboutPlacesYouveLived = ({ profile, userId }) => {
         <label>Current City and Hometown</label>
         {
           profile["placesYouveLived"]["currentCityAndHometown"] ?
-          <span>
+          <ul>
             { profile["placesYouveLived"]["currentCityAndHometown"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -18,10 +18,10 @@ const AboutPlacesYouveLived = ({ profile, userId }) => {
         <label>Other Places Lived</label>
         {
           profile["placesYouveLived"]["otherPlacesLived"] ?
-          <span>
+          <ul>
             { profile["placesYouveLived"]["otherPlacesLived"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }

@@ -14,17 +14,22 @@ const AboutOverview = ({ profile, userId }) => {
     }
   }
 
-  const overview = items.map((item, index) => {
+  const flattened = items.reduce(
+    (acc, el) => acc.concat(el),
+    []
+  );
+
+  const overview = flattened.map((item, index) => {
     return (
       <li key={ index }>
-        <span>{ item[0]["value"] }</span>
+        <span>{ item["value"] }</span>
       </li>
     );
   });
 
 
   return (
-    <div className="about-details">
+    <div id="about-overview">
       <ul>
         {overview}
       </ul>

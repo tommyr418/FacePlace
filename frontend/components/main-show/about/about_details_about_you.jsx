@@ -7,10 +7,10 @@ const AboutDetailsAboutYou = ({ profile, userId }) => {
         <label>About you</label>
         {
           profile["detailsAboutYou"]["aboutYou"] ?
-          <span>
+          <ul>
             { profile["detailsAboutYou"]["aboutYou"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -18,10 +18,10 @@ const AboutDetailsAboutYou = ({ profile, userId }) => {
         <label>Name Pronunciation</label>
         {
           profile["detailsAboutYou"]["namePronunciation"] ?
-          <span>
+          <ul>
             { profile["detailsAboutYou"]["namePronunciation"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -29,10 +29,10 @@ const AboutDetailsAboutYou = ({ profile, userId }) => {
         <label>Other Names</label>
         {
           profile["detailsAboutYou"]["otherNames"] ?
-          <span>
+          <ul>
             { profile["detailsAboutYou"]["otherNames"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
@@ -40,10 +40,10 @@ const AboutDetailsAboutYou = ({ profile, userId }) => {
         <label>Favorite Quotes</label>
         {
           profile["detailsAboutYou"]["favoriteQuotes"] ?
-          <span>
+          <ul>
             { profile["detailsAboutYou"]["favoriteQuotes"].map(
-              item => item["value"]) }
-          </span>
+              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+          </ul>
           :
           null
         }
