@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ProfilePictureUpload extends React.Component {
+class PictureUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,4 +49,4 @@ class ProfilePictureUpload extends React.Component {
   }
 }
 
-export default ProfilePictureUpload;
+export default PictureUpload;

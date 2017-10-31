@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import ProfilePictureUpload from './profile_picture_upload';
+import PictureUpload from './picture_upload';
 
 class ProfilePicture extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class ProfilePicture extends React.Component {
                 className="close">
                 close
               </button>
-              <ProfilePictureUpload
+              <PictureUpload
                 updateProfilePic={ this.props.updateProfilePic }
                 currentUser= { this.props.currentUser }
                 closeModal={ this.closeModal }/>
