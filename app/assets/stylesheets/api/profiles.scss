@@ -106,14 +106,14 @@
   border-left: 1px solid #e9eaed;
 }
 
-#picture-upload {
+.modal-form {
   display: flex;
   flex-direction: column;
   position: relative;
   min-height: inherit;
 }
 
-#picture-upload button {
+.submit {
   position: absolute;
   bottom: 0px;
   height: 22px;
@@ -237,11 +237,14 @@
   margin-bottom: 10px;
 }
 
-#about-form {
-  display: flex;
-  flex-direction: column;
-}
-
 #about-form select {
   margin: 20px;
+  width: 200px;
+}
+
+#about-form input {
+  margin: 20px;
+  width: 400px;
+  border: 1px solid #cdcdcd;
+  height: 20px;
 }

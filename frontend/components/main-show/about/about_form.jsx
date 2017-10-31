@@ -46,6 +46,7 @@ class AboutForm extends React.Component {
   render(){
     return (
       <form id="about-form"
+        className="modal-form"
         onSubmit={ this.handleSubmit }>
         <select onChange={ this.handleCategory }
           defaultValue = "">
@@ -196,7 +197,7 @@ class AboutForm extends React.Component {
           null
         }
 
-        <button>Submit</button>
+        <button className="submit">Submit</button>
       </form>
     );
   }

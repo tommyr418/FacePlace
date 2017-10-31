@@ -38,12 +38,13 @@ class PictureUpload extends React.Component {
   render() {
     return (
       <form id="picture-upload"
+        className="modal-form"
         onSubmit={ this.handleSubmit }>
         <input type="file"
           onChange={ this.handleFile }>
         </input>
         <img src={ this.state.imageUrl }/>
-        <button>Submit</button>
+        <button className="submit">Submit</button>
       </form>
     );
   }
