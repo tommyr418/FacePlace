@@ -13,7 +13,7 @@ export const updateUser = (user) => {
   });
 };
 
-export const updateProfilePic = (formData) => {
+export const updatePhoto = (formData) => {
   return $.ajax({
     method: "PATCH",
     url: `/api/users/${formData.get("user[id]")}`,

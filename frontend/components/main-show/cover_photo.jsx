@@ -49,7 +49,7 @@ class CoverPhoto extends React.Component {
 
         <ProfilePicture user={ this.props.user }
           currentUser={ this.props.currentUser }
-          updateProfilePic={ this.props.updateProfilePic }/>
+          updatePhoto={ this.props.updatePhoto }/>
         <img src={ this.props.user.cover_image_url }/>
 
         { addFriend }
@@ -62,9 +62,10 @@ class CoverPhoto extends React.Component {
                 close
               </button>
               <PictureUpload
-                updateProfilePic={ this.props.updateProfilePic }
+                updatePhoto={ this.props.updatePhoto }
                 currentUser= { this.props.currentUser }
-                closeModal={ this.closeModal }/>
+                closeModal={ this.closeModal }
+                photoType="user[cover_photo]"/>
             </div>
           </div>
           : ""}

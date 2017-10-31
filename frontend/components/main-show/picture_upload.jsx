@@ -29,8 +29,8 @@ class PictureUpload extends React.Component {
     const file = this.state.imageFile;
     const formData = new FormData();
     formData.append("user[id]", this.props.currentUser.id);
-    if (file) formData.append("user[profile_pic]", file);
-    this.props.updateProfilePic(formData).then(
+    if (file) formData.append(this.props.photoType, file);
+    this.props.updatePhoto(formData).then(
         this.props.closeModal
     );
   }

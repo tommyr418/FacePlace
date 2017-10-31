@@ -39,8 +39,8 @@ export const updateUser = user => dispatch => (
   )
 );
 
-export const updateProfilePic = formData => dispatch => (
-  UserAPIUtil.updateProfilePic(formData).then(
+export const updatePhoto = formData => dispatch => (
+  UserAPIUtil.updatePhoto(formData).then(
     data => dispatch(receiveUser(data)),
     errors => dispatch(receiveUserError(errors))
   )

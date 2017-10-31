@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { requestUser,
   updateUser,
-  updateProfilePic } from '../../actions/user_actions';
+  updatePhoto } from '../../actions/user_actions';
 import MainShow from './main_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => (
   {
     requestUser: userId => dispatch(requestUser(userId)),
     updateUser: user => dispatch(updateUser(user)),
-    updateProfilePic: formData => dispatch(updateProfilePic(formData)),
+    updatePhoto: formData => dispatch(updatePhoto(formData)),
   }
 );
 
