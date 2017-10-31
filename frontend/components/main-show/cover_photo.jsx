@@ -32,7 +32,8 @@ class CoverPhoto extends React.Component {
     const addCover = (this.props.currentUser.id === this.props.user.id) ?
       <button id="add-cover-button"
         onClick={ this.openModal }>
-        Add/Update Cover Photo
+        <i class="fa fa-camera" aria-hidden="true"></i>
+        Add Cover Photo
       </button>
       :
       "";
@@ -50,7 +51,7 @@ class CoverPhoto extends React.Component {
         <ProfilePicture user={ this.props.user }
           currentUser={ this.props.currentUser }
           updatePhoto={ this.props.updatePhoto }/>
-        <img src={ this.props.user.cover_image_url }/>
+        <img id="cover-photo-img" src={ this.props.user.cover_image_url }/>
 
         { addFriend }
 

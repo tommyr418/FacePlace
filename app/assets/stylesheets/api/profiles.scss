@@ -9,11 +9,39 @@
 }
 
 #cover-photo {
-  margin: 0 40px;
+  margin: 0 41px;
   height: 205px;
-  width: 851px;
+  width: 849px;
   background-color: black;
   position: relative;
+}
+
+#cover-photo-img {
+  height: 100%;
+  width: 100%;
+}
+
+#add-friend-button {
+  position: absolute;
+}
+
+#add-cover-button {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  height: 30px;
+  background-color: #000;
+  border: 1px solid #acadb0;
+  border-radius: 2px;
+  color: #d2d3d4;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+#add-cover-button i {
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 #profile-picture-div {
