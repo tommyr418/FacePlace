@@ -5,22 +5,37 @@ const AboutContact = ({ profile, userId }) => {
     return (
       <div className="about-details">
         <label>Contact Information</label>
-        <span>
-          { profile["contactAndBasicInfo"]["contactInformation"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["contactAndBasicInfo"]["contactInformation"] ?
+          <span>
+            { profile["contactAndBasicInfo"]["contactInformation"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>Websites and Social links</label>
-        <span>
-          { profile["contactAndBasicInfo"]["websitesAndSocialLinks"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["contactAndBasicInfo"]["websitesAndSocialLinks"] ?
+          <span>
+            { profile["contactAndBasicInfo"]["websitesAndSocialLinks"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>Basic Information</label>
-        <span>
-          { profile["contactAndBasicInfo"]["basicIformation"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["contactAndBasicInfo"]["basicIformation"] ?
+          <span>
+            { profile["contactAndBasicInfo"]["basicIformation"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
       </div>
     );
   } else{

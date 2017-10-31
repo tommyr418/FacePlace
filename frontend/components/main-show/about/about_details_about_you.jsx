@@ -5,28 +5,48 @@ const AboutDetailsAboutYou = ({ profile, userId }) => {
     return (
       <div className="about-details">
         <label>About you</label>
-        <span>
-          { profile["detailsAboutYou"]["aboutYou"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["detailsAboutYou"]["aboutYou"] ?
+          <span>
+            { profile["detailsAboutYou"]["aboutYou"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>Name Pronunciation</label>
-        <span>
-          { profile["detailsAboutYou"]["namePronunciation"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["detailsAboutYou"]["namePronunciation"] ?
+          <span>
+            { profile["detailsAboutYou"]["namePronunciation"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>Other Names</label>
-        <span>
-          { profile["detailsAboutYou"]["otherNames"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["detailsAboutYou"]["otherNames"] ?
+          <span>
+            { profile["detailsAboutYou"]["otherNames"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
 
         <label>Favorite Quotes</label>
-        <span>
-          { profile["detailsAboutYou"]["favoriteQuotes"].map(
-            item => item["value"]) }
-        </span>
+        {
+          profile["detailsAboutYou"]["favoriteQuotes"] ?
+          <span>
+            { profile["detailsAboutYou"]["favoriteQuotes"].map(
+              item => item["value"]) }
+          </span>
+          :
+          null
+        }
       </div>
     );
   } else{
