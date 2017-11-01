@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: space-around;
   background-color: #e9ebee;
+  height: 100%;
 }
 
 #main-show {
