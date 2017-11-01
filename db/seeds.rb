@@ -7,45 +7,75 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-User.create(email: "tommy@yahoo.com", password: "tommyren", fname: "Tommy",
-            lname: "Ren", birthdate: "01/01/1992", sex: "male")
-User.create(email: "panda@yahoo.com", password: "rubyiscool", fname: "Julie",
-            lname: "Ren", birthdate: "01/01/1990", sex: "female")
-User.create(email: "kevin@yahoo.com", password: "xyzxyz123", fname: "Kevin",
-            lname: "Ya", birthdate: "12/30/1992", sex: "male")
+user = User.create(email: "homer@yahoo.com", password: "homersimpson",
+                   fname: "Homer", lname: "Simpson", birthdate: "04/17/1970",
+                   sex: "male")
+f1 = User.create(email: "marge@yahoo.com", password: "margesimpson",
+                 fname: "Marge", lname: "Simpson", birthdate: "10/10/1973",
+                 sex: "female")
+f2 = User.create(email: "bart@yahoo.com", password: "bartsimpson", fname: "Bart",
+            lname: "Simpson", birthdate: "12/30/1992", sex: "male")
+f3 =  User.create(email: "lisa@yahoo.com", password: "lisasimpson", fname: "Lisa",
+            lname: "Simpson", birthdate: "01/18/1994", sex: "female")
+User.create(email: "ned@yahoo.com", password: "nedflanders", fname: "Ned",
+            lname: "Flanders", birthdate: "12/25/1945", sex: "male")
+User.create(email: "maude@yahoo.com", password: "maudeflanders", fname: "Maude",
+            lname: "Flanders", birthdate: "12/02/1952", sex: "female")
+f4 = User.create(email: "moe@yahoo.com", password: "moesizlack", fname: "Moe",
+            lname: "Sizlack", birthdate: "07/12/1959", sex: "male")
+f5 = User.create(email: "barney@yahoo.com", password: "barneygumble",
+            fname: "Barney",
+            lname: "Gumble", birthdate: "05/14/1965", sex: "male")
+f6 = User.create(email: "lenny@yahoo.com", password: "lennyleonard", fname: "Lenny",
+            lname: "Leonard", birthdate: "11/27/1970", sex: "male")
+f7 = User.create(email: "carl@yahoo.com", password: "carlcarlsom", fname: "Carl",
+            lname: "Carlson", birthdate: "11/14/1971", sex: "male")
+User.create(email: "mrburns@yahoo.com", password: "charlesburns",
+            fname: "Charles",
+            lname: "Burns", birthdate: "02/28/1899", sex: "male")
 
 
 Profile.destroy_all
 Profile.create(user_id: User.first.id, category: "placesYouveLived",
                sub_category: "currentCityAndHometown",
-               value: "Lives In: Brooklyn")
-Profile.create(user_id: User.first.id, category: "placesYouveLived",
-               sub_category: "otherPlacesLived",
-               value: "Lived In: Buffalo")
+               value: "Lives In: Springfeild")
 Profile.create(user_id: User.first.id, category: "familyAndRelationships",
                sub_category: "familyMembers",
-               value: "Sister: Julie Ren")
-
-Profile.create(user_id: User.all[1], category: "workAndEducation",
-               sub_category: "highSchool",
-               value: "Studied At: Brooklyn Tech")
-Profile.create(user_id: User.all[1], category: "placesYouveLived",
-               sub_category: "otherPlacesLived",
-               value: "Lived In: Brooklyn")
-Profile.create(user_id: User.all[1], category: "familyAndRelationships",
+               value: "Son: Bart Simpson")
+Profile.create(user_id: User.first.id, category: "familyAndRelationships",
                sub_category: "familyMembers",
-               value: "Brother: Tommy Ren")
-
-Profile.create(user_id: User.all[2], category: "workAndEducation",
+               value: "Daughter: Lisa Simpson")
+Profile.create(user_id: User.first.id, category: "familyAndRelationships",
+               sub_category: "familyMembers",
+               value: "Wife: Marge Simpson")
+Profile.create(user_id: User.first.id, category: "familyAndRelationships",
+               sub_category: "relationship",
+               value: "Wife: Marge Simpson")
+Profile.create(user_id: User.first.id, category: "workAndEducation",
                sub_category: "work",
-               value: "Works At: Boeing")
-Profile.create(user_id: User.all[2], category: "placesYouveLived",
-               sub_category: "otherPlacesLived",
-               value: "Lived In: Brooklyn")
-Profile.create(user_id: User.all[2], category: "familyAndRelationships",
-               sub_category: "familyMembers",
-               value: "Cousin: Tommy Ren")
+               value: "Works At: Springfeild Nuclear Power Plant")
+
+FriendRequest.destroy_all
+FriendRequest.create(requester_id: user.id,
+                     recipient_id: f1.id, status: "accepted")
+FriendRequest.create(requester_id: user.id,
+                     recipient_id: f2.id, status: "accepted")
+FriendRequest.create(requester_id: f3.id,
+                     recipient_id: user.id, status: "accepted")
+FriendRequest.create(requester_id: user.id,
+                     recipient_id: f4.id, status: "accepted")
+FriendRequest.create(requester_id: f5.id,
+                     recipient_id: user.id, status: "accepted")
+FriendRequest.create(requester_id: f6.id,
+                     recipient_id: user.id, status: "accepted")
+FriendRequest.create(requester_id: user.id,
+                     recipient_id: f7.id, status: "accepted")
 
 Friend.destroy_all
-Friend.create(friender_id: User.first.id, friendee_id: User.last.id)
-Friend.create(friender_id: User.all[1].id, friendee_id: User.first.id)
+Friend.create(friender_id: user.id, friendee_id: f1.id)
+Friend.create(friender_id: user.id, friendee_id: f2.id)
+Friend.create(friender_id: f3.id, friendee_id: user.id)
+Friend.create(friender_id: user.id, friendee_id: f4.id)
+Friend.create(friender_id: f5.id, friendee_id: user.id)
+Friend.create(friender_id: f6.id, friendee_id: user.id)
+Friend.create(friender_id: user.id, friendee_id: f7.id)

@@ -16,9 +16,17 @@ const UserNav = ({ logout, currentUser }) => {
         <span>Home</span>
       </Link>
 
-      <Link to="/find-friends">
-        <span>Find Friends</span>
-      </Link>
+      <a>
+        <i className="fa fa-users" aria-hidden="true"></i>
+      </a>
+
+      <a>
+        <i className="fa fa-commenting" aria-hidden="true"></i>
+      </a>
+
+      <a>
+        <i className="fa fa-globe" aria-hidden="true"></i>
+      </a>
 
       <button onClick={ logout }>Logout</button>
     </nav>
