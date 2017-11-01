@@ -5,10 +5,10 @@ export const fetchUser = (userId) => {
   });
 };
 
-export const fetchFriends = () => {
+export const fetchFriends = (userId) => {
   return $.ajax({
     method: "GET",
-    url: "/api/user/friends"
+    url: `/api/users/${userId}/friends`
   });
 };
 

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
   end
 
-  get "/api/user/friends", to: "api/users#friends", defaults: { format: :json }
+  get "/api/users/:id/friends", to: "api/users#friends", defaults: { format: :json }
   get "/api/user/requesters", to: "api/users#requesters",
                                defaults: { format: :json }
 end

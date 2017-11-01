@@ -42,14 +42,14 @@ export const requestUser = userId => dispatch => (
 
 export const requestFriends = () => dispatch => (
   UserAPIUtil.fetchUsers().then(
-    data => dispatch(receiveManyUsers),
+    data => dispatch(receiveManyUsers(data)),
     errors => dispatch(receiveUserError(errors))
   )
 );
 
-export const requestRequesters = () => dispatch => (
+export const fetchRequesters = () => dispatch => (
   UserAPIUtil.fetchRequesters().then(
-    data => dispatch(receiveManyUsers),
+    data => dispatch(receiveManyUsers(data)),
     errors => dispatch(receiveUserError(errors))
   )
 );

@@ -39,7 +39,8 @@ class UserNav extends React.Component {
 
           {
             this.state.requestsOpen ?
-            <FriendRequest toggleRequests={ this.toggleRequests }/>
+            <FriendRequest toggleRequests={ this.toggleRequests }
+              fetchRequesters={ this.props.fetchRequesters }/>
             :
             null
           }

@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => (
   {
     logout: () => dispatch(logout()),
     login: (user) => dispatch(login(user)),
+    fetchRequesters: () => dispatch(fetchRequesters()),
   }
 );
 

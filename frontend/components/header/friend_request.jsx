@@ -11,8 +11,8 @@ class FriendRequest extends React.Component {
     this.props.toggleRequests(e);
   }
 
-  componentDidMout() {
-    
+  componentDidMount() {
+    this.props.fetchRequesters();
   }
 
   render() {

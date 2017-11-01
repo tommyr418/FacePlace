@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def friends
-    @users = User.all.select { |user| current_user.friends.include?(user.id) }
+    @user = User.find(params[:id])
+    @users = User.all.select { |user| @user.friends.include?(user.id) }
     render :friends
   end
 
