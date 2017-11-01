@@ -37,9 +37,11 @@ class CoverPhoto extends React.Component {
       </button>
       :
       "";
-    const addFriend = ((this.props.currentUser.id === this.props.user.id) ||
-      this.props.currentUser.friends.includes(
-      this.props.user.id)) ?
+    const addFriend = (
+      (this.props.currentUser.id === this.props.user.id) ||
+      (this.props.currentUser.friends.includes(this.props.user.id)) ||
+      (this.props.currentUser.outgoingRequests.includes(this.props.user.id))
+      ) ?
       ""
       :
       <button id="add-friend-button">
