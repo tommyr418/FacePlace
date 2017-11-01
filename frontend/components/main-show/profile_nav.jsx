@@ -13,12 +13,12 @@ const ProfileNav = ({ user }) => {
       <Link to={`/users/${user.id}/friends`}>
       Friends
       </Link>
-      <Link to={`/users/${user.id}/photos`}>
+      <a>
       Photos
-      </Link>
-      <Link to={`/users/${user.id}`}>
+      </a>
+      <a>
       More
-      </Link>
+      </a>
     </nav>
   );
 };

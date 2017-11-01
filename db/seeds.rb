@@ -17,9 +17,9 @@ f2 = User.create(email: "bart@yahoo.com", password: "bartsimpson", fname: "Bart"
             lname: "Simpson", birthdate: "12/30/1992", sex: "male")
 f3 =  User.create(email: "lisa@yahoo.com", password: "lisasimpson", fname: "Lisa",
             lname: "Simpson", birthdate: "01/18/1994", sex: "female")
-User.create(email: "ned@yahoo.com", password: "nedflanders", fname: "Ned",
+u1 = User.create(email: "ned@yahoo.com", password: "nedflanders", fname: "Ned",
             lname: "Flanders", birthdate: "12/25/1945", sex: "male")
-User.create(email: "maude@yahoo.com", password: "maudeflanders", fname: "Maude",
+u2 = User.create(email: "maude@yahoo.com", password: "maudeflanders", fname: "Maude",
             lname: "Flanders", birthdate: "12/02/1952", sex: "female")
 f4 = User.create(email: "moe@yahoo.com", password: "moesizlack", fname: "Moe",
             lname: "Sizlack", birthdate: "07/12/1959", sex: "male")
@@ -30,7 +30,7 @@ f6 = User.create(email: "lenny@yahoo.com", password: "lennyleonard", fname: "Len
             lname: "Leonard", birthdate: "11/27/1970", sex: "male")
 f7 = User.create(email: "carl@yahoo.com", password: "carlcarlsom", fname: "Carl",
             lname: "Carlson", birthdate: "11/14/1971", sex: "male")
-User.create(email: "mrburns@yahoo.com", password: "charlesburns",
+u3 = User.create(email: "mrburns@yahoo.com", password: "charlesburns",
             fname: "Charles",
             lname: "Burns", birthdate: "02/28/1899", sex: "male")
 
@@ -70,6 +70,10 @@ FriendRequest.create(requester_id: f6.id,
                      recipient_id: user.id, status: "accepted")
 FriendRequest.create(requester_id: user.id,
                      recipient_id: f7.id, status: "accepted")
+FriendRequest.create(requester_id: u1.id,
+                     recipient_id: user.id)
+FriendRequest.create(requester_id: u3.id,
+                     recipient_id: user.id)
 
 Friend.destroy_all
 Friend.create(friender_id: user.id, friendee_id: f1.id)
