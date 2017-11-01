@@ -17,7 +17,7 @@ class FriendRequest extends React.Component {
 
   render() {
     for (var i = 0; i < this.props.currentUser.pending_requests.length; i++) {
-      const id = this.props.currentUser.pending_requests[i].requester_id
+      const id = this.props.currentUser.pending_requests[i].requester_id;
       if (!this.props.users[id]) {
         return null;
       }
@@ -32,7 +32,7 @@ class FriendRequest extends React.Component {
           </span>
         </div>
       );
-    };
+    }
 
     const requests = this.props.currentUser.pending_requests.map((request) => {
       const id = request.requester_id;

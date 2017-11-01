@@ -42,3 +42,37 @@
 #friend-requests span {
   margin: 0 10px;
 }
+
+#friends-list {
+  display: flex;
+  width: inherit;
+}
+
+#friends-list img {
+  width: 100px;
+  height: 100px;
+}
+
+#friends-list ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 12px;
+  width: inherit;
+  list-style: none;
+  padding: 0;
+  margin: 6px 13px;
+}
+
+#friends-list li {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  margin: 6px 0px;
+  border: 1px solid #e9ebee;
+}
+
+#friends-list a {
+  margin: 10px;
+  color: #385a98;
+  text-decoration: none;
+}
