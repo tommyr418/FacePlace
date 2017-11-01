@@ -5,6 +5,20 @@ export const fetchUser = (userId) => {
   });
 };
 
+export const fetchFriends = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/user/friends"
+  });
+};
+
+export const fetchRequesters = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/user/requesters"
+  });
+};
+
 export const updateUser = (user) => {
   return $.ajax({
     method: "PATCH",

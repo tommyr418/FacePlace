@@ -1,4 +1,19 @@
 class Api::UsersController < ApplicationController
+  def friends
+    @users = User.all.select { |user| current_user.friends.include?(user.id) }
+    render :friends
+  end
+
+  def requesters
+    pending = current_user.incoming_requests.select do |request|
+      request.status == "pending"
+    end
+    @users = User.all.select do |user|
+      pending.pluck(:requester_id).include?(user.id)
+    end
+    render :requesters
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

@@ -1,4 +1,4 @@
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_MANY_USERS } from '../actions/user_actions';
 
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -6,6 +6,9 @@ const UsersReducer = (state = {}, action) => {
     case RECEIVE_USER: {
       return Object.assign({}, state,
         { [action.data.user.id]: action.data.user });
+    }
+    case RECEIVE_MANY_USERS: {
+      return Object.assign({}, state, action.data);
     }
     default:
       return state;

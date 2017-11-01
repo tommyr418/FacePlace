@@ -16,7 +16,8 @@ class MainHeader extends React.Component {
           </div>
 
           <UserNav currentUser={ this.props.currentUser }
-            logout={ this.props.logout }/>
+            logout={ this.props.logout }
+            />
         </header>
       );
     } else {
@@ -25,8 +26,7 @@ class MainHeader extends React.Component {
           <h1>facePlace</h1>
 
           <LoginForm login={ this.props.login }
-            errors={ this.props.errors }
-            clearSessionErrors={ this.props.clearSessionErrors }/>
+            errors={ this.props.errors }/>
         </header>
       );
     }

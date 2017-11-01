@@ -1,12 +1,20 @@
 import * as UserAPIUtil from '../util/user_api_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_MANY_USERS = 'RECEIVE_MANY_USERS';
 export const RECEIVE_USER_ERROR = 'RECEIVE_USER_ERROR';
 export const RECEIVE_PROFILE = 'RECEIVE_PROFILE';
 
 const receiveUser = (data) => (
   {
     type: RECEIVE_USER,
+    data,
+  }
+);
+
+const receiveManyUsers = data => (
+  {
+    type: RECEIVE_MANY_USERS,
     data,
   }
 );
@@ -28,6 +36,20 @@ const receiveProfile = data => (
 export const requestUser = userId => dispatch => (
   UserAPIUtil.fetchUser(userId).then(
     data => dispatch(receiveUser(data)),
+    errors => dispatch(receiveUserError(errors))
+  )
+);
+
+export const requestFriends = () => dispatch => (
+  UserAPIUtil.fetchUsers().then(
+    data => dispatch(receiveManyUsers),
+    errors => dispatch(receiveUserError(errors))
+  )
+);
+
+export const requestRequesters = () => dispatch => (
+  UserAPIUtil.fetchRequesters().then(
+    data => dispatch(receiveManyUsers),
     errors => dispatch(receiveUserError(errors))
   )
 );

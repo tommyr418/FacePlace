@@ -1,36 +1,62 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UserNav = ({ logout, currentUser }) => {
-  return (
-    <nav id="user-nav">
+import FriendRequest from './friend_request';
 
-      <Link to={`/users/${currentUser.id}`}>
-        <div id="header-image">
-          <img src={ currentUser.image_url }/>
-        </div>
-        <span>{ currentUser.fname }</span>
-      </Link>
+class UserNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      requestsOpen: false,
+    };
+    this.toggleRequests = this.toggleRequests.bind(this);
+  }
 
-      <Link to="/">
-        <span>Home</span>
-      </Link>
+  toggleRequests(e) {
+    e.stopPropagation();
+    this.setState({
+      requestsOpen: !this.state.requestsOpen,
+    });
+  }
 
-      <a>
-        <i className="fa fa-users" aria-hidden="true"></i>
-      </a>
+  render() {
+    return (
+      <nav id="user-nav">
 
-      <a>
-        <i className="fa fa-commenting" aria-hidden="true"></i>
-      </a>
+        <Link to={`/users/${ this.props.currentUser.id }`}>
+          <div id="header-image">
+            <img src={ this.props.currentUser.image_url }/>
+          </div>
+          <span>{ this.props.currentUser.fname }</span>
+        </Link>
 
-      <a>
-        <i className="fa fa-globe" aria-hidden="true"></i>
-      </a>
+        <Link to="/">
+          <span>Home</span>
+        </Link>
 
-      <button onClick={ logout }>Logout</button>
-    </nav>
-  );
-};
+        <a onClick={ this.toggleRequests }>
+          <i className="fa fa-users" aria-hidden="true"></i>
+
+          {
+            this.state.requestsOpen ?
+            <FriendRequest toggleRequests={ this.toggleRequests }/>
+            :
+            null
+          }
+        </a>
+
+        <a>
+          <i className="fa fa-commenting" aria-hidden="true"></i>
+        </a>
+
+        <a>
+          <i className="fa fa-globe" aria-hidden="true"></i>
+        </a>
+
+        <button onClick={ this.props.logout }>Logout</button>
+      </nav>
+    );
+  }
+}
 
 export default UserNav;

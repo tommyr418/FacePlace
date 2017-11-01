@@ -140,3 +140,13 @@ body {
   color: white;
   border: 1px solid #29487d;
 }
+
+.dropdown-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  border: 1px solid #dddfe2;
+  border-radius: 2px;
+  z-index: 1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
