@@ -40,8 +40,8 @@ class MainAbout extends React.Component {
 
   render() {
     return (
-      <div id="main-about">
-        <div id="main-about-title">
+      <div className="content-pane">
+        <div className="content-title">
           <a>About</a>
 
           {

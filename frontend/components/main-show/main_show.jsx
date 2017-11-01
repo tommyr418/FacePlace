@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import CoverPhoto from './cover_photo';
 import ProfileNav from './profile_nav';
 import MainAboutContainer from './about/main_about_container';
+import FriendsContainer from './friends/friends_container';
 
 class MainShow extends React.Component {
   componentDidMount() {
@@ -34,6 +35,7 @@ class MainShow extends React.Component {
         <ProfileNav user={ this.props.user }/>
 
         <Route path="/users/:userId/about" component={ MainAboutContainer }/>
+        <Route path="/users/:userId/friends" component={ FriendsContainer } />
       </div>
     );
   }

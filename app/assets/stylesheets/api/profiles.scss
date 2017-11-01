@@ -126,7 +126,7 @@
   color: #4267b2;
 }
 
-#main-about {
+.content-pane {
   min-height: 350px;
   width: 849px;
   margin: 15px 40px;
@@ -135,7 +135,7 @@
   border-radius: 3px;
 }
 
-#main-about-title {
+.content-title {
   display: flex;
   justify-content: space-between;
   height: 29px;
@@ -144,7 +144,7 @@
   background-color: #f6f7f9;
 }
 
-#main-about-title a {
+.content-title a {
   color: #4b4f56;
   font-size: 20px;
   font-weight: bold;
@@ -154,7 +154,7 @@
   margin-left: 40px;
 }
 
-#main-about-title button {
+.content-title button {
   margin-right: 40px;
   height: 28px;
   background-color: #fff;
