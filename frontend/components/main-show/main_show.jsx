@@ -35,6 +35,7 @@ class MainShow extends React.Component {
         <ProfileNav user={ this.props.user }/>
 
         <Route path="/users/:userId/about" component={ MainAboutContainer }/>
+        <Route path="/users/:userId/about" component={ FriendsContainer } />
         <Route path="/users/:userId/friends" component={ FriendsContainer } />
       </div>
     );

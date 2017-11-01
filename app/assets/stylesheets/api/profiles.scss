@@ -10,7 +10,7 @@
 
 #cover-photo {
   margin: 0 41px;
-  height: 205px;
+  height: 250px;
   width: 849px;
   background-color: black;
   position: relative;
@@ -111,6 +111,7 @@
   flex-direction: column;
   position: relative;
   min-height: inherit;
+  padding: 22px 10px;
 }
 
 .submit {
@@ -124,6 +125,11 @@
 
 #picture-upload input {
   color: #4267b2;
+}
+
+#picture-upload img{
+  height: auto;
+  width: 100%;
 }
 
 .content-pane {
