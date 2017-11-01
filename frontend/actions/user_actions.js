@@ -40,8 +40,8 @@ export const requestUser = userId => dispatch => (
   )
 );
 
-export const requestFriends = () => dispatch => (
-  UserAPIUtil.fetchUsers().then(
+export const fetchFriends = (userId) => dispatch => (
+  UserAPIUtil.fetchFriends(userId).then(
     data => dispatch(receiveManyUsers(data)),
     errors => dispatch(receiveUserError(errors))
   )

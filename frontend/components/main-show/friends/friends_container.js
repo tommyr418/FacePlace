@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import { requestUser,
-  requestFriends } from '../../../actions/user_actions';
-import MainAbout from './main_about';
+  fetchFriends } from '../../../actions/user_actions';
+import Friends from './friends';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,11 +16,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => (
   {
     requestUser: userId => dispatch(requestUser(userId)),
-    requestFriends: () => dispatch(requestFriends()),
+    fetchFriends: userId => dispatch(fetchFriends(userId)),
   }
 );
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainAbout);
+)(Friends);
