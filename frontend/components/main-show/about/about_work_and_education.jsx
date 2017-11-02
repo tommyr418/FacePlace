@@ -1,6 +1,15 @@
 import React from 'react';
 
 class AboutWorkAndEducation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(e) {
+    this.props.removeProfile(e.currentTarget.getAttribute("data"));
+  }
+
   render() {
     if(this.props.profile["workAndEducation"]) {
       return (
