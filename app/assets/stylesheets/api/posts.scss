@@ -38,6 +38,11 @@
   border-bottom: 1px solid #dddfe2;
 }
 
+#intro-title span {
+  color: #1e212a;
+  margin: 0 12px;
+}
+
 #timeline-intro ul {
   list-style: none;
   margin: 6px 12px;;
@@ -50,6 +55,42 @@
   font-size: 12px;
 }
 
-#wall-posts {
+.post-index {
+  min-height: 350px;
+  width: 510px;
+  background-color: #ffffff;
+  border: 1px solid #dddfe2;
+}
 
+.post {
+  width: 484px;
+  background-color: #ffffff;
+  border: 1px solid #dddfe2;
+  margin: 12px;
+}
+
+.post img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.post-header {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 12px 0 12px;
+  color: #aaa;
+}
+
+.post-header a {
+  margin: 0 10px;
+  color: #385a99;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.post-body {
+  margin: 12px;
+  color: #1f212b;
 }

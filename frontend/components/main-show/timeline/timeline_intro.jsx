@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 class TimelineIntro extends React.Component {
   render () {
     const keys = Object.keys(this.props.profile);

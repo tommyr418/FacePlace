@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TimelineWall extends React.Component {
   constructor(props) {
@@ -16,18 +17,22 @@ class TimelineWall extends React.Component {
     const authorId = this.props.posts[postId].author_id;
     const author = this.props.users[authorId];
     return (
-      <div id="wall-post"
+      <div className="post"
         key={ postId }>
-        <img src={ author.image_url }/>
-        <span>
-          { author.fname } { author.lname }
-        </span>
+        <div className="post-header">
+          <img src={ author.image_url }/>
+          <Link to={ `/users/${author.id}` }>
+            { author.fname } { author.lname }
+          </Link>
 
-        <span>
-          { this.props.user.fname } { this.props.user.lname }
-        </span>
+          <i class="fa fa-caret-right" aria-hidden="true"></i>
 
-        <div>
+          <Link to={ `/users/${this.props.user.id}` }>
+            { this.props.user.fname } { this.props.user.lname }
+          </Link>
+        </div>
+
+        <div className="post-body">
           { post.body }
         </div>
       </div>
@@ -47,7 +52,7 @@ class TimelineWall extends React.Component {
     );
 
     return (
-      <div id="wall">
+      <div className="post-index">
         { posts }
       </div>
     );
