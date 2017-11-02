@@ -9,7 +9,14 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
           profile["workAndEducation"]["work"] ?
           <ul>
             { profile["workAndEducation"]["work"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null
@@ -20,7 +27,14 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
           profile["workAndEducation"]["professionalSkills"] ?
           <ul>
             { profile["workAndEducation"]["professionalSkills"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null
@@ -31,7 +45,14 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
           profile["workAndEducation"]["college"] ?
           <ul>
             { profile["workAndEducation"]["college"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null
@@ -42,7 +63,14 @@ const AboutWorkAndEducation = ({ profile, userId }) => {
           profile["workAndEducation"]["highSchool"] ?
           <ul>
             { profile["workAndEducation"]["highSchool"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null

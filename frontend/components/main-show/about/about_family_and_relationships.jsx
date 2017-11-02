@@ -9,7 +9,14 @@ const AboutFamilyAndRelationships = ({ profile, userId }) => {
           profile["familyAndRelationships"]["relationship"] ?
           <ul>
             { profile["familyAndRelationships"]["relationship"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           : null
         }
@@ -19,7 +26,14 @@ const AboutFamilyAndRelationships = ({ profile, userId }) => {
           profile["familyAndRelationships"]["familyMembers"] ?
           <ul>
             { profile["familyAndRelationships"]["familyMembers"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
             </ul>
             :
             null

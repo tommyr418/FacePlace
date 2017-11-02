@@ -235,10 +235,12 @@
 .about-details ul {
   list-style: none;
   margin: 0;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 
 .about-details li {
+  display: flex;
+  justify-content: space-between;
   color: #4b4f56;
   margin-bottom: 10px;
 }

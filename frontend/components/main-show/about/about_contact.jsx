@@ -9,7 +9,14 @@ const AboutContact = ({ profile, userId }) => {
           profile["contactAndBasicInfo"]["contactInformation"] ?
           <ul>
             { profile["contactAndBasicInfo"]["contactInformation"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null
@@ -20,7 +27,14 @@ const AboutContact = ({ profile, userId }) => {
           profile["contactAndBasicInfo"]["websitesAndSocialLinks"] ?
           <ul>
             { profile["contactAndBasicInfo"]["websitesAndSocialLinks"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null
@@ -31,7 +45,14 @@ const AboutContact = ({ profile, userId }) => {
           profile["contactAndBasicInfo"]["basicIformation"] ?
           <ul>
             { profile["contactAndBasicInfo"]["basicIformation"].map(
-              (item, index) => <li key={ index }>{ item["value"] }</li>) }
+              (item) =>
+              <li key={ item.id }>
+              { item["value"] }
+              <div>
+                <button>edit</button>
+                <button>delete</button>
+              </div>
+            </li>) }
           </ul>
           :
           null
