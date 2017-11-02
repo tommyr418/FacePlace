@@ -128,7 +128,7 @@ class AboutForm extends React.Component {
             </option>
             <option
               value="contactInformation">
-              Work
+              Contact Information
             </option>
             <option
               value="websitesAndSocialLinks">
