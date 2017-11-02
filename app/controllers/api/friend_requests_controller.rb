@@ -12,10 +12,11 @@ class Api::FriendRequestsController < ApplicationController
 
   def update
     @friend_request = FriendRequest.find(params[:id])
+    @user = current_user
 
     if @friend_request && @friend_request.status == "pending" &&
       @friend_request.update(friend_request_params)
-      render json: ["sucess"]
+      render '/api/sessions/show.json.jbuilder'
     else
       render json: ["Request Already Completed"], status: 422
     end

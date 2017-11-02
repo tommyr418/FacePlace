@@ -18,7 +18,9 @@ class MainHeader extends React.Component {
           <UserNav currentUser={ this.props.currentUser }
             logout={ this.props.logout }
             fetchRequesters={ this.props.fetchRequesters }
-            users={ this.props.users }/>
+            users={ this.props.users }
+            addFriend={ this.props.addFriend }
+            updateRequest={ this.props.updateRequest }/>
         </header>
       );
     } else {

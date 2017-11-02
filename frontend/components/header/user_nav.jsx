@@ -42,7 +42,9 @@ class UserNav extends React.Component {
             <FriendRequest toggleRequests={ this.toggleRequests }
               fetchRequesters={ this.props.fetchRequesters }
               currentUser={ this.props.currentUser }
-              users={ this.props.users }/>
+              users={ this.props.users }
+              addFriend={ this.props.addFriend}
+              updateRequest={ this.props.updateRequest }/>
             :
             null
           }

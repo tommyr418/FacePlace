@@ -7,3 +7,15 @@ export const sendRequest = request => dispatch => (
     currentUser => dispatch(receiveCurrentUser(currentUser))
   )
 );
+
+export const addFriend = friend => dispatch => (
+  FriendAPIUtil.addFriend(friend).then(
+    currentUser => dispatch(receiveCurrentUser(currentUser))
+  )
+);
+
+export const updateRequest = request => dispatch => (
+  FriendAPIUtil.updateRequest(request).then(
+    currentUser => dispatch(receiveCurrentUser(currentUser))
+  )
+);

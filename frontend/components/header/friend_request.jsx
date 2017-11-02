@@ -5,6 +5,8 @@ class FriendRequest extends React.Component {
   constructor(props) {
     super(props);
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.addFriend = this.addFriend.bind(this);
+    this.rejectFriend = this.rejectFriend.bind(this);
   }
 
   handleClickOutside(e) {
@@ -13,6 +15,24 @@ class FriendRequest extends React.Component {
 
   componentDidMount() {
     this.props.fetchRequesters();
+  }
+
+  addFriend(e) {
+    this.props.addFriend({
+      friender_id: e.currentTarget.getAttribute("data-requesterid"),
+      friendee_id: this.props.currentUser.id,
+    });
+    this.props.updateRequest({
+      id: e.currentTarget.getAttribute("data-requestid"),
+      status: "completed"
+    });
+  }
+
+  rejectFriend(e) {
+    this.props.updateRequest({
+      id: e.currentTarget.getAttribute("data-requestid"),
+      status: "completed"
+    });
   }
 
   render() {
@@ -44,8 +64,17 @@ class FriendRequest extends React.Component {
             <span>{ user.fname } { user.lname }</span>
           </div>
           <div>
-            <button>confirm</button>
-            <button>ignore</button>
+            <button
+              onClick={ this.addFriend }
+              data-requesterid={ id }
+              data-requestid={ request.id }>
+              confirm
+            </button>
+            <button
+              onClick={ this.rejectFriend }
+              data-requestid={ request.id }>
+              ignore
+            </button>
           </div>
         </li>
       );
