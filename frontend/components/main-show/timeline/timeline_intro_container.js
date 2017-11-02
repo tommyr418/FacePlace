@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import TimelineIntro from './timeline_intro';
-import { fetchFriends } from '../../../actions/user_actions';
+import { requestUser } from '../../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchFriends: userId => dispatch(fetchFriends(userId)),
+    requestUser: userId => dispatch(requestUser(userId)),
   };
 };
 

@@ -1,7 +1,14 @@
 import React from 'react';
 
 class TimelineIntro extends React.Component {
+  componentDidMount() {
+    this.props.requestUser(this.props.userId)
+  }
   render () {
+    if(!this.props.profile) {
+      return null;
+    }
+
     const keys = Object.keys(this.props.profile);
     const categories = keys.slice(1);
     const subCategories = categories.map((category) => {
@@ -33,7 +40,7 @@ class TimelineIntro extends React.Component {
       <div id="timeline-intro">
         <div id="intro-title">
           <div id="intro-logo">
-            <i class="fa fa-globe" aria-hidden="true"></i>
+            <i className="fa fa-globe" aria-hidden="true"></i>
           </div>
           <span>Intro</span>
         </div>
