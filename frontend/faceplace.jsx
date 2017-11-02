@@ -4,10 +4,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { requestUser,
-  addProfile,
-  updateProfile,
-  removeProfile } from './actions/user_actions';
+import { fetchPosts, fetchPost } from './actions/post_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -19,10 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-  window.requestUser = requestUser;
-  window.addProfile = addProfile;
-  window.updateProfile = updateProfile;
-  window.removeProfile = removeProfile;
+  window.fetchPosts = fetchPosts;
+  window.fetchPost = fetchPost;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={ store } />, root);
 });
