@@ -16,6 +16,10 @@
 #  profile_pic_content_type :string
 #  profile_pic_file_size    :integer
 #  profile_pic_updated_at   :datetime
+#  cover_photo_file_name    :string
+#  cover_photo_content_type :string
+#  cover_photo_file_size    :integer
+#  cover_photo_updated_at   :datetime
 #
 
 require 'test_helper'

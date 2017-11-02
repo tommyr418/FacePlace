@@ -16,6 +16,10 @@
 #  profile_pic_content_type :string
 #  profile_pic_file_size    :integer
 #  profile_pic_updated_at   :datetime
+#  cover_photo_file_name    :string
+#  cover_photo_content_type :string
+#  cover_photo_file_size    :integer
+#  cover_photo_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -51,6 +55,14 @@ class User < ApplicationRecord
   has_many :received_friends,
            through: :received_friendings,
            source: :friender
+
+  has_many :authored_posts,
+           foreign_key: :author_id,
+           class_name: :Post
+
+  has_many :wall_posts,
+           foreign_key: :wall_id,
+           class_name: :Post
 
   has_attached_file :profile_pic,
                     default_url: "default-profile-picture.png"

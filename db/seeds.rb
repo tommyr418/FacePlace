@@ -57,19 +57,21 @@ Profile.create(user_id: User.first.id, category: "workAndEducation",
 
 FriendRequest.destroy_all
 FriendRequest.create(requester_id: user.id,
-                     recipient_id: f1.id, status: "accepted")
+                     recipient_id: f1.id, status: "completed")
 FriendRequest.create(requester_id: user.id,
-                     recipient_id: f2.id, status: "accepted")
+                     recipient_id: f2.id, status: "completed")
 FriendRequest.create(requester_id: f3.id,
-                     recipient_id: user.id, status: "accepted")
+                     recipient_id: user.id, status: "completed")
 FriendRequest.create(requester_id: user.id,
-                     recipient_id: f4.id, status: "accepted")
+                     recipient_id: f4.id, status: "completed")
 FriendRequest.create(requester_id: f5.id,
-                     recipient_id: user.id, status: "accepted")
+                     recipient_id: user.id, status: "completed")
 FriendRequest.create(requester_id: f6.id,
-                     recipient_id: user.id, status: "accepted")
+                     recipient_id: user.id, status: "completed")
 FriendRequest.create(requester_id: user.id,
-                     recipient_id: f7.id, status: "accepted")
+                     recipient_id: f7.id, status: "completed")
+FriendRequest.create(requester_id: f3.id,
+                     recipient_id: f2.id, status: "completed")
 FriendRequest.create(requester_id: u1.id,
                      recipient_id: user.id)
 FriendRequest.create(requester_id: u3.id,
@@ -83,3 +85,16 @@ Friend.create(friender_id: user.id, friendee_id: f4.id)
 Friend.create(friender_id: f5.id, friendee_id: user.id)
 Friend.create(friender_id: f6.id, friendee_id: user.id)
 Friend.create(friender_id: user.id, friendee_id: f7.id)
+Friend.create(friender_id: f3.id, friendee_id: f2.id)
+
+Post.destroy_all
+Post.create(author_id: user.id, wall_id: user.id, body: "Doughnuts!")
+Post.create(author_id: user.id, wall_id: user.id, body: "Doh!")
+Post.create(author_id: user.id, wall_id: user.id, body: "I’ve learned that life is one crushing defeat after another until you just wish Flanders was dead.")
+Post.create(author_id: user.id, wall_id: user.id, body: "My beer! You never had a chance to become my urine!")
+Post.create(author_id: f1.id, wall_id: user.id ,body: "Feed the dog")
+Post.create(author_id: f2.id, wall_id: user.id ,body: "Homer sucks")
+Post.create(author_id: f3.id, wall_id: user.id ,body: "Plese drive me to recital")
+Post.create(author_id: f4.id, wall_id: user.id ,body: "Pay your tab bozo.")
+Post.create(author_id: f2.id, wall_id: f3.id,body: "eat my shorts")
+Post.create(author_id: f3.id, wall_id: f2.id,body: "no you")
