@@ -36,6 +36,7 @@
   color: white;
   font-family: arial;
   font-size: 12px;
+  position: relative;
 }
 
 #login-form strong {
@@ -76,6 +77,9 @@
   height: 14px;
   padding: 10px;
   margin: auto 0;
+  position: absolute;
+  top: 48px;
+  left: 9px;
 }
 
 #user-nav {
