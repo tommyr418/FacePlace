@@ -2,12 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#timeline-intro {
+#timeline-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 849px;
+  min-height: 350px;
+  margin: 15px 40px;
+}
 
+#timeline-intro {
+  width: 325px;
+  height: 600px;
+  background-color: #ffffff;
+  border: 1px solid #dddfe2;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#intro-logo {
+  height: 24px;
+  width: 24px;
+  background-color: #4367b2;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#intro-title {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  margin: 0 12px;
+  border-bottom: 1px solid #dddfe2;
 }
 
 #timeline-intro ul {
   list-style: none;
+  margin: 6px 12px;;
+  padding: 0;
+}
+
+#timeline-intro li {
+  padding: 6px 0;
+  color: #1e212a;
+  font-size: 12px;
 }
 
 #wall-posts {

@@ -16,7 +16,8 @@ class TimelineWall extends React.Component {
     const authorId = this.props.posts[postId].author_id;
     const author = this.props.users[authorId];
     return (
-      <div id="wall-post">
+      <div id="wall-post"
+        key={ postId }>
         <img src={ author.image_url }/>
         <span>
           { author.fname } { author.lname }
@@ -30,7 +31,7 @@ class TimelineWall extends React.Component {
           { post.body }
         </div>
       </div>
-    )
+    );
   }
 
   render() {
@@ -46,7 +47,7 @@ class TimelineWall extends React.Component {
     );
 
     return (
-      <div>
+      <div id="wall">
         { posts }
       </div>
     );

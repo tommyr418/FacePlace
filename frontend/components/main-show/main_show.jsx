@@ -5,8 +5,7 @@ import CoverPhoto from './cover_photo';
 import ProfileNav from './profile_nav';
 import MainAboutContainer from './about/main_about_container';
 import FriendsContainer from './friends/friends_container';
-import TimelineIntroContainer from './timeline/timeline_intro_container';
-import TimelineWallContainer from './timeline/timeline_wall_container';
+import TimelineContent from './timeline/timeline_content';
 
 class MainShow extends React.Component {
   componentDidMount() {
@@ -37,10 +36,7 @@ class MainShow extends React.Component {
           sendRequest={ this.props.sendRequest }/>
         <ProfileNav user={ this.props.user }/>
 
-        <Route exact path="/users/:userId"
-          component={ TimelineIntroContainer } />
-        <Route exact path="/users/:userId"
-          component={ TimelineWallContainer } />
+        <Route exact path="/users/:userId" component={ TimelineContent }/>
         <Route path="/users/:userId/about" component={ MainAboutContainer }/>
         <Route path="/users/:userId/about" component={ FriendsContainer } />
         <Route path="/users/:userId/friends" component={ FriendsContainer } />

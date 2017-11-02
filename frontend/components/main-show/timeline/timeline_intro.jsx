@@ -33,6 +33,13 @@ class TimelineIntro extends React.Component {
 
     return (
       <div id="timeline-intro">
+        <div id="intro-title">
+          <div id="intro-logo">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+          </div>
+          <span>Intro</span>
+        </div>
+
         <ul>
           {overview}
         </ul>
