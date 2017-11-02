@@ -27,6 +27,7 @@ class User < ApplicationRecord
             :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
+  validate :birthdate_not_in_the_future
 
   after_initialize :ensure_session_token
 
@@ -104,5 +105,12 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64(16)
+  end
+
+  def birthdate_not_in_the_future
+    date_format = self.birthdate.split("/").rotate(-1).join("-")
+    if Date.parse(date_format) > Date.today
+      errors.add(:birthdate, "can't be in the future")
+    end
   end
 end
