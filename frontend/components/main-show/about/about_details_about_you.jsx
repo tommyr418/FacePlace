@@ -1,6 +1,15 @@
 import React from 'react';
 
 class AboutDetailsAboutYou extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(e) {
+    this.props.removeProfile(e.currentTarget.getAttribute("data"));
+  }
+
   render() {
     if(this.props.profile["detailsAboutYou"]) {
       return (
@@ -15,7 +24,9 @@ class AboutDetailsAboutYou extends React.Component {
                 { item["value"] }
                 <div>
                   <button>edit</button>
-                  <button>delete</button>
+                  <button
+                    onClick={ this.handleDelete }
+                    data={ item.id }>delete</button>
                 </div>
               </li>) }
             </ul>
@@ -33,7 +44,9 @@ class AboutDetailsAboutYou extends React.Component {
                 { item["value"] }
                 <div>
                   <button>edit</button>
-                  <button>delete</button>
+                  <button
+                    onClick={ this.handleDelete }
+                    data={ item.id }>delete</button>
                 </div>
               </li>) }
             </ul>
@@ -51,7 +64,9 @@ class AboutDetailsAboutYou extends React.Component {
                 { item["value"] }
                 <div>
                   <button>edit</button>
-                  <button>delete</button>
+                  <button
+                    onClick={ this.handleDelete }
+                    data={ item.id }>delete</button>
                 </div>
               </li>) }
             </ul>
@@ -69,7 +84,9 @@ class AboutDetailsAboutYou extends React.Component {
                 { item["value"] }
                 <div>
                   <button>edit</button>
-                  <button>delete</button>
+                  <button
+                    onClick={ this.handleDelete }
+                    data={ item.id }>delete</button>
                 </div>
               </li>) }
             </ul>
