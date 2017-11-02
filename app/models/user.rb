@@ -108,6 +108,7 @@ class User < ApplicationRecord
   end
 
   def birthdate_not_in_the_future
+    return nil if self.birthdate.empty?
     date_format = self.birthdate.split("/").rotate(-1).join("-")
     if Date.parse(date_format) > Date.today
       errors.add(:birthdate, "can't be in the future")
