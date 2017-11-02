@@ -55,6 +55,70 @@
   font-size: 12px;
 }
 
+.post-form {
+  width: 510px;
+  height: 150px;
+  border: 1px solid #dddfe2;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.post-form-head {
+  width: 486px;
+  height: 15px;
+  padding: 10px 12px 8px 12px;
+  border-bottom: 1px solid #dddfe2;
+  background-color: #f6f7f9
+}
+
+.post-form-head a {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.post-form-head i {
+  margin-right: 5px;
+}
+
+.post-form-body {
+  display: flex;
+  align-items: center;
+  width: 486px;
+  height: 45px;
+  padding: 12px;
+  border-bottom: 1px solid #dddfe2;
+}
+
+.post-form-body img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.post-form-body input {
+  border: none;
+  height: inherit;
+  width: inherit;
+  font-size: 24px;
+  color: #a6a6a6;
+}
+
+.post-form-foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px;
+}
+
+.post-form-foot button {
+  height: 22px;
+  background-color: #4267b2;
+  color: white;
+  border: 1px solid #29487d;
+  border-radius: 3px;
+}
+
 .post-index {
   min-height: 350px;
   width: 510px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TimelineForm from './timeline_form';
 
 class TimelineWall extends React.Component {
   constructor(props) {
@@ -41,18 +42,54 @@ class TimelineWall extends React.Component {
 
   render() {
     if(!this.props.user || !this.props.posts || !this.props.users || !this.props.user.wall_posts) {
-      return null;
+      return (
+        <div>
+          <div className="post-form">
+            <TimelineForm
+              currentUser={ this.props.currentUser }
+              user={ this.props.user }
+              createPost={ this.props.createPost }/>
+          </div>
+
+          <div className="post-index">
+          </div>
+        </div>
+      );
     }
 
     for (var i = 0; i < this.props.user.wall_posts.length; i++) {
       const postId = this.props.user.wall_posts[i];
-      const post = this.props.posts[postId]
+      const post = this.props.posts[postId];
       if (!post) {
-        return null;
+        return (
+          <div>
+            <div className="post-form">
+              <TimelineForm
+                currentUser={ this.props.currentUser }
+                user={ this.props.user }
+                createPost={ this.props.createPost }/>
+            </div>
+
+            <div className="post-index">
+            </div>
+          </div>
+        );
       }
       const author = this.props.users[post.author_id];
       if(!author) {
-        return null;
+        return (
+          <div>
+            <div className="post-form">
+              <TimelineForm
+                currentUser={ this.props.currentUser }
+                user={ this.props.user }
+                createPost={ this.props.createPost }/>
+            </div>
+
+            <div className="post-index">
+            </div>
+          </div>
+        );
       }
     }
 
@@ -61,8 +98,17 @@ class TimelineWall extends React.Component {
     );
 
     return (
-      <div className="post-index">
-        { posts }
+      <div>
+        <div className="post-form">
+          <TimelineForm
+            currentUser={ this.props.currentUser }
+            user={ this.props.user }
+            createPost={ this.props.createPost }/>
+        </div>
+
+        <div className="post-index">
+          { posts }
+        </div>
       </div>
     );
   }
