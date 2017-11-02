@@ -59,7 +59,9 @@ class CoverPhoto extends React.Component {
       </button>;
 
     const coverImage = this.props.user.cover_image_url ?
-      <img id="cover-photo-img" src={ this.props.user.cover_image_url }/>
+      <div id="cover-photo-img"
+        style={ {backgroundImage: `url(${this.props.user.cover_image_url})` } }>
+      </div>
       :
       "";
 

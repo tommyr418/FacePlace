@@ -30,9 +30,9 @@ class ProfilePicture extends React.Component {
   render() {
     return (
       <div id="profile-picture-div">
-        <img id="profile-picture"
-          src={ this.props.user.image_url }
-          onClick={ this.openModal }/>
+        <div id="profile-picture"
+          style={ {backgroundImage: `url(${this.props.user.image_url})` } }>
+        </div>
 
         { this.state.modalOpen ?
           <div className="modal">

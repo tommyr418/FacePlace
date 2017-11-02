@@ -17,8 +17,10 @@
 }
 
 #cover-photo-img {
-  height: 100%;
-  width: 100%;
+  height: inherit;
+  width: inherit;
+  background-size: cover;
+  background-position: center center;
 }
 
 #add-friend-button {
@@ -67,9 +69,10 @@
 #profile-picture{
   width: 160px;
   height: 160px;
-  background: lightgray;
   border: 4px solid #fff;
   border-radius: 2px;
+  background-size: cover;
+  background-position: center center;
   cursor: pointer;
 }
 
