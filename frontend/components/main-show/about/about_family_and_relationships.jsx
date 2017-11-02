@@ -24,7 +24,9 @@ class AboutFamilyAndRelationships extends React.Component {
                 { item["value"] }
                 <div>
                   <button>edit</button>
-                  <button>delete</button>
+                  <button
+                    onClick={ this.handleDelete }
+                    data={ item.id }>delete</button>
                 </div>
               </li>) }
             </ul>
@@ -41,7 +43,9 @@ class AboutFamilyAndRelationships extends React.Component {
                 { item["value"] }
                 <div>
                   <button>edit</button>
-                  <button>delete</button>
+                  <button
+                    onClick={ this.handleDelete }
+                    data={ item.id }>delete</button>
                 </div>
               </li>) }
               </ul>
