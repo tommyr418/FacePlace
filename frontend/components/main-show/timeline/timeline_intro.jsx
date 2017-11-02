@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 class TimelineIntro extends React.Component {
   render () {
     const keys = Object.keys(this.props.profile);
@@ -30,7 +32,7 @@ class TimelineIntro extends React.Component {
 
 
     return (
-      <div id="about-overview">
+      <div id="timeline-intro">
         <ul>
           {overview}
         </ul>
@@ -39,4 +41,4 @@ class TimelineIntro extends React.Component {
   }
 }
 
-export default TimelineIntro
+export default TimelineIntro;

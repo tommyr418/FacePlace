@@ -6,6 +6,7 @@ import ProfileNav from './profile_nav';
 import MainAboutContainer from './about/main_about_container';
 import FriendsContainer from './friends/friends_container';
 import TimelineIntroContainer from './timeline/timeline_intro_container';
+import TimelineWallContainer from './timeline/timeline_wall_container';
 
 class MainShow extends React.Component {
   componentDidMount() {
@@ -38,6 +39,8 @@ class MainShow extends React.Component {
 
         <Route exact path="/users/:userId"
           component={ TimelineIntroContainer } />
+        <Route exact path="/users/:userId"
+          component={ TimelineWallContainer } />
         <Route path="/users/:userId/about" component={ MainAboutContainer }/>
         <Route path="/users/:userId/about" component={ FriendsContainer } />
         <Route path="/users/:userId/friends" component={ FriendsContainer } />
