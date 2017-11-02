@@ -73,6 +73,10 @@ class CoverPhoto extends React.Component {
 
         { coverImage }
 
+        <span id="user-name">
+          { this.props.user.fname } { this.props.user.lname }
+        </span>
+
         { addFriend }
 
         { this.state.modalOpen ?
