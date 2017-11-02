@@ -25,7 +25,7 @@ class TimelineWall extends React.Component {
             { author.fname } { author.lname }
           </Link>
 
-          <i class="fa fa-caret-right" aria-hidden="true"></i>
+          <i className="fa fa-caret-right" aria-hidden="true"></i>
 
           <Link to={ `/users/${this.props.user.id}` }>
             { this.props.user.fname } { this.props.user.lname }
