@@ -11,6 +11,7 @@ class CoverPhoto extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
   }
 
   openModal() {
@@ -24,6 +25,13 @@ class CoverPhoto extends React.Component {
   closeModal(){
     this.setState({
       modalOpen: false,
+    });
+  }
+
+  sendRequest() {
+    this.props.sendRequest({
+      requester_id: this.props.currentUser.id,
+      recipient_id: this.props.user.id
     });
   }
 
@@ -44,7 +52,8 @@ class CoverPhoto extends React.Component {
       ) ?
       ""
       :
-      <button id="add-friend-button">
+      <button id="add-friend-button"
+        onClick={ this.sendRequest }>
         <i className="fa fa-plus" aria-hidden="true"></i>
         Add Friend
       </button>;

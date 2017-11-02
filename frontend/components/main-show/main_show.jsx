@@ -31,7 +31,8 @@ class MainShow extends React.Component {
       <div id="main-show">
         <CoverPhoto user={ this.props.user }
           currentUser={ this.props.currentUser }
-          updatePhoto={ this.props.updatePhoto }/>
+          updatePhoto={ this.props.updatePhoto }
+          sendRequest={ this.props.sendRequest }/>
         <ProfileNav user={ this.props.user }/>
 
         <Route path="/users/:userId/about" component={ MainAboutContainer }/>

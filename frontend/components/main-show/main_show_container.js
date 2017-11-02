@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { requestUser,
   updateUser,
   updatePhoto } from '../../actions/user_actions';
+import { sendRequest } from '../../actions/friend_actions';
 import MainShow from './main_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch) => (
     requestUser: userId => dispatch(requestUser(userId)),
     updateUser: user => dispatch(updateUser(user)),
     updatePhoto: formData => dispatch(updatePhoto(formData)),
+    sendRequest: request => dispatch(sendRequest(request))
   }
 );
 

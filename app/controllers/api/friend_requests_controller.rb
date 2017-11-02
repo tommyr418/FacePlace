@@ -1,9 +1,10 @@
 class Api::FriendRequestsController < ApplicationController
   def create
     @friend_request = FriendRequest.new(friend_request_params)
+    @user = current_user
 
     if @friend_request.save
-      render json: ["sucess"]
+      render '/api/sessions/show.json.jbuilder'
     else
       render json: @friend_request.errors.full_messages, status: 422
     end
