@@ -8,13 +8,25 @@ import FriendsContainer from './friends/friends_container';
 import TimelineContent from './timeline/timeline_content';
 
 class MainShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
   componentDidMount() {
     this.props.requestUser(this.props.userId);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.userId) {
-      this.props.requestUser(newProps.match.params.userId);
+      this.props.requestUser(newProps.match.params.userId).then(
+        () => {
+          this.setState({
+            loading: !this.state.loading,
+          });
+        }
+      );
     }
   }
 

@@ -53,7 +53,7 @@ class TimelineWall extends React.Component {
       return null;
     }
 
-    if(!this.props.user) {
+    if(!this.props.user || !this.props.user.wall_posts) {
       return null;
     }
 

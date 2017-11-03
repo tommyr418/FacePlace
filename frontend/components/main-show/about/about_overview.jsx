@@ -1,6 +1,10 @@
 import React from 'react';
 
 const AboutOverview = ({ profile, userId }) => {
+  if(!profile) {
+    return null;
+  }
+
   const keys = Object.keys(profile);
   const categories = keys.slice(1);
   const subCategories = categories.map((category) => {

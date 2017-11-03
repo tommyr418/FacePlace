@@ -24,6 +24,10 @@ class Friends extends React.Component {
       return null;
     }
 
+    if(!this.props.user || !this.props.user.friends) {
+      return null;
+    }
+
     const friends = this.props.user.friends.map((friendId) => {
       const friend = this.props.users[friendId];
       return (
