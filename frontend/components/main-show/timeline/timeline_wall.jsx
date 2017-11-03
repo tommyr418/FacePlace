@@ -44,6 +44,38 @@ class TimelineWall extends React.Component {
         <div className="post-body">
           { post.body }
         </div>
+
+        <div className="post-links">
+          <a>
+            <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            Like
+          </a>
+
+          <a>
+            <i className="fa fa-comment-o" aria-hidden="true"></i>
+            Comment
+          </a>
+
+          <a>
+            <i className="fa fa-share-square" aria-hidden="true"></i>
+            Share
+          </a>
+        </div>
+
+        <div className="post-comment-form">
+          <img id="comment-pic"
+            src={ this.props.currentUser.image_url }/>
+          <form>
+            <div>
+              <input>
+
+              </input>
+              <button>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
