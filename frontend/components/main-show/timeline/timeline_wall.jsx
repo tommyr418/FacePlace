@@ -21,8 +21,30 @@ class TimelineWall extends React.Component {
     );
   }
 
+  componentWillReceiveProps(newProps) {
+    if(!this.props.user.wall_posts) {
+      return;
+    }
+    const postsIds = Object.keys(newProps.posts).map((id) => {
+      return parseInt(id);
+    })
+    let needUpdate = false;
+    for (var i = 0; i < this.props.user.wall_posts.length; i++) {
+      if(!postsIds.includes(this.props.user.wall_posts[i])) {
+        needUpdate = true;
+        break;
+      }
+    }
+    if (needUpdate) {
+      this.props.fetchWallPosts(this.props.userId);
+    }
+  }
+
   mapPosts(postId) {
     const post = this.props.posts[postId];
+    if(!post) {
+      return null;
+    }
     const authorId = this.props.posts[postId].author_id;
     const author = this.props.users[authorId];
     return (

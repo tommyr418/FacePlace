@@ -6,7 +6,7 @@ const SessionReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER: {
-      return _.merge({}, state, { currentUser: action.currentUser });
+      return Object.assign({}, state, { currentUser: action.currentUser });
     }
     case RECEIVE_POST: {
       return _.merge({}, state, { currentUser: { news_feed: [action.data.id].concat(state.currentUser.news_feed) }})
