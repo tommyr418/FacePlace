@@ -2,7 +2,9 @@ json.posts do
   json.partial! "api/posts/posts", posts: @posts
 end
 
-users = @posts.map(&:author)
+relevant = @posts.pluck(:author_id) + @posts.pluck(:wall_id) << current_user.id
+
+users = User.all.select { |user| relevant.include?(user.id) }
 
 json.users do
   users.each do |user|

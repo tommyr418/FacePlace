@@ -10,6 +10,14 @@ class Api::PostsController < ApplicationController
     render :index
   end
 
+  def news_feed
+    relevant = current_user.friends.push(current_user.id)
+    @posts = Post.all.includes(:author).select do |post|
+      relevant.include?(post.wall_id) || relevant.include?(post.author_id)
+    end
+    render :index
+  end
+
   def show
     @post = Post.find(params[:id])
     render :show

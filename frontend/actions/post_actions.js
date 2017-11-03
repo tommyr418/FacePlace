@@ -39,6 +39,13 @@ export const fetchWallPosts = userId => dispatch => (
   )
 );
 
+export const fetchNewsFeed = () => dispatch => (
+  PostAPIUtil.fetchNewsFeed().then(
+    data => dispatch(receivePosts(data)),
+    errors => dispatch(receivePostErrors(errors))
+  )
+);
+
 export const fetchPost = postId => dispatch => (
   PostAPIUtil.fetchPost(postId).then(
     data => dispatch(receivePost(data)),

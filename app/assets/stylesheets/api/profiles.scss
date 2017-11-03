@@ -251,13 +251,18 @@
 #about-form select {
   margin: 20px;
   width: 200px;
+  height: 25px;
+  color: #ffffff;
+  background-color: #4267b2;
 }
 
 #about-form input {
   margin: 20px;
   width: 400px;
-  border: 1px solid #cdcdcd;
-  height: 20px;
+  border: 1px solid #4267b2;
+  height: 25px;
+  color: #4267b2;
+  font-size: 20px;
 }
 
 #user-name {

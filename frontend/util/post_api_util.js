@@ -12,6 +12,13 @@ export const fetchWallPosts = userId => {
   });
 };
 
+export const fetchNewsFeed = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/user/news"
+  });
+};
+
 export const fetchPost = postId => {
   return $.ajax({
     method: "GET",

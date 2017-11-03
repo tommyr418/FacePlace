@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get "/api/user/requesters", to: "api/users#requesters",
                                defaults: { format: :json }
   get "/api/users/:id/posts", to: "api/posts#wall_posts", defaults: { format: :json }
+  get "/api/user/news", to: "api/posts#news_feed", defaults: { format: :json }
 end
