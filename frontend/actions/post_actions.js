@@ -3,11 +3,19 @@ import * as PostAPIUtil from '../util/post_api_util';
 export const RECEIVE_POST = "RECEIVE_POST";
 export const RECEIVE_MANY_POSTS = "RECEIVE_MANY_POSTS";
 export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
+export const RECEIVE_NEWS_POST = "RECEIVE_NEWS_POST";
 
 export const receivePost = data => (
   {
     type: RECEIVE_POST,
     data
+  }
+);
+
+export const receiveNewsPost = data => (
+  {
+  type: RECEIVE_NEWS_POST,
+  data,
   }
 );
 

@@ -1,5 +1,5 @@
 import { RECEIVE_USER, RECEIVE_MANY_USERS } from '../actions/user_actions';
-import { RECEIVE_MANY_POSTS } from '../actions/post_actions';
+import { RECEIVE_MANY_POSTS, RECEIVE_POST } from '../actions/post_actions';
 import { merge } from 'lodash';
 
 const UsersReducer = (state = {}, action) => {
@@ -14,6 +14,9 @@ const UsersReducer = (state = {}, action) => {
     }
     case RECEIVE_MANY_POSTS: {
       return _.merge({}, state, action.data.users);
+    }
+    case RECEIVE_POST :{
+      return _.merge({}, state, { [action.data.wall_id]: { wall_posts: [action.data.id].concat(state[action.data.wall_id].wall_posts) }})
     }
     default:
       return state;
