@@ -1,9 +1,6 @@
 import React from 'react';
 
 class TimelineIntro extends React.Component {
-  componentDidMount() {
-    this.props.requestUser(this.props.userId)
-  }
   render () {
     if(!this.props.profile) {
       return null;

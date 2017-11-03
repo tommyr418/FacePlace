@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import TimelineWall from './timeline_wall';
-import { fetchPosts } from '../../../actions/post_actions';
-import { fetchFriends, requestUser } from '../../../actions/user_actions';
+import { fetchWallPosts } from '../../../actions/post_actions';
+import { requestUser } from '../../../actions/user_actions';
 import { createPost } from '../../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,8 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchPosts: () => dispatch(fetchPosts()),
-    fetchFriends: userId => dispatch(fetchFriends(userId)),
+    fetchWallPosts: (userId) => dispatch(fetchWallPosts(userId)),
     requestUser: userId => dispatch(requestUser(userId)),
     createPost: post => dispatch(createPost(post)),
   };

@@ -5,12 +5,20 @@ import TimelineForm from './timeline_form';
 class TimelineWall extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true,
+    };
     this.mapPosts = this.mapPosts.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchPosts();
-    this.props.fetchFriends(this.props.userId);
+    this.props.fetchWallPosts(this.props.userId).then(
+      () => {
+        this.setState({
+          loading: false,
+        });
+      }
+    );
   }
 
   mapPosts(postId) {
@@ -41,56 +49,12 @@ class TimelineWall extends React.Component {
   }
 
   render() {
-    if(!this.props.user || !this.props.posts || !this.props.users || !this.props.user.wall_posts) {
-      return (
-        <div>
-          <div className="post-form">
-            <TimelineForm
-              currentUser={ this.props.currentUser }
-              user={ this.props.user }
-              createPost={ this.props.createPost }/>
-          </div>
-
-          <div className="post-index">
-          </div>
-        </div>
-      );
+    if (this.state.loading) {
+      return null;
     }
 
-    for (var i = 0; i < this.props.user.wall_posts.length; i++) {
-      const postId = this.props.user.wall_posts[i];
-      const post = this.props.posts[postId];
-      if (!post) {
-        return (
-          <div>
-            <div className="post-form">
-              <TimelineForm
-                currentUser={ this.props.currentUser }
-                user={ this.props.user }
-                createPost={ this.props.createPost }/>
-            </div>
-
-            <div className="post-index">
-            </div>
-          </div>
-        );
-      }
-      const author = this.props.users[post.author_id];
-      if(!author) {
-        return (
-          <div>
-            <div className="post-form">
-              <TimelineForm
-                currentUser={ this.props.currentUser }
-                user={ this.props.user }
-                createPost={ this.props.createPost }/>
-            </div>
-
-            <div className="post-index">
-            </div>
-          </div>
-        );
-      }
+    if(!this.props.user) {
+      return null;
     }
 
     const posts = this.props.user.wall_posts.map(

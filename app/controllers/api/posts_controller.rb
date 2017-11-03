@@ -1,6 +1,12 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = current_user.wall_posts
+    @posts = Post.all
+    render :index
+  end
+
+  def wall_posts
+    @user = User.find(params[:id])
+    @posts = @user.wall_posts
     render :index
   end
 

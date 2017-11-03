@@ -18,9 +18,6 @@ class MainShow extends React.Component {
     }
   }
 
-  componentDidUpdate() {
-  }
-
   render() {
     if(!this.props.user) {
       return (

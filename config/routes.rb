@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/api/users/:id/friends", to: "api/users#friends", defaults: { format: :json }
   get "/api/user/requesters", to: "api/users#requesters",
                                defaults: { format: :json }
+  get "/api/users/:id/posts", to: "api/posts#wall_posts", defaults: { format: :json }
 end

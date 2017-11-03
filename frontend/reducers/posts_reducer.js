@@ -8,7 +8,7 @@ const PostsReducer = (state = {}, action) => {
         { [action.data.id]: action.data });
     }
     case RECEIVE_MANY_POSTS: {
-      return Object.assign({}, state, action.data);
+      return Object.assign({}, state, action.data.posts);
     }
     default:
       return state;

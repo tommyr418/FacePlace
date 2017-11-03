@@ -2,16 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Friends extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
+
   componentDidMount() {
-    this.props.fetchFriends(this.props.user.id);
+    this.props.fetchFriends(this.props.user.id).then(
+      () => {
+        this.setState({
+          loading: false,
+        });
+      }
+    );
   }
 
   render() {
-    for (var i = 0; i < this.props.user.friends.length; i++) {
-      const id = this.props.user.friends[i];
-      if (!this.props.users[id]) {
-        return null;
-      }
+    if (this.state.loading) {
+      return null;
     }
 
     const friends = this.props.user.friends.map((friendId) => {
