@@ -44,6 +44,10 @@ body {
   height: 42px;
 }
 
+#header-left-logged-in a {
+  text-decoration: none;
+}
+
 #logo {
   background-color: white;
   color: #3b5998;
