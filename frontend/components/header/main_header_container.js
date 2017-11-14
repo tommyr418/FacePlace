@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
-import { logout, login,
-  receiveSessionErrors } from '../../actions/session_actions';
+import { logout, login } from '../../actions/session_actions';
 import { fetchRequesters } from '../../actions/user_actions';
 import { addFriend, updateRequest } from "../../actions/friend_actions";
 import MainHeader from './main_header';
