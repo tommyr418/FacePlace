@@ -57,11 +57,6 @@ class NewsFeed extends React.Component {
             <i className="fa fa-comment-o" aria-hidden="true"></i>
             Comment
           </a>
-
-          <a>
-            <i className="fa fa-share-square" aria-hidden="true"></i>
-            Share
-          </a>
         </div>
 
         <div className="post-comment-form">
