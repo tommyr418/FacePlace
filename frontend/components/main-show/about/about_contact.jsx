@@ -56,9 +56,9 @@ class AboutContact extends React.Component {
 
           <label>Basic Information</label>
           {
-            this.props.profile["contactAndBasicInfo"]["basicIformation"] ?
+            this.props.profile["contactAndBasicInfo"]["basicInformation"] ?
             <ul>
-              { this.props.profile["contactAndBasicInfo"]["basicIformation"].map(
+              { this.props.profile["contactAndBasicInfo"]["basicInformation"].map(
                 (item) =>
                 <li key={ item.id }>
                 { item["value"] }

@@ -15,11 +15,13 @@ class MainShow extends React.Component {
     };
   }
   componentDidMount() {
+    window.scrollTo(0,0);
     this.props.requestUser(this.props.userId);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.userId) {
+      window.scrollTo(0,0);
       this.props.requestUser(newProps.match.params.userId).then(
         () => {
           this.setState({

@@ -17,6 +17,8 @@
 
 body {
   margin: 0;
+  min-height: 1000px;
+  background-color: #e9ebee;
   font-family: arial;
 }
 
@@ -78,6 +80,7 @@ body {
   font-size: 15px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  cursor: pointer;
 }
 
 .fa-search {
