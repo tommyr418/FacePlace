@@ -31,6 +31,9 @@ class TimelineForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const post = Object.assign({}, this.state);
+    e.currentTarget.children[1].children[1].value
+      = e.currentTarget.children[1].children[1].defaultValue;
+    e.currentTarget.children[1].children[1].style.color = "#a6a6a6";
     this.props.createPost(post).then(
       () => {
         this.setState({

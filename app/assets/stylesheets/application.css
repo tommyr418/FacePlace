@@ -22,6 +22,11 @@ body {
   font-family: arial;
 }
 
+input:focus,
+button:focus {
+  outline: none;
+}
+
 #main {
   display: flex;
   justify-content: space-around;
@@ -133,8 +138,7 @@ body {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 70%;
-  min-width: 600px;
+  width: 600px;
   min-height: 300px;
   border: 2px solid #4267b2;
   border-radius: 2px;
