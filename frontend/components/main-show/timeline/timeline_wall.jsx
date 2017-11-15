@@ -27,7 +27,7 @@ class TimelineWall extends React.Component {
     }
     const postsIds = Object.keys(newProps.posts).map((id) => {
       return parseInt(id);
-    })
+    });
     let needUpdate = false;
     for (var i = 0; i < this.props.user.wall_posts.length; i++) {
       if(!postsIds.includes(this.props.user.wall_posts[i])) {

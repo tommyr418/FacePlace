@@ -217,7 +217,7 @@ footer i {
 
 #search-null {
   margin: 20px;
-  color:
+  color: #385a97;
 }
 
 .user {
@@ -237,6 +237,7 @@ footer i {
   width: 72px;
   border: 1px solid #e5e5e5;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .user div {
@@ -244,12 +245,13 @@ footer i {
   align-items: flex-start;
 }
 
-.user a {
-  margin: 0 10px;
+.users-index-name {
+  margin: 10px 15px;
   color: #385a99;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .user button {
@@ -257,6 +259,7 @@ footer i {
   color: #4c4f57;
   border: 1px solid #cdd0d4;
   background-color: #f6f7f9;
+  cursor: pointer;
 }
 
 .user button:hover {

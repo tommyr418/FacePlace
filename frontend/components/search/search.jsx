@@ -42,12 +42,25 @@ class Search extends React.Component {
     delete copy.completed;
 
     const results = Object.values(copy).map((user) => {
+      let buttonText;
+
+      if (this.props.currentUser.friends.includes(user.id)) {
+        buttonText = "Friends";
+      } else if (this.props.currentUser.outgoingRequests.includes(user.id)) {
+        buttonText = "Request Sent";
+      } else {
+        buttonText = "Add friend";
+      }
+
       return (
         <div className="user"
           key={ user.id }>
           <div>
-            <img src={ user.image_url }/>
             <Link to={ `/users/${user.id}` }>
+              <img src={ user.image_url }/>
+            </Link>
+            <Link to={ `/users/${user.id}` }
+              className="users-index-name">
               { user.fname } { user.lname }
             </Link>
           </div>
@@ -55,7 +68,7 @@ class Search extends React.Component {
           <div>
             <button>
               <i className="fa fa-user" aria-hidden="true"></i>
-              Add friend
+              { buttonText }
             </button>
           </div>
         </div>
