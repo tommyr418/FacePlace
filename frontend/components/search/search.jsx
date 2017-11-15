@@ -7,6 +7,7 @@ class Search extends React.Component {
     this.state = {
       loading: true,
     };
+    this.sendRequest = this.sendRequest.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +22,13 @@ class Search extends React.Component {
       this.props.searchUsers(search);
       window.scrollTo(0,0);
     }
+  }
+
+  sendRequest(e) {
+    this.props.sendRequest({
+      requester_id: this.props.currentUser.id,
+      recipient_id: e.currentTarget.getAttribute("data"),
+    });
   }
 
   render() {
@@ -66,10 +74,20 @@ class Search extends React.Component {
           </div>
 
           <div>
-            <button>
-              <i className="fa fa-user" aria-hidden="true"></i>
-              { buttonText }
-            </button>
+            {
+              buttonText === "Add friend"
+              ?
+              <button onClick={ this.sendRequest }
+                data={ user.id }>
+                <i className="fa fa-user" aria-hidden="true"></i>
+                { buttonText }
+              </button>
+              :
+              <button>
+                <i className="fa fa-user" aria-hidden="true"></i>
+                { buttonText }
+              </button>
+            }
           </div>
         </div>
       );
