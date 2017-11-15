@@ -11,7 +11,7 @@ import SearchContainer from './search/search_container';
 const App = () => (
   <div>
     <Route path="/" component={MainHeaderContainer} />
-    <Route path="/search/users" component={ SearchContainer } />
+    <ProtectedRoute path="/search/users" component={ SearchContainer } />
     <Route exact path="/" component={ MainContainer } />
     <Route exact path="/" component={ MainFooterContainer }/>
     <ProtectedRoute path="/users/:userId" component={ MainShowContainer } />
