@@ -45,18 +45,35 @@ class CoverPhoto extends React.Component {
       </button>
       :
       "";
-    const addFriend = (
-      (this.props.currentUser.id === this.props.user.id) ||
-      (this.props.currentUser.friends.includes(this.props.user.id)) ||
-      (this.props.currentUser.outgoingRequests.includes(this.props.user.id))
-      ) ?
-      ""
-      :
-      <button id="add-friend-button"
-        onClick={ this.sendRequest }>
-        <i className="fa fa-plus" aria-hidden="true"></i>
-        Add Friend
-      </button>;
+
+    let friendButton;
+
+    if (this.props.currentUser.id === this.props.user.id) {
+      friendButton = "";
+    } else if (this.props.currentUser.friends.includes(this.props.user.id)) {
+      friendButton = (
+        <button id="add-friend-button">
+          <i className="fa fa-plus" aria-hidden="true"></i>
+          Friends
+        </button>
+      );
+    } else if (this.props.currentUser.outgoingRequests
+        .includes(this.props.user.id)) {
+      friendButton = (
+        <button id="add-friend-button">
+          <i className="fa fa-plus" aria-hidden="true"></i>
+          Request Sent
+        </button>
+      );
+    } else {
+      friendButton = (
+        <button id="add-friend-button"
+          onClick={ this.sendRequest }>
+          <i className="fa fa-plus" aria-hidden="true"></i>
+          Add Friend
+        </button>
+      );
+    }
 
     const coverImage = this.props.user.cover_image_url ?
       <div id="cover-photo-img"
@@ -79,7 +96,7 @@ class CoverPhoto extends React.Component {
           { this.props.user.fname } { this.props.user.lname }
         </span>
 
-        { addFriend }
+        { friendButton }
 
         { this.state.modalOpen ?
           <div className="modal">
