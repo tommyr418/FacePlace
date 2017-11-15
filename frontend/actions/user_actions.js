@@ -4,6 +4,7 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_MANY_USERS = 'RECEIVE_MANY_USERS';
 export const RECEIVE_USER_ERROR = 'RECEIVE_USER_ERROR';
 export const RECEIVE_PROFILE = 'RECEIVE_PROFILE';
+export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 
 const receiveUser = (data) => (
   {
@@ -29,6 +30,13 @@ const receiveUserError = errors => (
 const receiveProfile = data => (
   {
     type: RECEIVE_PROFILE,
+    data,
+  }
+);
+
+const receiveSearchResults = data => (
+  {
+    type: RECEIVE_SEARCH_RESULTS,
     data,
   }
 );
@@ -90,7 +98,7 @@ export const removeProfile = profileId => dispatch => (
 
 export const searchUsers = search => dispatch => (
   UserAPIUtil.searchUsers(search).then(
-    data => dispatch(receiveManyUsers(data)),
+    data => dispatch(receiveSearchResults(data)),
     errors => dispatch(receiveUserError(errors))
   )
 );

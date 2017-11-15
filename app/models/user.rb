@@ -100,7 +100,7 @@ class User < ApplicationRecord
   end
 
   def self.search(search)
-    where("fname ILIKE ? OR lname ILIKE ? OR (fname || ' ' || lname) ILIKE ?",
+    where("fname ILIKE ? OR lname ILIKE ? OR (fname || '_' || lname) ILIKE ?",
           "%#{search}%",
           "%#{search}%",
           "%#{search}%")

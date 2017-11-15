@@ -5,7 +5,8 @@ import Search from './search';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    search: state.entities.search,
   };
 };
 

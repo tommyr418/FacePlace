@@ -195,3 +195,76 @@ footer i {
   margin: 10px;
   color: #333;
 }
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e9ebee;
+  height: 100%;
+}
+
+.users-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 55px;
+  min-height: 100px;
+  width: 494px;
+  background-color: #ffffff;
+  border: 1px solid #dddfe2;
+}
+
+#search-null {
+  margin: 20px;
+  color:
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  width: 470px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.user:last-of-type {
+  border-bottom: none;
+}
+
+.user img {
+  height: 72px;
+  width: 72px;
+  border: 1px solid #e5e5e5;
+  object-fit: cover;
+}
+
+.user div {
+  display: flex;
+  align-items: flex-start;
+}
+
+.user a {
+  margin: 0 10px;
+  color: #385a99;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.user button {
+  font-size: 12px;
+  color: #4c4f57;
+  border: 1px solid #cdd0d4;
+  background-color: #f6f7f9;
+}
+
+.user button:hover {
+  background-color: #e9ebee;
+  border-color: #ced0d4;
+  color: #4b4f56;
+}
+
+.user i {
+  margin: 0 4px;
+}
