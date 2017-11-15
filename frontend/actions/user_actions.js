@@ -87,3 +87,10 @@ export const removeProfile = profileId => dispatch => (
     errors => dispatch(receiveUserError(errors))
   )
 );
+
+export const searchUsers = search => dispatch => (
+  UserAPIUtil.searchUsers(search).then(
+    data => dispatch(receiveManyUsers(data)),
+    errors => dispatch(receiveUserError(errors))
+  )
+);

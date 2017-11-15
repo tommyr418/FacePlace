@@ -15,6 +15,14 @@ class Api::UsersController < ApplicationController
     render :requesters
   end
 
+  def index
+    if params[:search]
+      @users = User.search(params[:search]).order("lname")
+    else
+      @users = User.all.order("lname")
+    end
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

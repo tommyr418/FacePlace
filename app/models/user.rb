@@ -99,6 +99,13 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def self.search(search)
+    where("fname ILIKE ? OR lname ILIKE ? OR (fname || ' ' || lname) ILIKE ?",
+          "%#{search}%",
+          "%#{search}%",
+          "%#{search}%")
+  end
+
   private
 
   attr_reader :password

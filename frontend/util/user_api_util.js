@@ -60,3 +60,10 @@ export const removeProfile = (profileId) => {
     url: `/api/profiles/${profileId}`,
   });
 };
+
+export const searchUsers = (search) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/users?search=${search}`,
+  });
+};
