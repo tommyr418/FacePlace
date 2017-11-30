@@ -34,6 +34,17 @@ export const createPost = (post) => {
   });
 };
 
+export const createPostPicture = formData => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/posts",
+    data: formData,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+  });
+};
+
 export const updatePost = (post) => {
   return $.ajax({
     method: "PATCH",

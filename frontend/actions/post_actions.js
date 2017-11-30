@@ -66,6 +66,12 @@ export const createPost = post => dispatch => (
     errors => dispatch(receivePostErrors(errors))
   )
 );
+export const createPostPicture = formData => dispatch => (
+  PostAPIUtil.createPostPicture(formData).then(
+    data => dispatch(receivePost(data)),
+    errors => dispatch(receivePostErrors(errors))
+  )
+);
 export const updatePost = post => dispatch => (
   PostAPIUtil.updatePost(post).then(
     data => dispatch(receivePost(data)),

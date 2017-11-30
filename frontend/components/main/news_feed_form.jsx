@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PostPicture from './post_picture';
+
 class NewsFeedForm extends React.Component {
   constructor(props) {
     super(props);
@@ -7,11 +9,14 @@ class NewsFeedForm extends React.Component {
       body: "",
       author_id: this.props.currentUser.id,
       wall_id: this.props.currentUser.id,
+      modalOpen: false,
     };
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleFocus(e) {
@@ -49,35 +54,64 @@ class NewsFeedForm extends React.Component {
     });
   }
 
+  openModal() {
+    this.setState({
+      modalOpen: true,
+    });
+  }
+
+  closeModal(){
+    this.setState({
+      modalOpen: false,
+    });
+  }
+
   render() {
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <div className="post-form-head">
-          <a>
-            <i className="fa fa-pencil" aria-hidden="true"></i>
-            Post
-          </a>
+      <div>
+        <form onSubmit={ this.handleSubmit }>
+          <div className="post-form-head">
+            <a>
+              <i className="fa fa-pencil" aria-hidden="true"></i>
+              Post
+            </a>
 
-          <a>
-            <i className="fa fa-camera" aria-hidden="true"></i>
-            Photo
-          </a>
-        </div>
+            <a onClick={ this.openModal }>
+              <i className="fa fa-camera" aria-hidden="true"></i>
+              Photo
+            </a>
+          </div>
 
-        <div className="post-form-body">
-          <img src={ this.props.currentUser.image_url }/>
+          <div className="post-form-body">
+            <img src={ this.props.currentUser.image_url }/>
 
-          <input type="text"
-            defaultValue="What's on your mind?"
-            onFocus={ this.handleFocus }
-            onBlur={ this.handleBlur }
-            onChange={ this.handleInputChange }></input>
-        </div>
+            <input type="text"
+              defaultValue="What's on your mind?"
+              onFocus={ this.handleFocus }
+              onBlur={ this.handleBlur }
+              onChange={ this.handleInputChange }></input>
+          </div>
 
-        <div className="post-form-foot">
-          <button>Post</button>
-        </div>
-      </form>
+          <div className="post-form-foot">
+            <button>Post</button>
+          </div>
+        </form>
+
+        { this.state.modalOpen ?
+          <div className="modal">
+            <div className="modal-content">
+              <button onClick={ this.closeModal }
+                className="close">
+                close
+              </button>
+              <PostPicture
+                createPostPicture={ this.props.createPostPicture }
+                currentUser={ this.props.currentUser }
+                closeModal={ this.closeModal }/>
+            </div>
+          </div>
+          : ""}
+      </div>
     );
   }
 }

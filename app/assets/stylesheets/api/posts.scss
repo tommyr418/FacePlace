@@ -156,8 +156,18 @@
 }
 
 .post-body {
+  max-height: 400px;
   margin: 12px;
   color: #1f212b;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.post-body img{
+  border-radius: 0;
+  width: 400px;
+  height: auto;
 }
 
 .post-links {
