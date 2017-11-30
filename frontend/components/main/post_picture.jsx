@@ -6,7 +6,7 @@ class PostPicture extends React.Component {
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
-      wall_id: this.props.currentUser.id,
+      wall_id: this.props.wallID,
       imageUrl: "",
       imageFile: null,
     };

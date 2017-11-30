@@ -64,6 +64,7 @@ class TimelineWall extends React.Component {
         </div>
 
         <div className="post-body">
+          { post.image_url ? <img src={ post.image_url }/> : null }
           { post.body }
         </div>
 
@@ -116,7 +117,8 @@ class TimelineWall extends React.Component {
           <TimelineForm
             currentUser={ this.props.currentUser }
             user={ this.props.user }
-            createPost={ this.props.createPost }/>
+            createPost={ this.props.createPost }
+            createPostPicture={ this.props.createPostPicture }/>
         </div>
 
         <div className="post-index">

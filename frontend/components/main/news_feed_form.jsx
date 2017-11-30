@@ -107,7 +107,8 @@ class NewsFeedForm extends React.Component {
               <PostPicture
                 createPostPicture={ this.props.createPostPicture }
                 currentUser={ this.props.currentUser }
-                closeModal={ this.closeModal }/>
+                closeModal={ this.closeModal }
+                wallID={ this.props.currentUser.id }/>
             </div>
           </div>
           : ""}

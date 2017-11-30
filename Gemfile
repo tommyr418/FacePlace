@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'annotate'
 gem 'aws-sdk', '< 3.0'
+gem 'faker'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'jquery-rails'

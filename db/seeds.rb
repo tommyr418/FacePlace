@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 User.destroy_all
 user = User.new(email: "homer@yahoo.com", password: "homersimpson",
                    fname: "Homer", lname: "Simpson", birthdate: "04/17/1970",
@@ -141,8 +143,17 @@ Friend.create(friender_id: user.id, friendee_id: f4.id)
 Friend.create(friender_id: f5.id, friendee_id: user.id)
 Friend.create(friender_id: f6.id, friendee_id: user.id)
 Friend.create(friender_id: user.id, friendee_id: f7.id)
-Friend.create(friender_id: f3.id, friendee_id: f2.id)
-Friend.create(friender_id: f6.id, friendee_id: u3.id)
+
+User.all.each do |person|
+  next if user.id == person.id
+  2.times do
+    random = User.all.sample.id
+    while(person.friends.include?(random) || person.id == random)
+      random = User.all.sample.id
+    end
+    Friend.create(friender_id: person.id, friendee_id: random)
+  end
+end
 
 Post.destroy_all
 Post.create(author_id: user.id, wall_id: user.id, body: "Doughnuts!")
@@ -156,3 +167,8 @@ Post.create(author_id: f4.id, wall_id: user.id, body: "Pay your tab bozo.")
 Post.create(author_id: f2.id, wall_id: f3.id, body: "eat my shorts")
 Post.create(author_id: f3.id, wall_id: f2.id, body: "no you")
 Post.create(author_id: f6.id, wall_id: u3.id, body: "gonna be out from work boss")
+
+50.times do |num|
+  person = User.all.sample
+  Post.create(author_id: person.id, wall_id: person.friends.sample, body: Faker::Simpsons.quote)
+end

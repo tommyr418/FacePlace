@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TimelineWall from './timeline_wall';
 import { fetchWallPosts } from '../../../actions/post_actions';
 import { requestUser } from '../../../actions/user_actions';
-import { createPost } from '../../../actions/post_actions';
+import { createPost, createPostPicture } from '../../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchWallPosts: (userId) => dispatch(fetchWallPosts(userId)),
     requestUser: userId => dispatch(requestUser(userId)),
     createPost: post => dispatch(createPost(post)),
+    createPostPicture: formData => dispatch(createPostPicture(formData)),
   };
 };
 
