@@ -52,7 +52,9 @@ class Search extends React.Component {
     const results = Object.values(copy).map((user) => {
       let buttonText;
 
-      if (this.props.currentUser.friends.includes(user.id)) {
+      if (this.props.currentUser.id === user.id) {
+        buttonText = "You";
+      } else if (this.props.currentUser.friends.includes(user.id)) {
         buttonText = "Friends";
       } else if (this.props.currentUser.outgoingRequests.includes(user.id)) {
         buttonText = "Request Sent";
