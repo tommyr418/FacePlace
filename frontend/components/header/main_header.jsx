@@ -16,6 +16,11 @@ class MainHeader extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    if(this.state.search === "") {
+      return;
+    }
+    
     this.props.history.push(`/search/users?search=${this.state.search.split(' ').join('_')}`);
     e.currentTarget.children[0].value = ""
     this.setState({
