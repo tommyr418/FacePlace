@@ -65,6 +65,10 @@ class User < ApplicationRecord
            foreign_key: :wall_id,
            class_name: :Post
 
+  has_many :authored_comments,
+           foreign_key: :author_id,
+           class_name: :Comment
+
   has_attached_file :profile_pic,
                     default_url: "default-profile-picture.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
