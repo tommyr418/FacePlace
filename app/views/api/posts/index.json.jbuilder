@@ -17,10 +17,11 @@ json.comments do
   end
 end
 
-relevant = @posts.pluck(:author_id) + @posts.pluck(:wall_id) << current_user.id
-relevant += relevant_comments
+relevant_users = @posts.pluck(:author_id) + @posts.pluck(:wall_id)
+relevant_users << current_user.id
+relevant_users += comments.pluck(:author_id)
 
-users = User.all.select { |user| relevant.include?(user.id) }
+users = User.all.select { |user| relevant_users.include?(user.id) }
 
 json.users do
   users.each do |user|
