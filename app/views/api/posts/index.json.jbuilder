@@ -2,7 +2,23 @@ json.posts do
   json.partial! "api/posts/posts", posts: @posts
 end
 
+relevant_comments = []
+@posts.each { |post| relevant_comments += post.comments.pluck(:id) }
+
+comments = Comment.all.select do |comment|
+  relevant_comments.include?(comment.id)
+end
+
+json.comments do
+  comments.each do |comment|
+    json.set! comment.id.to_s.to_sym do
+      json.extract! comment, :id, :author_id, :post_id, :body
+    end
+  end
+end
+
 relevant = @posts.pluck(:author_id) + @posts.pluck(:wall_id) << current_user.id
+relevant += relevant_comments
 
 users = User.all.select { |user| relevant.include?(user.id) }
 
