@@ -60,6 +60,10 @@ class NewsFeed extends React.Component {
           </a>
         </div>
 
+        <div className="comments">
+          
+        </div>
+
         <div className="post-comment-form">
           <img id="comment-pic"
             src={ this.props.currentUser.image_url }/>

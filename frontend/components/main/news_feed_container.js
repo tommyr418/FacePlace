@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     posts: state.entities.posts,
     users: state.entities.users,
+    comments: state.entities.comments,
   };
 };
 

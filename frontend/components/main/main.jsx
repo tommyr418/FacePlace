@@ -1,10 +1,18 @@
 import React from 'react';
+
+import Welcome from './welcome';
 import SignupForm from './signup_form';
 import NewsFeedContainer from './news_feed_container';
 
 class Main extends React.Component {
   componentDidMount() {
     window.scrollTo(0,0);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if(!newProps.currentUser) {
+      window.scrollTo(0,0);
+    }
   }
 
   render() {
@@ -17,27 +25,7 @@ class Main extends React.Component {
     } else {
       return (
         <div id="main">
-          <div id="main-front-left">
-            <h1>Connect with friends and the world around you on FacePlace.</h1>
-
-            <div>
-              <i className="fa fa-newspaper-o" aria-hidden="true"></i>
-              <h2>See photos and updates</h2>
-              <h3>from friends in News Feed.</h3>
-            </div>
-
-            <div>
-              <i className="fa fa-desktop" aria-hidden="true"></i>
-              <h2>Share what's new</h2>
-              <h3>in your life on your Timeline.</h3>
-            </div>
-
-            <div>
-              <i className="fa fa-share-alt" aria-hidden="true"></i>
-              <h2>Find more</h2>
-              <h3>of what you're looking for with FacePlace Search.</h3>
-            </div>
-          </div>
+          <Welcome />
 
           <SignupForm signup={ this.props.signup }
             errors={ this.props.errors }/>
