@@ -35,11 +35,18 @@ img {
   object-fit: cover;
 }
 
-#main {
+.main {
   display: flex;
   justify-content: space-around;
   background-color: #e9ebee;
   height: 100%;
+}
+
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 }
 
 #main-show {

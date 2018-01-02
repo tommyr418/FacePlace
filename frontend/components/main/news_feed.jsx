@@ -61,7 +61,7 @@ class NewsFeed extends React.Component {
         </div>
 
         <div className="comments">
-          
+
         </div>
 
         <div className="post-comment-form">
@@ -92,17 +92,8 @@ class NewsFeed extends React.Component {
     );
 
     return (
-      <div id="new-feed">
-        <div className="post-form">
-          <NewsFeedForm
-            currentUser={ this.props.currentUser }
-            createPost={ this.props.createPost }
-            createPostPicture={ this.props.createPostPicture }/>
-        </div>
-
-        <div className="post-index">
-          { posts }
-        </div>
+      <div className="post-index">
+        { posts }
       </div>
     );
   }

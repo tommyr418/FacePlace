@@ -2,6 +2,7 @@ import React from 'react';
 
 import Welcome from './welcome';
 import SignupForm from './signup_form';
+import NewsFeedForm from './news_feed_form';
 import NewsFeedContainer from './news_feed_container';
 
 class Main extends React.Component {
@@ -18,13 +19,18 @@ class Main extends React.Component {
   render() {
     if(this.props.currentUser) {
       return (
-        <div id="main">
+        <div className="news-feed">
+          <NewsFeedForm
+            currentUser={ this.props.currentUser }
+            createPost={ this.props.createPost }
+            createPostPicture={ this.props.createPostPicture }/>
+
           <NewsFeedContainer />
         </div>
       );
     } else {
       return (
-        <div id="main">
+        <div className="main">
           <Welcome />
 
           <SignupForm signup={ this.props.signup }

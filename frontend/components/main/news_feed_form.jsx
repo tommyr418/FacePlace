@@ -68,7 +68,7 @@ class NewsFeedForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="post-form">
         <form onSubmit={ this.handleSubmit }>
           <div className="post-form-head">
             <a>
