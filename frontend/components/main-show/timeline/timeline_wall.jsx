@@ -64,8 +64,8 @@ class TimelineWall extends React.Component {
         </div>
 
         <div className="post-body">
-          { post.image_url ? <img src={ post.image_url }/> : null }
           { post.body }
+          { post.image_url ? <img src={ post.image_url }/> : null }
         </div>
 
         <div className="post-links">
