@@ -22,11 +22,12 @@ At the user's convenience there is a post creation form on every user page to ad
 
 All the posts that are related to the user and the user's friends are displayed on the front page.
 
-## Future Directions for FacePlace
-
 ### Search
 
-Users should be able to find anyone on the platform by inputing a name on the search bar.
+Users can find anyone on the platform by inputing a name on the search bar.
+
+## Future Directions for FacePlace
+
 
 ### Events
 
