@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: true,
-    };
     this.sendRequest = this.sendRequest.bind(this);
   }
 
