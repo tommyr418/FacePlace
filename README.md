@@ -10,23 +10,31 @@ FacePlace is a full-stack social media platform designed to mimic the popular we
 
 Profiles are stored modularly in the database as profile entries of which a user can have an unlimited amount. They are associated with a user via a user_id foreign key and presorted into categories and subcategories. In order to create a profile entry, a user simply hits the 'add info' button on their main page and a modal with a modular form will appear. Users can then select a category, subcategory and input a entry
 
+![profile](https://user-images.githubusercontent.com/29281456/34880722-55b74174-f77f-11e7-9cb5-fae804094069.gif)
+
 ### Friending
 
 Users can add one another to their friends lists by hitting the Add friend button on the potential friend's page, a request will be sent to the potential friend. The potential friend will have pending requests in dropdown menu on their header where they can accept or decline the request.
 
-![Add friends](https://user-images.githubusercontent.com/29281456/34880440-703758e6-f77e-11e7-876f-88a1e7d32d7d.gif)
+![friends](https://user-images.githubusercontent.com/29281456/34880440-703758e6-f77e-11e7-876f-88a1e7d32d7d.gif)
 
 ### Posting
 
 At the user's convenience there is a post creation form on every user page to add a post the that user's wall. users can also post to their own walls from the main page.
 
+![posts](https://user-images.githubusercontent.com/29281456/34880889-dfb5e66e-f77f-11e7-8f9c-5fcfbdfe5e31.gif)
+
 ### News Feed
 
 All the posts that are related to the user and the user's friends are displayed on the front page.
 
+![news](https://user-images.githubusercontent.com/29281456/34880843-b7a1d3cc-f77f-11e7-9fd5-3ccdd7a1c0a4.gif)
+
 ### Search
 
 Users can find anyone on the platform by inputing a name on the search bar.
+
+![search](https://user-images.githubusercontent.com/29281456/34880772-7e477f00-f77f-11e7-87ea-32fc973dbc77.gif)
 
 ## Future Directions for FacePlace
 
