@@ -50,14 +50,6 @@ class UserNav extends React.Component {
           }
         </a>
 
-        <a>
-          <i className="fa fa-commenting" aria-hidden="true"></i>
-        </a>
-
-        <a>
-          <i className="fa fa-globe" aria-hidden="true"></i>
-        </a>
-
         <button onClick={ this.props.logout }>Logout</button>
       </nav>
     );
