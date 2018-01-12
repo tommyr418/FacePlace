@@ -9,7 +9,7 @@
 }
 
 #cover-photo {
-  margin: 0 41px;
+  margin: 0 auto;
   height: 250px;
   width: 849px;
   background-color: black;
@@ -80,7 +80,7 @@
 
 #profile-nav {
   display: flex;
-  margin: 0 40px;
+  margin: 0 auto;
   height: 43px;
   width: 648px;
   background-color: white;
@@ -140,7 +140,7 @@
 .content-pane {
   min-height: 350px;
   width: 849px;
-  margin: 15px 40px;
+  margin: 15px auto;
   background-color: #fff;
   border: 1px solid #d2d6da;
   border-radius: 3px;
