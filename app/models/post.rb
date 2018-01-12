@@ -15,7 +15,9 @@
 #
 
 class Post < ApplicationRecord
-  validates :author_id, :wall_id, :body, presence: true
+  validates :author_id, :wall_id, presence: true
+
+  validate :validate_content
 
   belongs_to :author, foreign_key: :author_id, class_name: :User
   belongs_to :users_wall, foreign_key: :wall_id, class_name: :User
@@ -23,4 +25,12 @@ class Post < ApplicationRecord
 
   has_attached_file :image, default_url: ""
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  private
+
+  def validate_content
+    if [self.body, self.image].reject(&:blank?).empty?
+      errors[:base] << "Must have either picture or text to post"
+    end
+  end
 end
