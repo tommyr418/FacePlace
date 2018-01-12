@@ -14,6 +14,8 @@ Profiles are stored modularly in the database as profile entries of which a user
 
 Users can add one another to their friends lists by hitting the Add friend button on the potential friend's page, a request will be sent to the potential friend. The potential friend will have pending requests in dropdown menu on their header where they can accept or decline the request.
 
+![Add friends](https://user-images.githubusercontent.com/29281456/34880440-703758e6-f77e-11e7-876f-88a1e7d32d7d.gif)
+
 ### Posting
 
 At the user's convenience there is a post creation form on every user page to add a post the that user's wall. users can also post to their own walls from the main page.
