@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NewsFeedForm from './news_feed_form';
 
 class NewsFeed extends React.Component {
   constructor(props) {

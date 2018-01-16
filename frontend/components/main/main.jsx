@@ -2,7 +2,7 @@ import React from 'react';
 
 import Welcome from './welcome';
 import SignupForm from './signup_form';
-import NewsFeedForm from './news_feed_form';
+import PostForm from '../posts/post_form';
 import NewsFeedContainer from './news_feed_container';
 
 class Main extends React.Component {
@@ -20,7 +20,7 @@ class Main extends React.Component {
     if(this.props.currentUser) {
       return (
         <div className="news-feed">
-          <NewsFeedForm
+          <PostForm
             currentUser={ this.props.currentUser }
             createPost={ this.props.createPost }
             createPostPicture={ this.props.createPostPicture }/>

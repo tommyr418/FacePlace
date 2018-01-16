@@ -2,13 +2,13 @@ import React from 'react';
 
 import PostPicture from './post_picture';
 
-class NewsFeedForm extends React.Component {
+class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
-      wall_id: this.props.currentUser.id,
+      wall_id: this.props.user ? this.props.user.id : this.props.currentUser.id,
       modalOpen: false,
     };
     this.handleFocus = this.handleFocus.bind(this);
@@ -117,4 +117,4 @@ class NewsFeedForm extends React.Component {
   }
 }
 
-export default NewsFeedForm;
+export default PostForm;

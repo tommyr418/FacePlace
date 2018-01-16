@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PostPicture from '../../main/post_picture';
+import PostPicture from '../../posts/post_picture';
 
 class TimelineForm extends React.Component {
   constructor(props) {
