@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      render partial: '/api/posts/post', locals: { post: @comment.post }
+      render :show
     else
       render json: @comment.errors.full_messages, status: 422
     end

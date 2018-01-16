@@ -13,7 +13,7 @@ const Comments = ({ postId, users, posts, comments }) => {
           { comment.body }
         </p>
       </div>
-    )
+    );
   });
 
   return (

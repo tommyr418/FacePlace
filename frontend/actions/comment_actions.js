@@ -1,7 +1,14 @@
 import * as CommentApiUtil from '../util/comment_api_util';
-import { receivePost } from './post_actions';
 
+export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS";
+
+export const receiveComment = data => (
+  {
+    type: RECEIVE_COMMENT,
+    data
+  }
+);
 
 export const receiveCommentErrors = errors => (
   {
@@ -12,7 +19,7 @@ export const receiveCommentErrors = errors => (
 
 export const postComment = comment => dispatch => (
   CommentApiUtil.createComment(comment).then(
-    data => dispatch(receivePost(data)),
+    data => dispatch(receiveComment(data)),
     errors => dispatch(receiveCommentErrors(errors))
   )
 );
