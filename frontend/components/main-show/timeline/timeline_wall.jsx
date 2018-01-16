@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TimelineForm from './timeline_form';
+import PostForm from '../../posts/post_form';
 
 class TimelineWall extends React.Component {
   constructor(props) {
@@ -114,7 +114,7 @@ class TimelineWall extends React.Component {
     return (
       <div>
         <div className="post-form">
-          <TimelineForm
+          <PostForm
             currentUser={ this.props.currentUser }
             user={ this.props.user }
             createPost={ this.props.createPost }
