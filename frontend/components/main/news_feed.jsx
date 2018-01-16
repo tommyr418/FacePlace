@@ -20,6 +20,22 @@ class NewsFeed extends React.Component {
     );
   }
 
+  componentWillReceiveProps(newProps) {
+    const postsIds = Object.keys(newProps.posts).map((id) => {
+      return parseInt(id);
+    });
+    let needUpdate = false;
+    for (var i = 0; i < this.props.currentUser.news_feed.length; i++) {
+      if(!postsIds.includes(this.props.currentUser.news_feed[i])) {
+        needUpdate = true;
+        break;
+      }
+    }
+    if (needUpdate) {
+      this.props.fetchNewsFeed();
+    }
+  }
+
   mapPosts(postId) {
     const post = this.props.posts[postId];
     const authorId = this.props.posts[postId].author_id;
@@ -83,6 +99,10 @@ class NewsFeed extends React.Component {
 
   render() {
     if (this.state.loading) {
+      return null;
+    }
+
+    if(Object.keys(this.props.posts).length === 0) {
       return null;
     }
 
