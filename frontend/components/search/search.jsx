@@ -33,6 +33,8 @@ class Search extends React.Component {
       return null;
     }
 
+    //search slice of state will have a key of completed: true
+    //if search was executed
     if (Object.keys(this.props.search).length === 1) {
       return (
         <div className="search">
