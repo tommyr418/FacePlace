@@ -27,8 +27,13 @@ button:focus {
   outline: none;
 }
 
+input {
+  border-width: 0px;
+}
+
 button {
   border-radius: 0;
+  border-width: 0px;
 }
 
 img {

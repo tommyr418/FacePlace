@@ -194,20 +194,23 @@
 .post-comment-form {
   padding: 12px 8px;
   height: 27px;
-  background-color: #f6f7f9;
+  background-color: #f2f3f5;
   display: flex;
   align-items: center;
 }
 
 .post-comment-form input{
   margin-left: 8px;
-  height: 30px;
-  width: 298px;
+  height: 32px;
+  width: 278px;
   border-top: 1px solid #dddfe2;
   border-left: 1px solid #dddfe2;
   border-bottom: 1px solid #dddfe2;
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
+  font-size: 14px;
+  padding: 0 10px;
+  vertical-align: middle;
 }
 
 .post-comment-form button {
