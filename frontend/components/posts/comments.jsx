@@ -6,9 +6,9 @@ const Comments = ({ postId, users, posts, comments }) => {
     const authorId = comment.author_id;
 
     return (
-      <div className="comment"
+      <div className="comment-item"
         key={ commentId }>
-        <img src={ users[authorId].image_url }/>
+        <img id="comment-item-pic" src={ users[authorId].image_url }/>
         <p>
           { comment.body }
         </p>
