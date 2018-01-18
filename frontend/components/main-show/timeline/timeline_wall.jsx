@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import PostForm from '../../posts/post_form';
+import Comments from '../../posts/comments';
+import CommentForm from '../../posts/comment_form';
 
 class TimelineWall extends React.Component {
   constructor(props) {
@@ -80,20 +83,16 @@ class TimelineWall extends React.Component {
           </a>
         </div>
 
-        <div className="post-comment-form">
-          <img id="comment-pic"
-            src={ this.props.currentUser.image_url }/>
-          <form>
-            <div>
-              <input>
+        <Comments
+          postId={ postId }
+          users={ this.props.users }
+          posts={ this.props.posts }
+          comments={ this.props.comments }/>
 
-              </input>
-              <button>
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
+        <CommentForm
+          postId={ postId }
+          currentUser={ this.props.currentUser }
+          postComment={ this.props.postComment }/>
       </div>
     );
   }
