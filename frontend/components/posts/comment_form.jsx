@@ -31,7 +31,8 @@
            src={ this.props.currentUser.image_url }/>
          <form onSubmit={ this.handleSubmit }>
            <div>
-             <input onChange={ this.handleInputChange }></input>
+             <input onChange={ this.handleInputChange }
+               id={ `comment-input-${this.props.postId}` }></input>
              <button>
                Submit
              </button>

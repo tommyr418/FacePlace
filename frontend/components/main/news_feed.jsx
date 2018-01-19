@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Comments from '../posts/comments';
 import CommentForm from '../posts/comment_form';
+import PostLinks from '../posts/post_links';
 
 class NewsFeed extends React.Component {
   constructor(props) {
@@ -66,17 +67,8 @@ class NewsFeed extends React.Component {
           {post.image_url ? <img src={ post.image_url }/> : null}
         </div>
 
-        <div className="post-links">
-          <a>
-            <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-            Like
-          </a>
-
-          <a>
-            <i className="fa fa-comment-o" aria-hidden="true"></i>
-            Comment
-          </a>
-        </div>
+        <PostLinks
+          postId={ postId }/>
 
         <Comments
           postId={ postId }
