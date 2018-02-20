@@ -290,6 +290,20 @@ footer i {
 
 #my-links {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
   top: 55px;
   left: 10%;
+}
+
+#my-links a {
+  text-decoration: none;
+  color: #22253C;
+  cursor: pointer;
+}
+
+#my-links i {
+  margin-right: 5px;
 }
