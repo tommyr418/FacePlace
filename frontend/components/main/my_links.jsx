@@ -20,6 +20,12 @@ const MyLinks = () => (
         <i className="fa fa-angellist" aria-hidden="true"></i>
         <span className="label">AngelList</span>
       </a>
+
+      <a href="http://tommyren.me"
+        target="_blank">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <span className="label">Portfolio</span>
+      </a>
   </div>
 );
 
