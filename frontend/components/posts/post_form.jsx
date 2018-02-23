@@ -39,6 +39,7 @@ class PostForm extends React.Component {
     e.currentTarget.children[1].children[1].value
       = e.currentTarget.children[1].children[1].defaultValue;
     e.currentTarget.children[1].children[1].style.color = "#a6a6a6";
+    e.currentTarget.children[1].children[1].blur();
     this.props.createPost(post).then(
       () => {
         this.setState({

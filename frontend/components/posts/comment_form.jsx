@@ -10,6 +10,8 @@
      };
      this.handleInputChange = this.handleInputChange.bind(this);
      this.handleSubmit = this.handleSubmit.bind(this);
+     this.handleFocus = this.handleFocus.bind(this);
+     this.handleBlur = this.handleBlur.bind(this);
    }
 
    handleInputChange(e){
@@ -18,10 +20,34 @@
      });
    }
 
+   handleFocus(e) {
+     if (e.currentTarget.value === e.currentTarget.defaultValue) {
+       e.currentTarget.value = "";
+       e.currentTarget.style.color = "#333";
+     }
+   }
+
+   handleBlur(e) {
+     if (e.currentTarget.value === "") {
+       e.currentTarget.style.color = "#a6a6a6";
+       e.currentTarget.value = e.currentTarget.defaultValue;
+     }
+   }
+
    handleSubmit(e) {
      e.preventDefault();
      const comment = Object.assign({}, this.state);
-     this.props.postComment(comment);
+     e.currentTarget.children[0].children[0].value
+       = e.currentTarget.children[0].children[0].defaultValue;
+     e.currentTarget.children[0].children[0].style.color = "#a6a6a6";
+     e.currentTarget.children[0].children[0].blur();
+     this.props.postComment(comment).then(
+       () => {
+         this.setState({
+           body: "",
+         });
+       }
+     );
    }
 
    render() {
@@ -32,7 +58,10 @@
          <form onSubmit={ this.handleSubmit }>
            <div>
              <input onChange={ this.handleInputChange }
-               id={ `comment-input-${this.props.postId}` }></input>
+               id={ `comment-input-${this.props.postId}` }
+               defaultValue="Write a comment..."
+               onFocus={ this.handleFocus }
+               onBlur={ this.handleBlur }></input>
              <button>
                Submit
              </button>
