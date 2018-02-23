@@ -13,6 +13,8 @@ class PostPicture extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleFile(e) {
@@ -47,6 +49,20 @@ class PostPicture extends React.Component {
     });
   }
 
+  handleFocus(e) {
+    if (e.currentTarget.value === e.currentTarget.defaultValue) {
+      e.currentTarget.value = "";
+      e.currentTarget.style.color = "#333";
+    }
+  }
+
+  handleBlur(e) {
+    if (e.currentTarget.value === "") {
+      e.currentTarget.style.color = "#a6a6a6";
+      e.currentTarget.value = e.currentTarget.defaultValue;
+    }
+  }
+
   render() {
     return (
       <form id="picture-upload"
@@ -57,7 +73,10 @@ class PostPicture extends React.Component {
         </input>
         <img src={ this.state.imageUrl }/>
         <input type="text"
-          onChange={ this.handleInputChange }></input>
+          onChange={ this.handleInputChange }
+          defaultValue="Write a caption..."
+          onFocus={ this.handleFocus }
+          onBlur={ this.handleBlur }></input>
         <button className="submit">Submit</button>
       </form>
     );
