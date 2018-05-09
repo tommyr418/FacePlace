@@ -4,7 +4,7 @@ import ProfilesReducer from './profiles_reducer';
 import PostsReducer from './posts_reducer';
 import SearchReducer from './search_reducer';
 import CommentReducer from './comments_reducer';
-import NewsReducer from './new_reducer';
+import NewsReducer from './news_reducer';
 
 const EntitiesReducer = combineReducers({
   search: SearchReducer,
