@@ -6,6 +6,8 @@ import Root from './components/root';
 
 import { searchUsers } from './actions/user_actions';
 
+import { fetchCurrentNews } from './actions/news_actions';
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if(window.currentUser) {
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
+  window.fetchCurrentNews = fetchCurrentNews;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={ store } />, root);

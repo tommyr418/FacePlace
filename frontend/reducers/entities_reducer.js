@@ -4,6 +4,7 @@ import ProfilesReducer from './profiles_reducer';
 import PostsReducer from './posts_reducer';
 import SearchReducer from './search_reducer';
 import CommentReducer from './comments_reducer';
+import NewsReducer from './new_reducer';
 
 const EntitiesReducer = combineReducers({
   search: SearchReducer,
@@ -11,6 +12,7 @@ const EntitiesReducer = combineReducers({
   profiles: ProfilesReducer,
   users: UsersReducer,
   comments: CommentReducer,
+  news: NewsReducer,
 });
 
 export default EntitiesReducer;

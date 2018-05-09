@@ -23,7 +23,7 @@ const MyLinks = () => (
 
       <a href="http://tommyren.me"
         target="_blank">
-        <i class="fa fa-globe" aria-hidden="true"></i>
+        <i className="fa fa-globe" aria-hidden="true"></i>
         <span className="label">Portfolio</span>
       </a>
   </div>
