@@ -5,6 +5,7 @@ import SignupForm from './signup_form';
 import PostForm from '../posts/post_form';
 import NewsFeedContainer from './news_feed_container';
 import MyLinks from './my_links';
+import RecentNewsContainer from './recent_news_container';
 
 class Main extends React.Component {
   componentDidMount() {
