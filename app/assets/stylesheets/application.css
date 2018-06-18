@@ -304,6 +304,7 @@ footer i {
   cursor: pointer;
   border: 1px solid #e9ebee;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 #my-links a:hover {
@@ -326,4 +327,57 @@ footer i {
 .selected {
   font-weight: bold;
   background-color: #f6f7f9;
+}
+
+.trending {
+  margin-left: 10px;
+  padding: 10px;
+  width: 288px;
+  height: 450px;
+  background-color: #ffffff;
+  border: 1px solid #dddfe3;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trending ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  overflow: auto;
+}
+
+.trending a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #22253C;
+  display: flex;
+  flex-direction: column;
+}
+
+.trending li {
+  margin: 4px 0;
+}
+
+.news-source {
+  color: #90949c;
+}
+
+.trending-header {
+  color: #616770;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#news-api-credit {
+  display: flex;
+  font-size: 14px;
+  color: #90949c;
+}
+
+#news-api-credit a {
+  margin-left: 5px;
 }

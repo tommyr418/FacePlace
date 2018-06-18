@@ -18,8 +18,33 @@ class RecentNews extends React.Component {
     );
   }
   render() {
+    if (this.state.loading) {
+      return null;
+    }
+
+    const articleLinks = this.props.news.articles.map((article, index) => {
+      return (
+        <li key={ index }>
+          <a href= {article.url } target="_blank">
+            <span>{ article.title }</span>
+            <span className='news-source' >{ article.source.name }</span>
+          </a>
+        </li>
+      );
+    });
+
     return (
-      <div>
+      <div className="trending">
+        <span className="trending-header">Trending News</span>
+
+        <ul className='trending-list'>
+          { articleLinks }
+        </ul>
+
+        <div id="news-api-credit">
+          <span>Powered by</span>
+          <a href="https://newsapi.org/" target="_blank">News Api</a>
+        </div>
       </div>
     );
   }
