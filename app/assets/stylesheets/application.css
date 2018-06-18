@@ -48,8 +48,7 @@ img {
 
 .news-feed {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   padding-top: 50px;
 }
 
@@ -288,13 +287,10 @@ footer i {
 }
 
 #my-links {
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px;
-  top: 55px;
-  left: 10%;
+  height: 150px;
 }
 
 #my-links a {
@@ -302,6 +298,8 @@ footer i {
   color: #22253C;
   cursor: pointer;
 }
+
+
 
 #my-links i {
   margin-right: 5px;

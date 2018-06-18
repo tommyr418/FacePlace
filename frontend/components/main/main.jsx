@@ -23,12 +23,17 @@ class Main extends React.Component {
       return (
         <div className="news-feed">
           <MyLinks />
-          <PostForm
-            currentUser={ this.props.currentUser }
-            createPost={ this.props.createPost }
-            createPostPicture={ this.props.createPostPicture }/>
 
-          <NewsFeedContainer />
+          <div>
+            <PostForm
+              currentUser={ this.props.currentUser }
+              createPost={ this.props.createPost }
+              createPostPicture={ this.props.createPostPicture }/>
+
+            <NewsFeedContainer />
+          </div>
+
+          <RecentNewsContainer />
         </div>
       );
     } else {
