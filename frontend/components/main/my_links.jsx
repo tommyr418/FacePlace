@@ -1,11 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const MyLinks = () => (
+const MyLinks = ({ currentUser }) => (
   <div id="my-links">
-    <div>
-      <span>Tommy Ren</span>
-    </div>
-    
+    <Link to={`/users/${ currentUser.id }`}>
+      <div id="header-image">
+        <img src={ currentUser.image_url }/>
+      </div>
+      <span>{ currentUser.fname } { currentUser.lname}</span>
+    </Link>
+
+    <a className="selected">
+      <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+      <span>News Feed</span>
+    </a>
+
+    <span className="links-header">About Tommy Ren</span>
+
     <a href="https://github.com/tommyr418"
       target="_blank">
       <i className="fa fa-github" aria-hidden="true"></i>

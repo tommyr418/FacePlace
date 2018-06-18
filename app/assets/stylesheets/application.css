@@ -290,17 +290,40 @@ footer i {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 150px;
+  height: 210px;
+  margin-right: 10px;
 }
 
 #my-links a {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 186px;
   text-decoration: none;
   color: #22253C;
   cursor: pointer;
+  border: 1px solid #e9ebee;
+  border-radius: 3px;
 }
 
-
+#my-links a:hover {
+  background-color: #f6f7f9;
+  border-color: #dddfe3;
+}
 
 #my-links i {
   margin-right: 5px;
+  font-size: 25px;
+}
+
+.links-header {
+  color: #616770;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.selected {
+  font-weight: bold;
+  background-color: #f6f7f9;
 }

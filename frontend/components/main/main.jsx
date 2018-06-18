@@ -22,7 +22,7 @@ class Main extends React.Component {
     if(this.props.currentUser) {
       return (
         <div className="news-feed">
-          <MyLinks />
+          <MyLinks currentUser={ this.props.currentUser }/>
 
           <div>
             <PostForm
