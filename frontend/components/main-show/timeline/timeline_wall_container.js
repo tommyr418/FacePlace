@@ -4,6 +4,7 @@ import TimelineWall from './timeline_wall';
 import { fetchWallPosts } from '../../../actions/post_actions';
 import { requestUser } from '../../../actions/user_actions';
 import { createPost, createPostPicture } from '../../../actions/post_actions';
+import { postComment } from '../../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     requestUser: userId => dispatch(requestUser(userId)),
     createPost: post => dispatch(createPost(post)),
     createPostPicture: formData => dispatch(createPostPicture(formData)),
+    postComment: (comment) => dispatch(postComment(comment)),
   };
 };
 
