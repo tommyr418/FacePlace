@@ -1,4 +1,5 @@
 import React from 'react';
+import { RingLoader } from 'react-spinners';
 
 class RecentNews extends React.Component {
   constructor(props) {
@@ -19,7 +20,11 @@ class RecentNews extends React.Component {
   }
   render() {
     if (this.state.loading) {
-      return null;
+      return (
+        <div className='trending'>
+          <RingLoader />
+        </div>
+      );
     }
 
     const articleLinks = this.props.news.articles.map((article, index) => {
