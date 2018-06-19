@@ -381,3 +381,9 @@ footer i {
 #news-api-credit a {
   margin-left: 5px;
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

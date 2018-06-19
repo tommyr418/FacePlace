@@ -21,7 +21,7 @@ class RecentNews extends React.Component {
   render() {
     if (this.state.loading) {
       return (
-        <div className='trending'>
+        <div className="trending spinner">
           <RingLoader />
         </div>
       );
