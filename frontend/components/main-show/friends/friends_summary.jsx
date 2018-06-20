@@ -64,3 +64,5 @@ class FriendsSummary extends React.Component {
     );
   }
 }
+
+export default FriendsSummary;
