@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { RingLoader } from 'react-spinners';
 
 class Friends extends React.Component {
   constructor(props) {
@@ -21,11 +22,19 @@ class Friends extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return null;
+      return (
+        <div className="content-pane spinner">
+          <RingLoader />
+        </div>
+      );
     }
 
     if(!this.props.user || !this.props.user.friends) {
-      return null;
+      return (
+        <div className="content-pane spinner">
+          <RingLoader />
+        </div>
+      );
     }
 
     const friends = this.props.user.friends.map((friendId) => {
