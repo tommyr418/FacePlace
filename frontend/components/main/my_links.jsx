@@ -15,6 +15,18 @@ const MyLinks = ({ currentUser }) => (
       <span>News Feed</span>
     </a>
 
+    <a>
+      <span>Timeline</span>
+    </a>
+
+    <a>
+      <span>Profile</span>
+    </a>
+
+    <a>
+      <span>Friends</span>
+    </a>
+
     <span className="links-header">About Tommy Ren</span>
 
     <a href="https://github.com/tommyr418"
