@@ -387,3 +387,24 @@ footer i {
   justify-content: center;
   align-items: center;
 }
+
+#friends-summary {
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+  background-color: #ffffff;
+  border: 1px solid #dddfe2;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#friends-summary ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#friends-summary img {
+  width: 101px;
+  height: 101px;
+}

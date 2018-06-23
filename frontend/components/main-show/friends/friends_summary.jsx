@@ -37,7 +37,7 @@ class FriendsSummary extends React.Component {
       );
     }
 
-    const friends = this.props.user.friends.map((friendId) => {
+    const friends = this.props.user.friends.slice(0,9).map((friendId) => {
       const friend = this.props.users[friendId];
       return (
         <li key={ friendId }>

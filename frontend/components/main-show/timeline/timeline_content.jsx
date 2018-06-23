@@ -7,10 +7,12 @@ import FriendsSummaryContainer from '../friends/friends_summary_container';
 
 const TimelineContent = () => (
   <div id="timeline-content">
-    <Route exact path="/users/:userId"
-      component={ TimelineIntroContainer } />
-    <Route exact path="/users/:userId"
-      component={ FriendsSummaryContainer } />
+    <div id="timeline-left">
+      <Route exact path="/users/:userId"
+        component={ TimelineIntroContainer } />
+      <Route exact path="/users/:userId"
+        component={ FriendsSummaryContainer } />
+    </div>
     <Route exact path="/users/:userId"
       component={ TimelineWallContainer } />
   </div>
