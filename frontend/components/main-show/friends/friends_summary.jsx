@@ -41,9 +41,9 @@ class FriendsSummary extends React.Component {
       const friend = this.props.users[friendId];
       return (
         <li key={ friendId }>
-          <Link to={`/users/${friendId}`}>
+          <Link to={`/users/${friendId}`} className="friend-thumbnail">
             <img src={ friend.image_url } />
-            {friend.fname} {friend.lname}
+            <span>{friend.fname} {friend.lname}</span>
           </Link>
         </li>
       );

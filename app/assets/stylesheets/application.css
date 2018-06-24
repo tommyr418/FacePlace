@@ -395,10 +395,10 @@ footer i {
   background-color: #ffffff;
   border: 1px solid #dddfe2;
   border-radius: 2px;
-  overflow: hidden;
 }
 
 #friends-summary ul {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -407,4 +407,22 @@ footer i {
 #friends-summary img {
   width: 101px;
   height: 101px;
+}
+
+#friends-summary li {
+  margin: none;
+  width: 101px;
+  height: 101px;
+}
+
+.friend-thumbnail {
+  width: 101px;
+  height: 101px;
+  position: relative;
+}
+
+.friend-thumbnail span {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
 }
