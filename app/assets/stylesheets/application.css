@@ -396,12 +396,16 @@ footer i {
   background-color: #ffffff;
   border: 1px solid #dddfe2;
   border-radius: 2px;
+  margin-top: 12px;
 }
 
 #friends-summary ul {
-  display: flex;
   list-style: none;
-  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  margin: 8px;
   padding: 0;
 }
 
