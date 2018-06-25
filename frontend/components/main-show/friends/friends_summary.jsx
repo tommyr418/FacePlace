@@ -60,6 +60,10 @@ class FriendsSummary extends React.Component {
         <ul>
           { friends }
         </ul>
+
+        <Link to={ `/users/${ this.props.user.id }/friends` }>
+          <span>See All Friends</span>
+        </Link>
       </div>
     );
   }
