@@ -15,17 +15,20 @@ const MyLinks = ({ currentUser }) => (
       <span>News Feed</span>
     </a>
 
-    <a>
+    <Link to={ `/users/${ currentUser.id }` }>
+      <i className="fa fa-calendar" aria-hidden="true"></i>
       <span>Timeline</span>
-    </a>
+    </Link>
 
-    <a>
+    <Link to={ `/users/${ currentUser.id }/about` }>
+      <i className="fa fa-user-circle" aria-hidden="true"></i>
       <span>Profile</span>
-    </a>
+    </Link>
 
-    <a>
+    <Link to={ `/users/${ currentUser.id }/friends` }>
+      <i className="fa fa-users" aria-hidden="true"></i>
       <span>Friends</span>
-    </a>
+    </Link>
 
     <span className="links-header">About Tommy Ren</span>
 
