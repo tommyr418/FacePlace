@@ -37,7 +37,7 @@ class Friends extends React.Component {
       );
     }
 
-    const friends = this.props.user.friends.map((friendId) => {
+    let friends = this.props.user.friends.map((friendId) => {
       const friend = this.props.users[friendId];
       return (
         <li key={ friendId }>
@@ -48,6 +48,11 @@ class Friends extends React.Component {
         </li>
       );
     });
+
+    if (this.props.match.path === "/users/:userId/about") {
+      friends = friends.slice(0,8);
+    }
+
     return (
       <div className="content-pane">
         <div className="content-title">
@@ -59,6 +64,15 @@ class Friends extends React.Component {
             { friends }
           </ul>
         </div>
+
+        { this.props.match.path === "/users/:userId/about" ?
+          <Link to={ `/users/${ this.props.user.id }/friends` }
+            id="link-to-friends">
+            <span>See All Friends</span>
+          </Link>
+          :
+          null
+        }
       </div>
     );
   }
