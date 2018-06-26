@@ -430,4 +430,15 @@ footer i {
   position: absolute;
   bottom: 2px;
   left: 2px;
+  color: #22253C;
+}
+
+#link-to-friends {
+  color: #22253C;
+  text-decoration: none;
+  margin: 0 12px;
+  padding: 12px 0;
+  border-top: 1px solid #dddfe2;
+  display: flex;
+  justify-content: center;
 }

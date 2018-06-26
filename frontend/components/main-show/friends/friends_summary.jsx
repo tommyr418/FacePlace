@@ -61,7 +61,8 @@ class FriendsSummary extends React.Component {
           { friends }
         </ul>
 
-        <Link to={ `/users/${ this.props.user.id }/friends` }>
+        <Link to={ `/users/${ this.props.user.id }/friends` }
+          id="link-to-friends">
           <span>See All Friends</span>
         </Link>
       </div>
