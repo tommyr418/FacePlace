@@ -22,6 +22,7 @@ class Post < ApplicationRecord
   belongs_to :author, foreign_key: :author_id, class_name: :User
   belongs_to :users_wall, foreign_key: :wall_id, class_name: :User
   has_many :comments
+  has_many :likes, as: :likable
 
   has_attached_file :image, default_url: ""
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

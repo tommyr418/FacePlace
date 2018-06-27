@@ -32,6 +32,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :profiles
+  has_many :likes
 
   has_many :outgoing_requests,
            foreign_key: :requester_id,
