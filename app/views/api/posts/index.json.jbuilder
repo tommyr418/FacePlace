@@ -13,6 +13,7 @@ json.comments do
   comments.each do |comment|
     json.set! comment.id.to_s.to_sym do
       json.extract! comment, :id, :author_id, :post_id, :body
+      json.likes comment.likes.pluck(:user_id)
     end
   end
 end
