@@ -38,3 +38,17 @@ export const likeComment = like => dispatch => (
     errors => dispatch(receiveLikeErrors(errors))
   )
 );
+
+export const unlikePost = postId => dispatch => (
+  LikeApiUtil.unlikePost(postId).then(
+    data => dispatch(receivePostLike(data)),
+    errors => dispatch(receiveLikeErrors(errors))
+  )
+);
+
+export const unlikeComment = commentId => dispatch => (
+  LikeApiUtil.unlikeComment(commentId).then(
+    data => dispatch(receiveCommentLike(data)),
+    errors => dispatch(receiveLikeErrors(errors))
+  )
+);
