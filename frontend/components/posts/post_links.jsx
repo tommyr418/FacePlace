@@ -56,8 +56,15 @@ class PostLinks extends React.Component {
             <span>
               { this.state.currentUserLikes ?
               "You " : null }
-              { this.state.currentUserLikes && this.state.likesLength > 1}
-              like this post
+              { this.state.currentUserLikes && this.state.likesLength > 1 ?
+                "and " : null}
+              { this.state.currentUserLikes && this.state.likesLength > 1 ?
+                <a>{ this.state.likesLength - 1 }
+                  { this.state.likesLength > 2 ? "people " : "person "}</a> : null}
+              { !this.state.currentUserLikes && this.state.likesLength >= 1 ?
+                <a>{ this.state.likesLength }
+                  { this.state.likesLength > 1 ? "people " : "person "}</a> : null}
+              liked this post
             </span>
           </div>
         }
