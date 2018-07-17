@@ -1,6 +1,8 @@
 class Api::LikesController < ApplicationController
+  before_action :find_likable
+
   def create
-    @like = Like.new(like_params)
+    @like = @likable.likes.new(like_params)
 
     if @like.save
       render :show
@@ -23,5 +25,10 @@ class Api::LikesController < ApplicationController
 
   def like_params
     params.require(:like).permit(:user_id, :likable_id, :likable_type)
+  end
+
+  def find_likable
+    @klass = params[:like][:likable_type].capitalize.constantize
+    @likable = @klass.find(params[:like][:likable_id])
   end
 end

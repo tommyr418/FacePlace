@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Comments from '../posts/comments';
 import CommentForm from '../posts/comment_form';
-import PostLinks from '../posts/post_links';
+import PostLinksContainer from '../posts/post_links_container';
 
 class NewsFeed extends React.Component {
   constructor(props) {
@@ -67,7 +67,7 @@ class NewsFeed extends React.Component {
           {post.image_url ? <img src={ post.image_url }/> : null}
         </div>
 
-        <PostLinks
+        <PostLinksContainer
           postId={ postId }/>
 
         <Comments
