@@ -6,6 +6,7 @@ import PostLinks from './post_links';
 const mapStateToProps = (state, ownProps) => {
   return {
     postId: ownProps.postId,
+    post: state.entities.posts[ownProps.postId],
     currentUser: state.session.currentUser
   };
 };
