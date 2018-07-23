@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TimelineIntro extends React.Component {
   render () {
@@ -32,6 +33,9 @@ class TimelineIntro extends React.Component {
       );
     });
 
+    if(this.props.currentUser.id !== this.props.userId && overview.length === 0) {
+      return null;
+    }
 
     return (
       <div id="timeline-intro">
@@ -42,9 +46,16 @@ class TimelineIntro extends React.Component {
           <span>Intro</span>
         </div>
 
-        <ul>
-          {overview}
-        </ul>
+        {
+          this.props.userId === this.props.currentUser.id
+          && overview.length === 0 ?
+          <Link to={ `/users/${this.props.currentUser.id}/about` }>
+          Add some information about yourself</Link>
+          :
+          <ul>
+            {overview}
+          </ul>
+        }
       </div>
     );
   }

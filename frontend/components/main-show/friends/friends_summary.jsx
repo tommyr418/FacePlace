@@ -20,6 +20,26 @@ class FriendsSummary extends React.Component {
     );
   }
 
+  componentWillReceiveProps(newProps) {
+    if(!this.props.user.friends) {
+      return;
+    }
+
+    const friendIds = Object.keys(newProps.users).map((id) => {
+      return parseInt(id);
+    });
+    let needUpdate = false;
+    for (var i = 0; i < this.props.user.friends.length; i++) {
+      if(!friendIds.includes(this.props.user.friends[i])) {
+        needUpdate = true;
+        break;
+      }
+    }
+    if (needUpdate) {
+      this.props.fetchFriends(this.props.userId);
+    }
+  }
+
   render() {
     if (this.state.loading) {
       return (
