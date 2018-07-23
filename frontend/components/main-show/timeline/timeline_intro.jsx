@@ -33,9 +33,11 @@ class TimelineIntro extends React.Component {
       );
     });
 
-    if(this.props.currentUser.id !== this.props.userId && overview.length === 0) {
+    if (this.props.currentUser.id !== this.props.user.id
+      && overview.length === 0) {
       return null;
     }
+
 
     return (
       <div id="timeline-intro">
@@ -47,7 +49,7 @@ class TimelineIntro extends React.Component {
         </div>
 
         {
-          this.props.userId === this.props.currentUser.id
+          this.props.user.id === this.props.currentUser.id
           && overview.length === 0 ?
           <Link to={ `/users/${this.props.currentUser.id}/about` }>
           Add some information about yourself</Link>
