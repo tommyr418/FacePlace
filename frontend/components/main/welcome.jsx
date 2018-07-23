@@ -4,6 +4,7 @@ class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.handleHomer = this.handleHomer.bind(this);
+    this.handleJon = this.handleJon.bind(this);
   }
 
   handleHomer(e){
@@ -12,6 +13,16 @@ class Welcome extends React.Component {
     const user = {
       email: "homer@yahoo.com",
       password: "homersimpson",
+    };
+    this.props.login(user);
+  }
+
+  handleJon(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const user = {
+      email: "jon@yahoo.com",
+      password: "jontargaryen",
     };
     this.props.login(user);
   }
@@ -45,7 +56,7 @@ class Welcome extends React.Component {
           <button
             onClick={ this.handleHomer }>I am Homer Simpson</button>
           <button
-            onClick={ this.handleJohn }>I Know Nothing</button>
+            onClick={ this.handleJon }>I Know Nothing</button>
         </div>
       </div>
     );
