@@ -12,6 +12,8 @@ class MainHeader extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
   }
 
   handleSubmit(e) {
@@ -20,7 +22,7 @@ class MainHeader extends React.Component {
     if(this.state.search === "") {
       return;
     }
-    
+
     this.props.history.push(`/search/users?search=${this.state.search.split(' ').join('_')}`);
     e.currentTarget.children[0].value = ""
     this.setState({
@@ -34,6 +36,18 @@ class MainHeader extends React.Component {
     });
   }
 
+  handleFocus(e) {
+    if (e.currentTarget.value === e.currentTarget.defaultValue) {
+      e.currentTarget.value = "";
+    }
+  }
+
+  handleBlur(e) {
+    if (e.currentTarget.value === "") {
+      e.currentTarget.value = e.currentTarget.defaultValue;
+    }
+  }
+
   render () {
     if(this.props.currentUser){
       return (
@@ -42,7 +56,11 @@ class MainHeader extends React.Component {
             <a href="/"><div id="logo">fP</div></a>
             <form onSubmit={ this.handleSubmit }>
               <input type="text" id="search-bar"
-                onChange={ this.handleChange }></input>
+                onChange={ this.handleChange }
+                defaultValue="Search here for Simpsons, Game of Thrones characters"
+                onBlur={ this.handleBlur }
+                onFocus={ this.handleFocus }>
+              </input>
               <button>
                 <i className="fa fa-search" aria-hidden="true"></i>
               </button>
