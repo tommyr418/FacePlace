@@ -172,3 +172,9 @@ Post.create(author_id: f6.id, wall_id: u3.id, body: "gonna be out from work boss
   person = User.all.sample
   Post.create(author_id: person.id, wall_id: person.friends.sample, body: Faker::Simpsons.quote)
 end
+
+50.times do |num|
+  person = User.all.sample
+  post = Post.all.sample
+  Like.create(user_id: person.id, likable_id: post.id, likable_type: "Post")
+end
