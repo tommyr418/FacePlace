@@ -39,11 +39,13 @@ class Welcome extends React.Component {
           <h3>of what you're looking for with FacePlace Search.</h3>
         </div>
 
+        <h2>Explore without creating an account now!</h2>
+
         <div id="demo-buttons">
           <button
-            onClick={ this.handleHomer }>Log In As Homer Simpson</button>
+            onClick={ this.handleHomer }>I am Homer Simpson</button>
           <button
-            onClick={ this.handleJohn }>Log In As Jon Snow</button>
+            onClick={ this.handleJohn }>I Know Nothing</button>
         </div>
       </div>
     );
