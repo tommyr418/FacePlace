@@ -1,27 +1,53 @@
 import React from 'react';
 
-const Welcome = () => (
-  <div id="main-front-left">
-    <h1>Connect with friends and the world around you on FacePlace.</h1>
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleHomer = this.handleHomer.bind(this);
+  }
 
-    <div>
-      <i className="fa fa-newspaper-o" aria-hidden="true"></i>
-      <h2>See photos and updates</h2>
-      <h3>from friends in News Feed.</h3>
-    </div>
+  handleHomer(e){
+    e.preventDefault();
+    e.stopPropagation();
+    const user = {
+      email: "homer@yahoo.com",
+      password: "homersimpson",
+    };
+    this.props.login(user);
+  }
 
-    <div>
-      <i className="fa fa-desktop" aria-hidden="true"></i>
-      <h2>Share what's new</h2>
-      <h3>in your life on your Timeline.</h3>
-    </div>
+  render() {
+    return (
+      <div id="main-front-left">
+        <h1>Connect with friends and the world around you on FacePlace.</h1>
 
-    <div>
-      <i className="fa fa-share-alt" aria-hidden="true"></i>
-      <h2>Find more</h2>
-      <h3>of what you're looking for with FacePlace Search.</h3>
-    </div>
-  </div>
-);
+        <div>
+          <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+          <h2>See photos and updates</h2>
+          <h3>from friends in News Feed.</h3>
+        </div>
+
+        <div>
+          <i className="fa fa-desktop" aria-hidden="true"></i>
+          <h2>Share what's new</h2>
+          <h3>in your life on your Timeline.</h3>
+        </div>
+
+        <div>
+          <i className="fa fa-share-alt" aria-hidden="true"></i>
+          <h2>Find more</h2>
+          <h3>of what you're looking for with FacePlace Search.</h3>
+        </div>
+
+        <div id="demo-buttons">
+          <button
+            onClick={ this.handleHomer }>Log In As Homer Simpson</button>
+          <button
+            onClick={ this.handleJohn }>Log In As Jon Snow</button>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Welcome;

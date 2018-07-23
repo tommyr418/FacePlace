@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Welcome from './welcome';
+import WelcomeContainer from './welcome_container';
 import SignupForm from './signup_form';
 import PostForm from '../posts/post_form';
 import NewsFeedContainer from './news_feed_container';
@@ -39,7 +39,7 @@ class Main extends React.Component {
     } else {
       return (
         <div className="main">
-          <Welcome />
+          <WelcomeContainer />
 
           <SignupForm signup={ this.props.signup }
             errors={ this.props.errors }/>
