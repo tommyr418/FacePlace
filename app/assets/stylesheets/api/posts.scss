@@ -157,6 +157,7 @@
   align-items: flex-start;
   padding: 12px 12px 0 12px;
   color: #aaa;
+  position: relative;
 }
 
 .post-header a {
@@ -236,6 +237,14 @@
   border-top-right-radius: 32px;
   border-bottom-right-radius: 32px;
   cursor: pointer;
+}
+
+.timestamp {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  font-size: 12px;
+  color: #616870;
 }
 
 #comment-pic {

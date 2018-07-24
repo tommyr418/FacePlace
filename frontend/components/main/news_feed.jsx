@@ -51,19 +51,19 @@ class NewsFeed extends React.Component {
     let timeString;
 
     if (timeDifference < 60000) {
-      timeString = Math.floor(timeDifference / 1000) + " s";
+      timeString = Math.floor(timeDifference / 1000) + "s";
     } else if (timeDifference < 3600000) {
-      timeString = Math.floor(timeDifference / 60000) + " m";
+      timeString = Math.floor(timeDifference / 60000) + "m";
     } else if (timeDifference < 86400000) {
-      timeString = Math.floor(timeDifference / 3600000) + " h";
+      timeString = Math.floor(timeDifference / 3600000) + "h";
     } else if (timeDifference < 604800000) {
-      timeString = Math.floor(timeDifference / 86400000) + " d";
+      timeString = Math.floor(timeDifference / 86400000) + "d";
     } else if (timeDifference < 2419200000) {
-      timeString = Math.floor(timeDifference / 604800000) + " w";
+      timeString = Math.floor(timeDifference / 604800000) + "w";
     } else if (timeDifference < 125798400000) {
-      timeString = Math.floor(timeDifference / 2419200000) + " m";
+      timeString = Math.floor(timeDifference / 2419200000) + "m";
     } else {
-      timeString = Math.floor(timeDifference / 125798400000) + " y";
+      timeString = Math.floor(timeDifference / 125798400000) + "y";
     }
 
     return (
@@ -80,7 +80,7 @@ class NewsFeed extends React.Component {
           <Link to={ `/users/${wall.id}` }>
             { wall.fname } { wall.lname }
           </Link>
-          <span>{ timeString }</span>
+          <span className="timestamp" >{ timeString }</span>
         </div>
 
         <div className="post-body">
