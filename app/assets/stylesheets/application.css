@@ -319,7 +319,7 @@ footer i {
 }
 
 .links-header {
-  color: #616770;
+  color: #4080ff;
   font-size: 13px;
   font-weight: bold;
   margin-top: 25px;
@@ -364,11 +364,11 @@ footer i {
 }
 
 .news-source {
-  color: #90949c;
+  color: #4080ff;
 }
 
 .trending-header {
-  color: #616770;
+  color: #4080ff;
   font-size: 13px;
   font-weight: bold;
 }
@@ -381,6 +381,7 @@ footer i {
 
 #news-api-credit a {
   margin-left: 5px;
+  color: #4080ff;
 }
 
 .spinner {
