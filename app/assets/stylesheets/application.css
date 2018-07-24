@@ -431,11 +431,12 @@ footer i {
   position: absolute;
   bottom: 2px;
   left: 2px;
-  color: #22253C;
+  color: #ffffff;
+  text-shadow: 1px 1px #1e212a;
 }
 
 #link-to-friends {
-  color: #22253C;
+  color: #4080ff;
   text-decoration: none;
   margin: 0 12px;
   padding: 12px 0;
