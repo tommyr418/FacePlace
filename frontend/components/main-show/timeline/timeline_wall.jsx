@@ -51,6 +51,26 @@ class TimelineWall extends React.Component {
     }
     const authorId = this.props.posts[postId].author_id;
     const author = this.props.users[authorId];
+    const timeStamp = Date.parse(this.props.posts[postId].created_at);
+    const timeDifference = Date.now() - timeStamp;
+    let timeString;
+
+    if (timeDifference < 60000) {
+      timeString = Math.floor(timeDifference / 1000) + " s";
+    } else if (timeDifference < 3600000) {
+      timeString = Math.floor(timeDifference / 60000) + " m";
+    } else if (timeDifference < 86400000) {
+      timeString = Math.floor(timeDifference / 3600000) + " h";
+    } else if (timeDifference < 604800000) {
+      timeString = Math.floor(timeDifference / 86400000) + " d";
+    } else if (timeDifference < 2419200000) {
+      timeString = Math.floor(timeDifference / 604800000) + " w";
+    } else if (timeDifference < 125798400000) {
+      timeString = Math.floor(timeDifference / 2419200000) + " m";
+    } else {
+      timeString = Math.floor(timeDifference / 125798400000) + " y";
+    }
+
     return (
       <div className="post"
         key={ postId }>
@@ -65,6 +85,7 @@ class TimelineWall extends React.Component {
           <Link to={ `/users/${this.props.user.id}` }>
             { this.props.user.fname } { this.props.user.lname }
           </Link>
+          <span>{ timeString }</span>
         </div>
 
         <div className="post-body">
