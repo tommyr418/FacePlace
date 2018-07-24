@@ -46,6 +46,7 @@ class NewsFeed extends React.Component {
     const author = this.props.users[authorId];
     const wallId = post.wall_id;
     const wall = this.props.users[wallId];
+    const timeStamp = this.props.posts[postId].created_at;
     return (
       <div className="post"
         key={ postId }>
