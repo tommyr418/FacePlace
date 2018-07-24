@@ -51,8 +51,13 @@ class TimelineIntro extends React.Component {
         {
           this.props.user.id === this.props.currentUser.id
           && overview.length === 0 ?
-          <Link to={ `/users/${this.props.currentUser.id}/about` }>
-          Add some information about yourself</Link>
+          <div id="timeline-link">
+            <span>Looks Like we don't know anything about you.</span>
+            <br/>
+            <Link to={ `/users/${this.props.currentUser.id}/about` }>
+              Add some imformation about yourself now!
+            </Link>
+          </div>
           :
           <ul>
             {overview}
