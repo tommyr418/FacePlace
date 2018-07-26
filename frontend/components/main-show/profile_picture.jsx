@@ -14,11 +14,9 @@ class ProfilePicture extends React.Component {
   }
 
   openModal() {
-    if(this.props.currentUser.id === this.props.user.id) {
-      this.setState({
-        modalOpen: true,
-      });
-    }
+    this.setState({
+      modalOpen: true,
+    });
   }
 
   closeModal(){
@@ -35,7 +33,8 @@ class ProfilePicture extends React.Component {
           onClick={ this.openModal }>
         </div>
 
-        { this.state.modalOpen ?
+        { this.props.currentUser.id === this.props.user.id ?
+          this.state.modalOpen &&
           <div className="modal">
             <div className="modal-content">
               <button onClick={ this.closeModal }
@@ -49,7 +48,17 @@ class ProfilePicture extends React.Component {
                 photoType="user[profile_pic]"/>
             </div>
           </div>
-          : ""}
+          :
+          this.state.modalOpen &&
+          <div className="modal">
+            <div className="modal-content">
+              <button onClick={ this.closeModal }
+                className="close">
+                close
+              </button>
+              <img src={ this.props.user.image_url }/>
+            </div>
+          </div> }
       </div>
     );
   }
