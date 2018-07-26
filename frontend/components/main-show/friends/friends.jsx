@@ -41,8 +41,8 @@ class Friends extends React.Component {
       const friend = this.props.users[friendId];
       return (
         <li key={ friendId }>
-          <img src={ friend.image_url } />
           <Link to={`/users/${friendId}`}>
+            <img src={ friend.image_url } />
             {friend.fname} {friend.lname}
           </Link>
         </li>
