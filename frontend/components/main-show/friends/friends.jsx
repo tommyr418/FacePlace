@@ -43,7 +43,7 @@ class Friends extends React.Component {
         <li key={ friendId }>
           <Link to={`/users/${friendId}`}>
             <img src={ friend.image_url } />
-            {friend.fname} {friend.lname}
+            <span>{friend.fname} {friend.lname}</span>
           </Link>
         </li>
       );
