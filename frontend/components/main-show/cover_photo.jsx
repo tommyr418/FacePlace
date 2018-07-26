@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import ProfilePicture from './profile_picture';
 import PictureUpload from './picture_upload';
@@ -52,18 +53,22 @@ class CoverPhoto extends React.Component {
       friendButton = "";
     } else if (this.props.currentUser.friends.includes(this.props.user.id)) {
       friendButton = (
-        <button id="add-friend-button">
-          <i className="fa fa-plus" aria-hidden="true"></i>
-          Friends
-        </button>
+        <Link to={ `/users/${this.props.currentUser.id}/friends` }>
+          <button id="add-friend-button">
+            <i className="fa fa-plus" aria-hidden="true"></i>
+            Friends
+          </button>
+        </Link>
       );
     } else if (this.props.currentUser.outgoingRequests
         .includes(this.props.user.id)) {
       friendButton = (
-        <button id="add-friend-button">
-          <i className="fa fa-plus" aria-hidden="true"></i>
-          Request Sent
-        </button>
+        <Link to={ `/users/${this.props.user.id}/friends` }>
+          <button id="add-friend-button">
+            <i className="fa fa-plus" aria-hidden="true"></i>
+            Request Sent
+          </button>
+        </Link>
       );
     } else {
       friendButton = (
