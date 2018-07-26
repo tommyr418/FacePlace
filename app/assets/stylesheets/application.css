@@ -162,6 +162,11 @@ img {
   border-radius: 2px;
 }
 
+.modal-content img {
+  height: 100%;
+  width: 100%;
+}
+
 .close {
   float: right;
   height: 22px;
