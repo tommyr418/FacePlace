@@ -21,7 +21,7 @@ class FriendsSummary extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if(!this.props.user.friends) {
+    if(!newProps.user.friends) {
       return;
     }
 
@@ -29,14 +29,23 @@ class FriendsSummary extends React.Component {
       return parseInt(id);
     });
     let needUpdate = false;
-    for (var i = 0; i < this.props.user.friends.length; i++) {
-      if(!friendIds.includes(this.props.user.friends[i])) {
+    for (var i = 0; i < newProps.user.friends.length; i++) {
+      if(!friendIds.includes(newProps.user.friends[i])) {
         needUpdate = true;
+        this.state = {
+          loading: true
+        };
         break;
       }
     }
     if (needUpdate) {
-      this.props.fetchFriends(this.props.userId);
+      this.props.fetchFriends(this.props.user.id).then(
+        () => {
+          this.setState({
+            loading: false,
+          });
+        }
+      );
     }
   }
 
