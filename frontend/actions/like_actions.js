@@ -2,6 +2,7 @@ import * as LikeApiUtil from '../util/like_api_util';
 
 export const RECEIVE_POST_LIKE = "RECEIVE_POST_LIKE";
 export const RECEIVE_COMMENT_LIKE = "RECEIVE_COMMENT_LIKE";
+export const DELETE_POST_LIKE = "DELETE_POST_LIKE";
 export const RECEIVE_LIKE_ERRORS = "RECEIVE_LIKE_ERRORS";
 
 export const receivePostLike = data => (
@@ -14,6 +15,13 @@ export const receivePostLike = data => (
 export const receiveCommentLike = data => (
   {
     type: RECEIVE_COMMENT_LIKE,
+    data
+  }
+);
+
+export const deletePostLike = data => (
+  {
+    type: DELETE_POST_LIKE,
     data
   }
 );
@@ -41,7 +49,7 @@ export const likeComment = like => dispatch => (
 
 export const unlikePost = postId => dispatch => (
   LikeApiUtil.unlikePost(postId).then(
-    data => dispatch(receivePostLike(data)),
+    data => dispatch(deletePostLike(data)),
     errors => dispatch(receiveLikeErrors(errors))
   )
 );

@@ -15,7 +15,7 @@ class Api::LikesController < ApplicationController
     @like = @likable.likes.find_by_user_id(@currentUser.id)
     if @like
       @like.destroy
-      render json: {}
+      render partial: 'api/users/post', locals: { post: @likable }
     else
       render json: ["Like does not exist"], status: 404
     end
