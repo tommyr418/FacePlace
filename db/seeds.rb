@@ -98,6 +98,38 @@ file = File.open('app/assets/images/mrburns.png')
 u3.profile_pic = file
 u3.save!
 
+u4 = User.new(email: "daenerys@yahoo.com", password: "dtargaryen",
+            fname: "Daenerys",
+            lname: "Targaryen", birthdate: "08/28/1989", sex: "female")
+
+file = File.open('app/assets/images/daenerys.jpg')
+u4.profile_pic = file
+u4.save!
+
+u5 = User.new(email: "arya@yahoo.com", password: "aryastark",
+            fname: "Arya",
+            lname: "Stark", birthdate: "01/23/1996", sex: "female")
+
+file = File.open('app/assets/images/arya.jpg')
+u5.profile_pic = file
+u5.save!
+
+u6 = User.new(email: "bran@yahoo.com", password: "branstark",
+            fname: "Bran",
+            lname: "Stark", birthdate: "07/10/1994", sex: "male")
+
+file = File.open('app/assets/images/bran.jpg')
+u6.profile_pic = file
+u6.save!
+
+u7 = User.new(email: "sansa@yahoo.com", password: "sansastark",
+            fname: "Sansa",
+            lname: "Stark", birthdate: "4/10/1990", sex: "female")
+
+file = File.open('app/assets/images/sansa.jpg')
+u7.profile_pic = file
+u7.save!
+
 
 Profile.destroy_all
 Profile.create(user_id: user1.id, category: "placesYouveLived",
