@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { likePost } from '../../actions/like_actions';
+import { likePost, unlikePost } from '../../actions/like_actions';
 import PostLinks from './post_links';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => (
   {
     likePost: like => dispatch(likePost(like)),
+    unlikePost: postId => dispatch(unlikePost(postId)),
   }
 );
 

@@ -12,10 +12,10 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = @likable.likes.find_by_user_id(@currentUser.id)
+    @like = @likable.likes.find_by(user_id: params[:like][:user_id])
     if @like
-      @like.destroy
-      render partial: 'api/users/post', locals: { post: @likable }
+      Like.destroy(@like.id)
+      render partial: 'api/posts/post', locals: { post: @likable }
     else
       render json: ["Like does not exist"], status: 404
     end

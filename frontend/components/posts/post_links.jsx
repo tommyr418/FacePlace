@@ -19,14 +19,23 @@ class PostLinks extends React.Component {
 
   handleLike(e) {
     e.preventDefault();
+    const like = {
+      user_id: this.props.currentUser.id,
+      likable_id: this.props.postId,
+      likable_type: "post",
+    }
     if(this.state.currentUserLikes) {
-
+      this.props.unlikePost(like).then(
+        () => {
+          this.setState({
+            currentUserLikes: this.props.post.likes
+            .includes(this.props.currentUser.id) ?
+            true : false,
+            likesLength: this.props.post.likes.length,
+          });
+        }
+      );
     } else {
-      const like = {
-        user_id: this.props.currentUser.id,
-        likable_id: this.props.postId,
-        likable_type: "post",
-      }
       this.props.likePost(like).then(
         () => {
           this.setState({

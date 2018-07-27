@@ -14,10 +14,11 @@ export const likeComment = like => {
   });
 };
 
-export const unlikePost = postId => {
+export const unlikePost = like => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/posts/${postId}/likes`,
+    url: `/api/posts/${like.likable_id}/likes`,
+    data: { like },
   });
 };
 
