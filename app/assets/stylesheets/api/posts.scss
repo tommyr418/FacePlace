@@ -188,6 +188,7 @@
   border-top: 1px solid #dddfe2;
   padding: 12px 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -202,6 +203,29 @@
 .post-links i {
   font-size: 20px;
   margin-right: 4px;
+}
+
+#post-links-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0;
+}
+
+#post-likes {
+  padding: 5px 0;
+  width: 100%;
+  border-bottom: 1px solid #dddfe2;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #606770;
+}
+
+#post-likes a {
+  margin: 0;
+  color: #5c8dc5;
 }
 
 .post-comment-form {

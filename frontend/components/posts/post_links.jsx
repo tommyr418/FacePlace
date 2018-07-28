@@ -53,19 +53,10 @@ class PostLinks extends React.Component {
   render() {
     return (
       <div className="post-links">
-        <a onClick={ this.handleLike }>
-          <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-          Like
-        </a>
-
-        <a onClick={ this.handleComment }>
-          <i className="fa fa-comment-o" aria-hidden="true"></i>
-          Comment
-        </a>
 
         { this.props.post.likes.length === 0 ? null
           :
-          <div className="post-likes">
+          <div id="post-likes">
             <i className="fa fa-thumbs-up" aria-hidden="true"></i>
             <span>
               { this.state.currentUserLikes ?
@@ -82,6 +73,18 @@ class PostLinks extends React.Component {
             </span>
           </div>
         }
+
+        <div id="post-links-div">
+          <a onClick={ this.handleLike }>
+            <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            Like
+          </a>
+
+          <a onClick={ this.handleComment }>
+            <i className="fa fa-comment-o" aria-hidden="true"></i>
+            Comment
+          </a>
+        </div>
       </div>
     );
   }
