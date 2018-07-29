@@ -48,7 +48,6 @@ class PostLinks extends React.Component {
         }
       );
     }
-
   }
 
   render() {
@@ -62,6 +61,7 @@ class PostLinks extends React.Component {
         );
       }
     );
+    
     return (
       <div className="post-links">
 

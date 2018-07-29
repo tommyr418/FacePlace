@@ -22,6 +22,10 @@ relevant_users = @posts.pluck(:author_id) + @posts.pluck(:wall_id)
 relevant_users << current_user.id
 relevant_users += comments.pluck(:author_id)
 
+@posts.each do |post|
+  relevant_users += post.likes.pluck(:user_id)
+end
+
 users = User.all.select { |user| relevant_users.include?(user.id) }
 
 json.users do
