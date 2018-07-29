@@ -52,6 +52,13 @@ class PostLinks extends React.Component {
   }
 
   render() {
+    const likers = this.props.post.likes.map(
+      (id) => {
+        return (
+          <li key={ id }>{ this.props.users[id].fname } { this.props.users[id].lname }</li>
+        );
+      }
+    );
     return (
       <div className="post-links">
 
@@ -73,7 +80,9 @@ class PostLinks extends React.Component {
               liked this post
             </span>
             <ReactToolTip id={ `likes-${this.props.postId}` }>
-              <span>hello world</span>
+              <ul>
+                { likers }
+              </ul>
             </ReactToolTip>
           </div>
         }
