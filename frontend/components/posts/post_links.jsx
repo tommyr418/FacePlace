@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactToolTip from 'react-tooltip';
 
 class PostLinks extends React.Component {
   constructor(props) {
@@ -64,13 +65,16 @@ class PostLinks extends React.Component {
               { this.state.currentUserLikes && this.state.likesLength > 1 ?
                 "and " : null}
               { this.state.currentUserLikes && this.state.likesLength > 1 ?
-                <a>{ this.state.likesLength - 1 }
+                <a data-tip data-for={ `likes-${this.props.postId}` }>{ this.state.likesLength - 1 }
                   { this.state.likesLength > 2 ? " people " : " person "}</a> : null}
               { !this.state.currentUserLikes && this.state.likesLength >= 1 ?
-                <a>{ this.state.likesLength }
+                <a data-tip data-for={ `likes-${this.props.postId}` }>{ this.state.likesLength }
                   { this.state.likesLength > 1 ? " people " : " person "}</a> : null}
               liked this post
             </span>
+            <ReactToolTip id={ `likes-${this.props.postId}` }>
+              <span>hello world</span>
+            </ReactToolTip>
           </div>
         }
 
