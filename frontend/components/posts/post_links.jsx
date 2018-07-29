@@ -54,6 +54,9 @@ class PostLinks extends React.Component {
   render() {
     const likers = this.props.post.likes.map(
       (id) => {
+        if(this.props.users[id].id === this.props.currentUser.id) {
+          return null;
+        }
         return (
           <li key={ id }>{ this.props.users[id].fname } { this.props.users[id].lname }</li>
         );
