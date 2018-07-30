@@ -50,6 +50,10 @@ class PostLinks extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    ReactToolTip.rebuild();
+  }
+
   render() {
     const likers = this.props.post.likes.map(
       (id) => {
@@ -61,7 +65,7 @@ class PostLinks extends React.Component {
         );
       }
     );
-    
+
     return (
       <div className="post-links">
 
