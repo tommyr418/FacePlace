@@ -87,7 +87,7 @@ class Search extends React.Component {
               <Link to={ buttonText === "You" ?
                 `/users/${this.props.currentUser.id}`
                 :
-                `/users/${this.props.currentUser.id}/friends` }>
+                `/users/${user.id}/friends` }>
                 <button>
                   <i className="fa fa-user" aria-hidden="true"></i>
                   { buttonText }
