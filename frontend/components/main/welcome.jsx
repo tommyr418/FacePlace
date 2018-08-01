@@ -51,6 +51,8 @@ class Welcome extends React.Component {
         </div>
 
         <h2>Explore without creating an account now!</h2>
+        <h3>Try out a demo account as either Homer Simpson or
+        Jon Snow below</h3>
 
         <div id="demo-buttons">
           <button
