@@ -18,7 +18,6 @@ class SignupForm extends React.Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.removeErrors = this.removeErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -79,17 +78,7 @@ class SignupForm extends React.Component {
     );
   }
 
-  removeErrors() {
-    setTimeout(() => {
-      this.setState({errors: ""});
-    }, 2500);
-  }
-
   render () {
-    if (this.state.errors) {
-      this.removeErrors();
-    }
-
     const errorStyling = {
       border: '1px solid #bd4c4a'
     };
