@@ -118,7 +118,14 @@ class SignupForm extends React.Component {
             onChange={ this.handleInputChange('lname')}
             defaultValue="last name"
             onFocus={ this.handleFocus }
-            onBlur={ this.handleBlur }>
+            onBlur={ this.handleBlur }
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Lname")
+              ?
+              errorStyling
+              :
+              null}>
           </input>
         </div>
 
@@ -126,30 +133,69 @@ class SignupForm extends React.Component {
           onChange={ this.handleInputChange('email')}
           defaultValue="email"
           onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }>
+          onBlur={ this.handleBlur }
+          style={
+            this.state.errors &&
+            this.props.errors[0].responseText.includes("Email")
+            ?
+            errorStyling
+            :
+            null}>
         </input>
 
         <input type="text"
           onChange={ this.handleInputChange('password')}
           defaultValue="password"
           onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }></input>
+          onBlur={ this.handleBlur }
+          style={
+            this.state.errors &&
+            this.props.errors[0].responseText.includes("Password")
+            ?
+            errorStyling
+            :
+            null}>
+        </input>
 
         <label>Birthday
           <br/>
           <input type="date"
             value={ this.state.birthdate }
-            onChange={ this.handleInputChange('birthdate')}></input>
+            onChange={ this.handleInputChange('birthdate')}
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Birthdate")
+              ?
+              errorStyling
+              :
+              null}>
+          </input>
         </label>
 
         <div className="radio">
-          <label>
+          <label
+            className="radio-label"
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Sex")
+              ?
+              errorStyling
+              :
+              null}>
             <input type="radio" name="sex" value="male"
               onChange={ this.handleOptionChange }/>
             Male
           </label>
 
-          <label>
+          <label
+            className="radio-label"
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Sex")
+              ?
+              errorStyling
+              :
+              null}>
             <input type="radio" name="sex" value="female"
               onChange={ this.handleOptionChange }/>
             Female
