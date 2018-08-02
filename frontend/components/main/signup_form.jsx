@@ -89,6 +89,11 @@ class SignupForm extends React.Component {
     if (this.state.errors) {
       this.removeErrors();
     }
+
+    const errorStyling = {
+      border: '1px solid #bd4c4a'
+    };
+
     return (
       <form onSubmit={ this.handleSubmit } id="signup-form">
         <h1> Create a New Account </h1>
@@ -99,7 +104,14 @@ class SignupForm extends React.Component {
             onChange={ this.handleInputChange('fname')}
             defaultValue="first name"
             onFocus={ this.handleFocus }
-            onBlur={ this.handleBlur }>
+            onBlur={ this.handleBlur }
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Fname")
+              ?
+              errorStyling
+              :
+              null}>
           </input>
 
           <input type="text" className="signup-form-name"
