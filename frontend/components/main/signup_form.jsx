@@ -105,7 +105,7 @@ class SignupForm extends React.Component {
                 <div>
                   <i class="fa fa-exclamation-circle error-icon"
                     data-tip data-for="fname-tooltip"></i>
-                  <ReactToolTip id="fname-tooltip">
+                  <ReactToolTip id="fname-tooltip" type="error">
                     <span>{ this.state.errors['Fname'] }</span>
                   </ReactToolTip>
                 </div>
@@ -128,6 +128,20 @@ class SignupForm extends React.Component {
                 :
                 null}>
               </input>
+              {
+                this.state.errors &&
+                this.props.errors[0].responseText.includes("Fname")
+                ?
+                <div>
+                  <i class="fa fa-exclamation-circle error-icon"
+                    data-tip data-for="lname-tooltip"></i>
+                  <ReactToolTip id="lname-tooltip" type="error">
+                    <span>{ this.state.errors['Lname'] }</span>
+                  </ReactToolTip>
+                </div>
+                :
+                null
+              }
           </div>
         </div>
 
@@ -145,6 +159,20 @@ class SignupForm extends React.Component {
               :
               null}>
             </input>
+            {
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Fname")
+              ?
+              <div>
+                <i class="fa fa-exclamation-circle error-icon"
+                  data-tip data-for="email-tooltip"></i>
+                <ReactToolTip id="email-tooltip" type="error">
+                  <span>{ this.state.errors['Email'] }</span>
+                </ReactToolTip>
+              </div>
+              :
+              null
+            }
         </div>
 
         <div className="input-div">
@@ -161,6 +189,20 @@ class SignupForm extends React.Component {
               :
               null}>
             </input>
+            {
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Fname")
+              ?
+              <div>
+                <i class="fa fa-exclamation-circle error-icon"
+                  data-tip data-for="password-tooltip"></i>
+                <ReactToolTip id="password-tooltip" type="error">
+                  <span>{ this.state.errors['Password'] }</span>
+                </ReactToolTip>
+              </div>
+              :
+              null
+            }
         </div>
 
         <label>Birthday
@@ -177,6 +219,20 @@ class SignupForm extends React.Component {
                 :
                 null}>
               </input>
+              {
+                this.state.errors &&
+                this.props.errors[0].responseText.includes("Fname")
+                ?
+                <div>
+                  <i class="fa fa-exclamation-circle error-icon-bday"
+                    data-tip data-for="birthdate-tooltip"></i>
+                  <ReactToolTip id="birthdate-tooltip" type="error">
+                    <span>{ this.state.errors['Birthdate'] }</span>
+                  </ReactToolTip>
+                </div>
+                :
+                null
+              }
           </div>
         </label>
 
@@ -208,6 +264,21 @@ class SignupForm extends React.Component {
               onChange={ this.handleOptionChange }/>
             Female
           </label>
+
+          {
+            this.state.errors &&
+            this.props.errors[0].responseText.includes("Fname")
+            ?
+            <div>
+              <i class="fa fa-exclamation-circle error-icon"
+                data-tip data-for="sex-tooltip"></i>
+              <ReactToolTip id="sex-tooltip" type="error">
+                <span>{ this.state.errors['Sex'] }</span>
+              </ReactToolTip>
+            </div>
+            :
+            null
+          }
         </div>
 
         <button>Create Account</button>

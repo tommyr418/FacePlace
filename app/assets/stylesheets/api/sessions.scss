@@ -196,6 +196,7 @@
 
 .radio {
   width: 100%;
+  position: relative;
 }
 
 #demo-buttons button {
@@ -239,5 +240,12 @@
   position: absolute;
   right: 15px;
   top: 18px;
+  color: #bd4c4a;
+}
+
+.error-icon-bday {
+  position: absolute;
+  right: 15px;
+  top: -15px;
   color: #bd4c4a;
 }
