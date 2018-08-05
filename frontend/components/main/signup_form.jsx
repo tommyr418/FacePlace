@@ -83,77 +83,87 @@ class SignupForm extends React.Component {
         <h1> Create a New Account </h1>
         <h2> It's free and always will be. </h2>
 
-        <div>
-          <input type="text" className="signup-form-name"
-            onChange={ this.handleInputChange('fname')}
-            defaultValue="first name"
-            onFocus={ this.handleFocus }
-            onBlur={ this.handleBlur }
-            style={
-              this.state.errors &&
-              this.props.errors[0].responseText.includes("Fname")
-              ?
-              errorStyling
-              :
-              null}>
-          </input>
+        <div className="name-div">
+          <div className="input-div-name">
+            <input type="text" className="signup-form-name"
+              onChange={ this.handleInputChange('fname')}
+              defaultValue="first name"
+              onFocus={ this.handleFocus }
+              onBlur={ this.handleBlur }
+              style={
+                this.state.errors &&
+                this.props.errors[0].responseText.includes("Fname")
+                ?
+                errorStyling
+                :
+                null}>
+              </input>
+          </div>
 
-          <input type="text" className="signup-form-name"
-            onChange={ this.handleInputChange('lname')}
-            defaultValue="last name"
-            onFocus={ this.handleFocus }
-            onBlur={ this.handleBlur }
-            style={
-              this.state.errors &&
-              this.props.errors[0].responseText.includes("Lname")
-              ?
-              errorStyling
-              :
-              null}>
-          </input>
+          <div className="input-div-name">
+            <input type="text" className="signup-form-name"
+              onChange={ this.handleInputChange('lname')}
+              defaultValue="last name"
+              onFocus={ this.handleFocus }
+              onBlur={ this.handleBlur }
+              style={
+                this.state.errors &&
+                this.props.errors[0].responseText.includes("Lname")
+                ?
+                errorStyling
+                :
+                null}>
+              </input>
+          </div>
         </div>
 
-        <input type="text"
-          onChange={ this.handleInputChange('email')}
-          defaultValue="email"
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
-          style={
-            this.state.errors &&
-            this.props.errors[0].responseText.includes("Email")
-            ?
-            errorStyling
-            :
-            null}>
-        </input>
+        <div className="input-div">
+          <input type="text"
+            onChange={ this.handleInputChange('email')}
+            defaultValue="email"
+            onFocus={ this.handleFocus }
+            onBlur={ this.handleBlur }
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Email")
+              ?
+              errorStyling
+              :
+              null}>
+            </input>
+        </div>
 
-        <input type="text"
-          onChange={ this.handleInputChange('password')}
-          defaultValue="password"
-          onFocus={ this.handleFocus }
-          onBlur={ this.handleBlur }
-          style={
-            this.state.errors &&
-            this.props.errors[0].responseText.includes("Password")
-            ?
-            errorStyling
-            :
-            null}>
-        </input>
+        <div className="input-div">
+          <input type="text"
+            onChange={ this.handleInputChange('password')}
+            defaultValue="password"
+            onFocus={ this.handleFocus }
+            onBlur={ this.handleBlur }
+            style={
+              this.state.errors &&
+              this.props.errors[0].responseText.includes("Password")
+              ?
+              errorStyling
+              :
+              null}>
+            </input>
+        </div>
 
         <label>Birthday
           <br/>
-          <input type="date"
-            value={ this.state.birthdate }
-            onChange={ this.handleInputChange('birthdate')}
-            style={
-              this.state.errors &&
-              this.props.errors[0].responseText.includes("Birthdate")
-              ?
-              errorStyling
-              :
-              null}>
-          </input>
+          <div className="input-div">
+            <input type="date"
+              value={ this.state.birthdate }
+              onChange={ this.handleInputChange('birthdate')}
+              style={
+                this.state.errors &&
+                this.props.errors[0].responseText.includes("Birthdate")
+                ?
+                errorStyling
+                :
+                null}>
+              </input>
+          </div>
         </label>
 
         <div className="radio">

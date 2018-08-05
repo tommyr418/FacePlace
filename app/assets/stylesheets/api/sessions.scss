@@ -169,6 +169,7 @@
   border: 1px solid #bdc7d8;
   border-radius: 5px;
   color: #a6a6a6;
+  width: 100%;
 }
 
 #signup-form button {
@@ -234,4 +235,12 @@
   margin: 5px;
   padding: 0 5px;
   border-radius: 5px;
+}
+
+.input-div-name {
+  width: 50%;
+}
+
+.input-div {
+  width: 100%;
 }
