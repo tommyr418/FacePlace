@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactToolTip from 'react-tooltip';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -17,7 +18,6 @@ class SignupForm extends React.Component {
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -61,21 +61,16 @@ class SignupForm extends React.Component {
   componentWillReceiveProps(newProps) {
     if (newProps.errors.length > 0 &&
       newProps.errors[0].responseJSON[0] !== "Invalid Email or Password") {
+      const errorObj = {};
+      newProps.errors[0].responseJSON.forEach((error) => {
+        const strArray = error.split();
+        const firstWord = strArray[0];
+        errorObj[firstWord] = <span>{ error }</span>;
+      });
       this.setState({
-        errors: newProps.errors[0].responseJSON.map((error, index) => {
-        return (
-          <span key={ index }>{ error }</span>
-        );
-      })});
+        errors: errorObj,
+      });
     }
-  }
-
-  renderErrors() {
-    return (
-      <div id="signup-errors">
-        { this.state.errors }
-      </div>
-    );
   }
 
   render () {
@@ -192,8 +187,6 @@ class SignupForm extends React.Component {
         </div>
 
         <button>Create Account</button>
-
-        { this.state.errors ? this.renderErrors() : "" }
       </form>
     );
   }
