@@ -63,9 +63,9 @@ class SignupForm extends React.Component {
       newProps.errors[0].responseJSON[0] !== "Invalid Email or Password") {
       const errorObj = {};
       newProps.errors[0].responseJSON.forEach((error) => {
-        const strArray = error.split();
+        const strArray = error.split(" ");
         const firstWord = strArray[0];
-        errorObj[firstWord] = <span>{ error }</span>;
+        errorObj[firstWord] =  error;
       });
       this.setState({
         errors: errorObj,
@@ -77,6 +77,8 @@ class SignupForm extends React.Component {
     const errorStyling = {
       border: '1px solid #bd4c4a'
     };
+
+    debugger;
 
     return (
       <form onSubmit={ this.handleSubmit } id="signup-form">
@@ -98,6 +100,19 @@ class SignupForm extends React.Component {
                 :
                 null}>
               </input>
+              {
+                this.state.errors &&
+                this.props.errors[0].responseText.includes("Fname")
+                ?
+                <div>
+                  <a data-tip data-for="fname-tooltip">error</a>
+                  <ReactToolTip id="fname-tooltip">
+                    <span>{ this.state.errors['Fname'] }</span>
+                  </ReactToolTip>
+                </div>
+                :
+                null
+              }
           </div>
 
           <div className="input-div-name">
