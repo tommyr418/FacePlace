@@ -198,22 +198,6 @@
   width: 100%;
 }
 
-#signup-errors {
-  position: absolute;
-  z-index: 4;
-  background-color: #bd4c4a;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  left: -350px;
-  top: 100px;
-}
-
-#signup-errors span {
-  padding: 10px;
-}
-
 #demo-buttons button {
   border: 1px solid #561870;
   border-radius: 5px;
@@ -243,8 +227,17 @@
 
 .input-div-name {
   width: 50%;
+  position: relative;
 }
 
 .input-div {
   width: 100%;
+  position: relative;
+}
+
+.error-icon{
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  color: #bd4c4a;
 }

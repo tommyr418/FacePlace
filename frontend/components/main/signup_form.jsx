@@ -78,8 +78,6 @@ class SignupForm extends React.Component {
       border: '1px solid #bd4c4a'
     };
 
-    debugger;
-
     return (
       <form onSubmit={ this.handleSubmit } id="signup-form">
         <h1> Create a New Account </h1>
@@ -105,7 +103,8 @@ class SignupForm extends React.Component {
                 this.props.errors[0].responseText.includes("Fname")
                 ?
                 <div>
-                  <a data-tip data-for="fname-tooltip">error</a>
+                  <i class="fa fa-exclamation-circle error-icon"
+                    data-tip data-for="fname-tooltip"></i>
                   <ReactToolTip id="fname-tooltip">
                     <span>{ this.state.errors['Fname'] }</span>
                   </ReactToolTip>
