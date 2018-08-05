@@ -130,7 +130,7 @@ class SignupForm extends React.Component {
               </input>
               {
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Fname")
+                this.props.errors[0].responseText.includes("Lname")
                 ?
                 <div>
                   <i class="fa fa-exclamation-circle error-icon"
@@ -161,7 +161,7 @@ class SignupForm extends React.Component {
             </input>
             {
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Fname")
+              this.props.errors[0].responseText.includes("Email")
               ?
               <div>
                 <i class="fa fa-exclamation-circle error-icon"
@@ -191,7 +191,7 @@ class SignupForm extends React.Component {
             </input>
             {
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Fname")
+              this.props.errors[0].responseText.includes("Password")
               ?
               <div>
                 <i class="fa fa-exclamation-circle error-icon"
@@ -221,7 +221,7 @@ class SignupForm extends React.Component {
               </input>
               {
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Fname")
+                this.props.errors[0].responseText.includes("Birthdate")
                 ?
                 <div>
                   <i class="fa fa-exclamation-circle error-icon-bday"
@@ -267,7 +267,7 @@ class SignupForm extends React.Component {
 
           {
             this.state.errors &&
-            this.props.errors[0].responseText.includes("Fname")
+            this.props.errors[0].responseText.includes("Sex")
             ?
             <div>
               <i class="fa fa-exclamation-circle error-icon"
