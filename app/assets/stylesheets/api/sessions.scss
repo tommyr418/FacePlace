@@ -195,7 +195,7 @@
 }
 
 .radio {
-  padding: 10px;
+  width: 100%;
 }
 
 #signup-errors {
@@ -235,6 +235,10 @@
   margin: 5px;
   padding: 0 5px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 85px;
 }
 
 .input-div-name {
