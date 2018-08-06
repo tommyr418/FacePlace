@@ -70,6 +70,10 @@ class SignupForm extends React.Component {
       this.setState({
         errors: errorObj,
       });
+    } else {
+      this.setState({
+        errors: "",
+      });
     }
   }
 
