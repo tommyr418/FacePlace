@@ -134,22 +134,22 @@ sansa.save!
 Profile.destroy_all
 Profile.create(user_id: homer.id, category: "placesYouveLived",
                sub_category: "currentCityAndHometown",
-               value: "Lives In: Springfeild")
+               tag: "Lives In", value: "Springfeild")
 Profile.create(user_id: homer.id, category: "familyAndRelationships",
                sub_category: "familyMembers",
-               value: "Son: Bart Simpson")
+               tag: "Son", value: "Bart Simpson")
 Profile.create(user_id: homer.id, category: "familyAndRelationships",
                sub_category: "familyMembers",
-               value: "Daughter: Lisa Simpson")
+               tag: "Daughter", value: "Lisa Simpson")
 Profile.create(user_id: homer.id, category: "familyAndRelationships",
                sub_category: "familyMembers",
-               value: "Wife: Marge Simpson")
+               tag: "Wife", value: "Marge Simpson")
 Profile.create(user_id: homer.id, category: "familyAndRelationships",
                sub_category: "relationship",
-               value: "Relationship: Marge Simpson")
+               tag: "In Ralationship", value: "Marge Simpson")
 Profile.create(user_id: homer.id, category: "workAndEducation",
                sub_category: "work",
-               value: "Works At: Springfeild Nuclear Power Plant")
+               tag: "Works At", value: "Springfeild Nuclear Power Plant")
 
 FriendRequest.destroy_all
 FriendRequest.create(requester_id: homer.id,
