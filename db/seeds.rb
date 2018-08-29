@@ -198,7 +198,7 @@ end
 Post.destroy_all
 50.times do |num|
   person = User.all.sample
-  Post.create(author_id: person.id, wall_id: person.friends.sample, body: Faker::Simpsons.quote)
+  Post.create(author_id: person.id, wall_id: person.friends.sample, body: Faker::Friends.quote)
 end
 
 50.times do |num|
