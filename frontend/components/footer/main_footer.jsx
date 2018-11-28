@@ -25,7 +25,7 @@ const MainFooter = ({ currentUser }) => {
           <span className="label">AngelList</span>
         </a>
 
-        <a href="http://tommyren.me"
+        <a href="http://tommyren.site"
           target="_blank">
           <i className="fa fa-globe" aria-hidden="true"></i>
           <span className="label">Portfolio</span>
