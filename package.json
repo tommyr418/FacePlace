@@ -32,17 +32,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tommyr418/facebook_lite.git"
+    "url": "git+https://github.com/tommyr418/FacePlace.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tommyr418/facebook_lite/issues"
+    "url": "https://github.com/tommyr418/FacePlace/issues"
   },
   "engines": {
     "node": "6.10.1",
     "npm": "3.10.10"
   },
-  "homepage": "https://github.com/tommyr418/facebook_lite#readme"
+  "homepage": "https://github.com/tommyr418/FacePlace#readme"
 }
