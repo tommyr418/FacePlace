@@ -36,6 +36,7 @@ gem 'faker'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
+gem 'normalize-rails'
 gem 'paperclip', '~> 5.0.0'
 gem 'pry-rails'
 
