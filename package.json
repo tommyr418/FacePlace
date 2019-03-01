@@ -46,6 +46,8 @@
   },
   "homepage": "https://github.com/tommyr418/FacePlace#readme",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.3.3"
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1"
   }
 }

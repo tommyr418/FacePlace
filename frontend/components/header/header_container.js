@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { logout, login } from '../../actions/session_actions';
 import { fetchRequesters } from '../../actions/user_actions';
 import { addFriend, updateRequest } from "../../actions/friend_actions";
-import MainHeader from './main_header';
+import Header from './header';
 
 const mapStateToProps = (state) => {
   return {
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainHeader);
+)(Header);

@@ -4,7 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 import LoginForm from './login_form';
 import UserNav from './user_nav';
 
-class MainHeader extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,4 +88,4 @@ class MainHeader extends React.Component {
   }
 }
 
-export default MainHeader;
+export default Header;
