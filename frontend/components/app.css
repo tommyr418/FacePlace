@@ -28,13 +28,13 @@ ul {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .main {
   display: flex;
   justify-content: space-around;
   background-color: #e9ebee;
-  height: 100%;
 }
 
 .news-feed {
