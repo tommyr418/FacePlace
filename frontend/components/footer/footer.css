@@ -3,6 +3,8 @@
   justify-content: center;
   padding: 20px;
   font-size: 30px;
+  background-color: white;
+  min-height: 60px;
 }
 
 .footer nav {

@@ -9,15 +9,18 @@ import MainFooterContainer from './footer/footer_container';
 import SearchContainer from './search/search_container';
 
 const App = () => (
-  <div className='app'>
-    <Route path="/" component={Header} />
+  <div className="app">
+    <div
+      className="app-first-child">
+      <Route path="/" component={Header} />
 
-    <Switch>
-      <ProtectedRoute path="/search/users" component={ SearchContainer } />
-      <ProtectedRoute path="/users/:userId" component={ MainShowContainer } />
-      <Route exact path="/" component={ MainContainer } />
-    </Switch>
-    
+      <Switch>
+        <ProtectedRoute path="/search/users" component={ SearchContainer } />
+        <ProtectedRoute path="/users/:userId" component={ MainShowContainer } />
+        <Route exact path="/" component={ MainContainer } />
+      </Switch>
+    </div>
+
     <Route exact path="/" component={ MainFooterContainer }/>
   </div>
 );
