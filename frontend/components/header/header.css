@@ -10,13 +10,13 @@
 .header-logged-out-div {
   display: flex;
   justify-content: space-between;
-  min-width: 980px;
+  min-width: 960px;
   height: 82px
 }
 
 .header h1 {
   color: white;
-  margin: 25px 0 10px 35px;
+  margin: 25px 0 10px 0;
   font-family: arial;
   font-size: 42px;
 }

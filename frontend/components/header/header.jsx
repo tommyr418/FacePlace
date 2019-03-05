@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
 import './header.css';
-import LoginForm from './login_form';
+import LoginForm from './login_form/login_form';
 import UserNav from './user_nav';
 
 class Header extends Component {

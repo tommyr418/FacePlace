@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class LoginForm extends React.Component {
+import './login_form.css';
+
+class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,7 +50,7 @@ class LoginForm extends React.Component {
       this.removeErrors();
     }
     return (
-      <form onSubmit={ this.handleSubmit } id="login-form">
+      <form onSubmit={ this.handleSubmit } className="login-form">
         { this.state.errors ?
           <span id="login-error">{ this.state.errors }</span>
           :
@@ -67,7 +69,6 @@ class LoginForm extends React.Component {
           <input type="password"
             value={ this.state.password }
             onChange={ this.handleInputChange('password')}></input>
-          <label>forgot account?</label>
         </div>
 
         <button>Log In</button>
