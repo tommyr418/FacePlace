@@ -51,7 +51,7 @@ class Header extends React.Component {
   render () {
     if(this.props.currentUser){
       return (
-        <header id="header-main-logged-in">
+        <div id="header-main-logged-in">
           <div id="header-left-logged-in">
             <a href="/"><div id="logo">fP</div></a>
             <form onSubmit={ this.handleSubmit }>
@@ -73,16 +73,16 @@ class Header extends React.Component {
             fetchRequesters={ this.props.fetchRequesters }
             addFriend={ this.props.addFriend }
             updateRequest={ this.props.updateRequest }/>
-        </header>
+        </div>
       );
     } else {
       return (
-        <header id="header-main">
+        <div id="header-main">
           <h1>facePlace</h1>
 
           <LoginForm login={ this.props.login }
             errors={ this.props.errors }/>
-        </header>
+        </div>
       );
     }
   }
