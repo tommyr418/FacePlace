@@ -67,8 +67,7 @@ class Header extends Component {
             className="header-logged-out-div">
             <h1>facePlace</h1>
 
-            <LoginForm login={ this.props.login }
-              errors={ this.props.errors }/>
+            <LoginForm />
           </div>
         </div>
       );

@@ -23,7 +23,7 @@ ul {
 }
 
 .app {
-  background-color: #e9ebee;
+  background-color: #edf0f5;
   font-family: arial;
   height: 100vh;
   display: flex;
@@ -44,22 +44,6 @@ ul {
 #main-show {
   display: flex;
   background-color: #e9ebee;
-}
-
-#main h1 {
-  margin: 0;
-}
-
-
-#header-left-logged-in {
-  display: flex;
-  align-items: center;
-  margin-left: 40px;
-  height: 42px;
-}
-
-#header-left-logged-in a {
-  text-decoration: none;
 }
 
 #logo {

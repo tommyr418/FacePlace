@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import './login_form.css';
+import { login } from '../../../actions/session_actions';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -77,4 +79,16 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => (
+  {
+    errors: state.errors.session_actions,
+  }
+);
+
+const mapDispatchToProps = (dispatch) => (
+  {
+    login: (user) => dispatch(login(user)),
+  }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

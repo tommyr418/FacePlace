@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
-  background-color: #e9ebee;
+  background-color: #edf0f5;
   width: 100%;
   min-height: 500px;
 }
@@ -10,4 +10,8 @@
   min-width: 960px;
   display: flex;
   justify-content: space-between;
+}
+
+#main h1 {
+  margin: 0;
 }

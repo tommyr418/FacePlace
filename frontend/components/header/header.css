@@ -32,3 +32,14 @@
   z-index: 2;
   width: 100%;
 }
+
+#header-left-logged-in {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  height: 42px;
+}
+
+#header-left-logged-in a {
+  text-decoration: none;
+}
