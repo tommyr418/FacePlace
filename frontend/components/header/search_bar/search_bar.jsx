@@ -12,14 +12,14 @@ class SearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    if(this.state.search === "") {
+    if (this.state.search === "") {
       return;
     }
 
     this.props.history.push(`/search/users?search=${
       this.state.search.split(' ').join('_')
     }`);
-    e.currentTarget.children[0].value = "";
+
     this.setState({
       search: "",
     });
@@ -33,14 +33,15 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <input type="text" id="search-bar"
+      <form className="search-bar"
+        onSubmit={ this.handleSubmit }>
+        <input className="search-bar-input"
+          type="text"
           onChange={ this.handleChange }
-          defaultValue="Search here for Simpsons, Game of Thrones characters"
-          onBlur={ this.handleBlur }
-          onFocus={ this.handleFocus }>
+          value={ this.state.search }
+          placeholder="Search e.g Lisa Simpson, Sansa Stark">
         </input>
-        <button>
+        <button className="search-bar-button">
           <i className="fa fa-search" aria-hidden="true"></i>
         </button>
       </form>

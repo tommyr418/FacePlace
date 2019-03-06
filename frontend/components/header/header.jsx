@@ -11,25 +11,31 @@ class Header extends Component {
   render () {
     if(this.props.currentUser){
       return (
-        <div id="header-main-logged-in">
-          <div id="header-left-logged-in">
-            <a href="/"><div id="logo">fP</div></a>
-            <SearchBar { ...this.props }/>
-          </div>
+        <div className="header header-logged-in">
+          <div className="header-logged-in-div">
+            <div className="header-logged-in-div-left">
+              <Link to="/">
+                <div className="header-logo">
+                  <span>fP</span>
+                </div>
+              </Link>
 
-          <UserNav currentUser={ this.props.currentUser }
-            users={ this.props.users }
-            logout={ this.props.logout }
-            fetchRequesters={ this.props.fetchRequesters }
-            addFriend={ this.props.addFriend }
-            updateRequest={ this.props.updateRequest }/>
+              <SearchBar { ...this.props }/>
+            </div>
+
+            <UserNav currentUser={ this.props.currentUser }
+              users={ this.props.users }
+              logout={ this.props.logout }
+              fetchRequesters={ this.props.fetchRequesters }
+              addFriend={ this.props.addFriend }
+              updateRequest={ this.props.updateRequest }/>
+          </div>
         </div>
       );
     } else {
       return (
-        <div className="header">
-          <div
-            className="header-logged-out-div">
+        <div className="header header-logged-out">
+          <div className="header-logged-out-div">
             <h1>facePlace</h1>
 
             <LoginForm />
