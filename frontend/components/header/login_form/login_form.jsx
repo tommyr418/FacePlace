@@ -81,7 +81,7 @@ class LoginForm extends Component {
 
 const mapStateToProps = (state) => (
   {
-    errors: state.errors.session_actions,
+    errors: state.errors.session,
   }
 );
 
