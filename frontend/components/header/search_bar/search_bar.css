@@ -1,0 +1,10 @@
+#search-bar {
+  height: 23px;
+  width: 400px;
+  margin-left: 10px;
+  padding-right: 5px;
+  border: none;
+  color: #1d2129;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
