@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { ProtectedRoute } from '../util/route_util';
-import Header from './header/header_container';
+import Header from './header/header';
 import MainContainer from './main/main_container';
 import MainShowContainer from './main-show/main_show_container';
 import MainFooterContainer from './footer/footer_container';
