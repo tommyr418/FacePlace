@@ -1,7 +1,7 @@
 import React from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
 
-class FriendRequest extends React.Component {
+class RequestDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -91,4 +91,4 @@ class FriendRequest extends React.Component {
   }
 }
 
-export default enhanceWithClickOutside(FriendRequest);
+export default enhanceWithClickOutside(RequestDropdown);

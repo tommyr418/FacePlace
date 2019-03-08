@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './header.css';
 import LoginForm from './login_form/login_form';
-import UserNav from './user_nav';
+import UserNav from './user_nav/user_nav';
 import SearchBar from './search_bar/search_bar';
 import LogoLink from './logo_link/logo_link';
 

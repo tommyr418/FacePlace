@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import FriendRequest from './friend_request';
+import { logout } from '../../../actions/session_actions';
+import { fetchRequesters } from '../../../actions/user_actions';
+import { addFriend, updateRequest } from "../../../actions/friend_actions";
+import RequestDropdown from './request_dropdown/request_dropdown';
 
 class UserNav extends React.Component {
   constructor(props) {
@@ -39,7 +43,7 @@ class UserNav extends React.Component {
 
           {
             this.state.requestsOpen ?
-            <FriendRequest toggleRequests={ this.toggleRequests }
+            <RequestDropdown toggleRequests={ this.toggleRequests }
               fetchRequesters={ this.props.fetchRequesters }
               currentUser={ this.props.currentUser }
               users={ this.props.users }
@@ -56,4 +60,19 @@ class UserNav extends React.Component {
   }
 }
 
-export default UserNav;
+const mapStateToProps = (state) => (
+  {
+    users: state.entities.users,
+  }
+);
+
+const mapDispatchToProps = (dispatch) => (
+  {
+    logout: () => dispatch(logout()),
+    fetchRequesters: () => dispatch(fetchRequesters()),
+    addFriend: friend => dispatch(addFriend(friend)),
+    updateRequest: request => dispatch(updateRequest(request)),
+  }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserNav);
