@@ -6,6 +6,7 @@ import './header.css';
 import LoginForm from './login_form/login_form';
 import UserNav from './user_nav';
 import SearchBar from './search_bar/search_bar';
+import LogoLink from './logo_link/logo_link';
 
 const Header = (props) => {
   if(props.currentUser){
@@ -13,11 +14,7 @@ const Header = (props) => {
       <div className="header header-logged-in">
         <div className="header-logged-in-div">
           <div className="header-logged-in-div-left">
-            <Link to="/">
-              <div className="header-logo">
-                <span>fP</span>
-              </div>
-            </Link>
+            <LogoLink />
 
             <SearchBar history={ props.history }/>
           </div>

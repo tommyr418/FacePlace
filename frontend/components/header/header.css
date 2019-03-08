@@ -45,20 +45,3 @@
   align-items: center;
   height: 42px;
 }
-
-.header-logo {
-  background-color: #fff;
-  color: #4267b2;
-  height: 24px;
-  width: 24px;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 2px;
-  position: relative;
-}
-
-.header-logo span {
-  position: absolute;
-  bottom: 0;
-  height: 22px;
-}
