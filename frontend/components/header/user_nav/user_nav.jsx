@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import './user_nav.css';
 import { logout } from '../../../actions/session_actions';
 import { fetchRequesters } from '../../../actions/user_actions';
 import { addFriend, updateRequest } from "../../../actions/friend_actions";

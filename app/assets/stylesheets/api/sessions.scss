@@ -2,62 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#user-nav {
-  display: flex;
-  align-items: center;
-  margin: auto 35px;
-  color: white;
-}
-
-#user-nav a {
-  display: flex;
-  align-items: center;
-  float: left;
-  font-size: 13px;
-  height: 28px;
-  padding: 0 10px;
-  vertical-align: middle;
-  text-align: center;
-  white-space: nowrap;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-}
-
-#user-nav i {
-  font-size: 18px;
-}
-
-#user-nav a:hover {
-  background-color: #415e9a;
-}
-
-#user-nav button {
-  height: 22px;
-  background-color: #4267b2;
-  color: white;
-  border: 1px solid #29487d;
-  cursor: pointer;
-}
-
-#user-nav button:hover {
-  background-color: #415e9a;
-}
-
-#header-image {
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
-}
-
-#header-image img {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-}
-
 #signup-form {
   display: flex;
   flex-direction: column;
