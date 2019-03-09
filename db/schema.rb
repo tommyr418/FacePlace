@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180807031817) do
+ActiveRecord::Schema.define(version: 20190308235649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180807031817) do
     t.string "status", default: "pending", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_friend_requests_on_recipient_id"
+    t.index ["requester_id"], name: "index_friend_requests_on_requester_id"
   end
 
   create_table "friends", force: :cascade do |t|
@@ -38,6 +40,8 @@ ActiveRecord::Schema.define(version: 20180807031817) do
     t.integer "friendee_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["friendee_id"], name: "index_friends_on_friendee_id"
+    t.index ["friender_id"], name: "index_friends_on_friender_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -46,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180807031817) do
     t.string "likable_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["likable_id", "likable_type"], name: "index_likes_on_likable_id_and_likable_type"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
