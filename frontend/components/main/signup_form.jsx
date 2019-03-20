@@ -60,12 +60,10 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.errors.length > 0 &&
-      newProps.errors[0].responseJSON[0] !== "Invalid Email or Password") {
+      newProps.errors[0].text !== "Invalid Email or Password") {
       const errorObj = {};
-      newProps.errors[0].responseJSON.forEach((error) => {
-        const strArray = error.split(" ");
-        const firstWord = strArray[0];
-        errorObj[firstWord] =  error;
+      newProps.errors.forEach((error) => {
+        errorObj[error.source] = error.text;
       });
       this.setState({
         errors: errorObj,
@@ -82,6 +80,8 @@ class SignupForm extends React.Component {
       border: '1px solid #bd4c4a'
     };
 
+    const errorSources = this.props.errors.map(error => error.source);
+
     return (
       <form onSubmit={ this.handleSubmit } id="signup-form">
         <h1> Create a New Account </h1>
@@ -96,7 +96,7 @@ class SignupForm extends React.Component {
               onBlur={ this.handleBlur }
               style={
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Fname")
+                errorSources.includes("fname")
                 ?
                 errorStyling
                 :
@@ -104,13 +104,13 @@ class SignupForm extends React.Component {
               </input>
               {
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Fname")
+                errorSources.includes("fname")
                 ?
                 <div>
-                  <i class="fa fa-exclamation-circle error-icon"
+                  <i className="fa fa-exclamation-circle error-icon"
                     data-tip data-for="fname-tooltip"></i>
                   <ReactToolTip id="fname-tooltip" type="error">
-                    <span>{ this.state.errors['Fname'] }</span>
+                    <span>{ this.state.errors['fname'] }</span>
                   </ReactToolTip>
                 </div>
                 :
@@ -126,7 +126,7 @@ class SignupForm extends React.Component {
               onBlur={ this.handleBlur }
               style={
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Lname")
+                errorSources.includes("lname")
                 ?
                 errorStyling
                 :
@@ -134,13 +134,13 @@ class SignupForm extends React.Component {
               </input>
               {
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Lname")
+                errorSources.includes("lname")
                 ?
                 <div>
-                  <i class="fa fa-exclamation-circle error-icon"
+                  <i className="fa fa-exclamation-circle error-icon"
                     data-tip data-for="lname-tooltip"></i>
                   <ReactToolTip id="lname-tooltip" type="error">
-                    <span>{ this.state.errors['Lname'] }</span>
+                    <span>{ this.state.errors['lname'] }</span>
                   </ReactToolTip>
                 </div>
                 :
@@ -157,7 +157,7 @@ class SignupForm extends React.Component {
             onBlur={ this.handleBlur }
             style={
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Email")
+              errorSources.includes("email")
               ?
               errorStyling
               :
@@ -165,13 +165,13 @@ class SignupForm extends React.Component {
             </input>
             {
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Email")
+              errorSources.includes("email")
               ?
               <div>
-                <i class="fa fa-exclamation-circle error-icon"
+                <i className="fa fa-exclamation-circle error-icon"
                   data-tip data-for="email-tooltip"></i>
                 <ReactToolTip id="email-tooltip" type="error">
-                  <span>{ this.state.errors['Email'] }</span>
+                  <span>{ this.state.errors['email'] }</span>
                 </ReactToolTip>
               </div>
               :
@@ -187,7 +187,7 @@ class SignupForm extends React.Component {
             onBlur={ this.handleBlur }
             style={
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Password")
+              errorSources.includes("password")
               ?
               errorStyling
               :
@@ -195,13 +195,13 @@ class SignupForm extends React.Component {
             </input>
             {
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Password")
+              errorSources.includes("password")
               ?
               <div>
-                <i class="fa fa-exclamation-circle error-icon"
+                <i className="fa fa-exclamation-circle error-icon"
                   data-tip data-for="password-tooltip"></i>
                 <ReactToolTip id="password-tooltip" type="error">
-                  <span>{ this.state.errors['Password'] }</span>
+                  <span>{ this.state.errors['password'] }</span>
                 </ReactToolTip>
               </div>
               :
@@ -217,7 +217,7 @@ class SignupForm extends React.Component {
               onChange={ this.handleInputChange('birthdate')}
               style={
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Birthdate")
+                errorSources.includes("birthdate")
                 ?
                 errorStyling
                 :
@@ -225,13 +225,13 @@ class SignupForm extends React.Component {
               </input>
               {
                 this.state.errors &&
-                this.props.errors[0].responseText.includes("Birthdate")
+                errorSources.includes("birthdate")
                 ?
                 <div>
-                  <i class="fa fa-exclamation-circle error-icon-bday"
+                  <i className="fa fa-exclamation-circle error-icon-bday"
                     data-tip data-for="birthdate-tooltip"></i>
                   <ReactToolTip id="birthdate-tooltip" type="error">
-                    <span>{ this.state.errors['Birthdate'] }</span>
+                    <span>{ this.state.errors['birthdate'] }</span>
                   </ReactToolTip>
                 </div>
                 :
@@ -245,7 +245,7 @@ class SignupForm extends React.Component {
             className="radio-label"
             style={
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Sex")
+              errorSources.includes("sex")
               ?
               errorStyling
               :
@@ -259,7 +259,7 @@ class SignupForm extends React.Component {
             className="radio-label"
             style={
               this.state.errors &&
-              this.props.errors[0].responseText.includes("Sex")
+              errorSources.includes("sex")
               ?
               errorStyling
               :
@@ -271,13 +271,13 @@ class SignupForm extends React.Component {
 
           {
             this.state.errors &&
-            this.props.errors[0].responseText.includes("Sex")
+            errorSources.includes("sex")
             ?
             <div>
-              <i class="fa fa-exclamation-circle error-icon"
+              <i className="fa fa-exclamation-circle error-icon"
                 data-tip data-for="sex-tooltip"></i>
               <ReactToolTip id="sex-tooltip" type="error">
-                <span>{ this.state.errors['Sex'] }</span>
+                <span>{ this.state.errors['sex'] }</span>
               </ReactToolTip>
             </div>
             :

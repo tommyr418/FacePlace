@@ -45,13 +45,13 @@ class Main extends React.Component {
             className="main-logged-out">
             <WelcomeContainer />
 
+            <SignupForm signup={ this.props.signup }
+              errors={ this.props.errors }/>
           </div>
         </div>
       );
     }
   }
 }
-// <SignupForm signup={ this.props.signup }
-//   errors={ this.props.errors }/>
 
 export default Main;
