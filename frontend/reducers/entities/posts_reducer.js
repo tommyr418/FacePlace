@@ -1,6 +1,6 @@
-import { RECEIVE_POST, RECEIVE_MANY_POSTS } from '../actions/post_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
-import { RECEIVE_POST_LIKE, DELETE_POST_LIKE } from '../actions/like_actions';
+import { RECEIVE_POST, RECEIVE_MANY_POSTS } from '../../actions/post_actions';
+import { RECEIVE_COMMENT } from '../../actions/comment_actions';
+import { RECEIVE_POST_LIKE, DELETE_POST_LIKE } from '../../actions/like_actions';
 import { merge } from 'lodash';
 
 const PostsReducer = (state = {}, action) => {

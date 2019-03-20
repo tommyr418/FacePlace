@@ -5,26 +5,20 @@ import './login_form.css';
 import { login } from '../../../actions/session_actions';
 
 class LoginForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      errors: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.removeErrors = this.removeErrors.bind(this);
-  }
+  state = {
+    email: "",
+    password: "",
+    errors: "",
+  };
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user);
   }
 
 
-  handleInputChange(feild){
+  handleInputChange = (feild) => {
     return (e) => this.setState({
       [feild]: e.currentTarget.value
     });
@@ -41,7 +35,7 @@ class LoginForm extends Component {
     }
   }
 
-  removeErrors() {
+  removeErrors = () => {
     setTimeout(() => {
       this.setState({errors: ""});
     }, 2500);
