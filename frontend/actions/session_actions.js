@@ -2,6 +2,8 @@ import * as SessionAPIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const RECEIVE_REGISTRATION_ERRORS =
+  'RECEIVE_REGISTRATION_ERRORS';
 
 export const receiveCurrentUser = (currentUser) => (
   {
@@ -17,10 +19,17 @@ export const receiveSessionErrors = (errors) => (
   }
 );
 
+export const receiveRegistrationErrors = (errors) => (
+  {
+    type: RECEIVE_REGISTRATION_ERRORS,
+    errors: errors.responseJSON,
+  }
+);
+
 export const signup = user => dispatch => (
   SessionAPIUtil.signup(user).then(
     (currentUser) => dispatch(receiveCurrentUser(currentUser)),
-    (errors) => dispatch(receiveSessionErrors(errors))
+    (errors) => dispatch(receiveRegistrationErrors(errors))
   )
 );
 
