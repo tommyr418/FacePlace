@@ -15,7 +15,7 @@
 .header-logged-out-div {
   display: flex;
   justify-content: space-between;
-  min-width: 960px;
+  min-width: 980px;
   height: 82px;
 }
 

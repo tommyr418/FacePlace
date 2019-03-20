@@ -10,14 +10,22 @@
 .login-form-container {
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
   min-height: 40px;
 }
 
+.login-form-container:first-of-type {
+  margin: 0 15px;
+}
+
+.login-form-container:last-of-type {
+  margin: 0 15px 0 0;
+}
+
 .login-form input {
-  width: 150px;
+  width: 138px;
   height: 20px;
   border: 1px solid black;
+  padding: 1px 5px;
 }
 
 .login-form button {
@@ -38,13 +46,20 @@
 }
 
 .login-form-error {
-  background-color: #bd4c4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #be4b49;
+  border: 1px solid #8b0300;
   color: #fff;
-  height: 14px;
-  padding: 8px;
-  margin: auto 0;
+  height: 48px;
+  width: 313px;
   position: absolute;
-  border-radius: 5px;
-  top: 46px;
-  left: 9px;
+  border-radius: 3px;
+  top: 60px;
+  left: 15px;
+}
+
+.error {
+  background-color: #ffe6e6;
 }

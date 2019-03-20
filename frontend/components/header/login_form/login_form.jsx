@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import './login_form.css';
 import { login } from '../../../actions/session_actions';
@@ -46,7 +47,9 @@ class LoginForm extends Component {
           <label>Email</label>
           <input type="text"
             value={ this.state.email }
-            onChange={ this.handleInputChange('email')}></input>
+            onChange={ this.handleInputChange('email')}
+            className={classNames({ 'error': this.state.errors })}>
+          </input>
         </div>
 
         <div
@@ -54,7 +57,9 @@ class LoginForm extends Component {
           <label>Password</label>
           <input type="password"
             value={ this.state.password }
-            onChange={ this.handleInputChange('password')}></input>
+            onChange={ this.handleInputChange('password')}
+            className={classNames({ 'error': this.state.errors })}>
+          </input>
         </div>
 
         <button>Log In</button>
