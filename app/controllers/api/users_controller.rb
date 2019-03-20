@@ -30,8 +30,11 @@ class Api::UsersController < ApplicationController
       render '/api/sessions/show.json.jbuilder'
     else
       user_errors = []
-      @user.errors.full_messages.each do |error|
-        user_errors << error
+      @user.errors.as_json(full_messages: true).each do |key, value|
+        user_errors << {
+          source: key.to_s,
+          text: value[0]
+        }
       end
       render json: user_errors, status: 422
     end
