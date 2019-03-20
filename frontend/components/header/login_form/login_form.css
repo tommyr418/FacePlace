@@ -7,11 +7,6 @@
   position: relative;
 }
 
-.login-form strong {
-  margin: auto 0;
-  color: yellow;
-}
-
 .login-form div {
   display: flex;
   flex-direction: column;
@@ -21,11 +16,13 @@
 
 .login-form input {
   width: 150px;
+  height: 20px;
+  border: 1px solid black;
 }
 
 .login-form button {
-  height: 22px;
-  margin: 22px 0 8px 0;
+  height: 24px;
+  margin: 24px 0 8px 0;
   background-color: #4267b2;
   color: white;
   border: 1px solid #29487d;

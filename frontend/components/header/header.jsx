@@ -19,12 +19,7 @@ const Header = (props) => {
             <SearchBar history={ props.history }/>
           </div>
 
-          <UserNav currentUser={ props.currentUser }
-            users={ props.users }
-            logout={ props.logout }
-            fetchRequesters={ props.fetchRequesters }
-            addFriend={ props.addFriend }
-            updateRequest={ props.updateRequest }/>
+          <UserNav currentUser={ props.currentUser }/>
         </div>
       </div>
     );
