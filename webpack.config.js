@@ -29,14 +29,33 @@ module.exports = {
   },
   plugins: plugins,
   module: {
-    loaders: [
+    rules: [
       {
-        test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
-        }
+        test: /\.(js|jsx)$/,
+        use: {
+          loader: 'babel-loader',
+          query: {
+            presets: ['@babel/env', '@babel/react'],
+            plugins: ["@babel/plugin-proposal-class-properties"]
+          }
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
+        exclude: /\.module\.css$/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+        ],
+        include: /\.module\.css$/
       }
     ]
   },

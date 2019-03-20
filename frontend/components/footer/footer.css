@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 30px;
+  background-color: white;
+  min-height: 60px;
+}
+
+.footer nav {
+  display: flex;
+  justify-content: center;
+}
+
+.footer a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 20px;
+  color: #375998;
+}
+
+.footer span {
+  font-size: 12px;
+}
+
+.footer i {
+  margin: 10px;
+  color: #333;
+}

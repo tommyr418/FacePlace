@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MainFooter from './main_footer';
+import Footer from './footer';
 
 const mapStateToProps = (state) => {
   return {
@@ -11,4 +11,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   null
-)(MainFooter);
+)(Footer);

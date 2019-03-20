@@ -2,19 +2,26 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { ProtectedRoute } from '../util/route_util';
-import MainHeaderContainer from './header/main_header_container';
+import Header from './header/header';
 import MainContainer from './main/main_container';
 import MainShowContainer from './main-show/main_show_container';
-import MainFooterContainer from './footer/main_footer_container';
+import MainFooterContainer from './footer/footer_container';
 import SearchContainer from './search/search_container';
 
 const App = () => (
-  <div>
-    <Route path="/" component={MainHeaderContainer} />
-    <ProtectedRoute path="/search/users" component={ SearchContainer } />
-    <Route exact path="/" component={ MainContainer } />
+  <div className="app">
+    <div
+      className="app-first-child">
+      <Route path="/" component={Header} />
+
+      <Switch>
+        <ProtectedRoute path="/search/users" component={ SearchContainer } />
+        <ProtectedRoute path="/users/:userId" component={ MainShowContainer } />
+        <Route exact path="/" component={ MainContainer } />
+      </Switch>
+    </div>
+
     <Route exact path="/" component={ MainFooterContainer }/>
-    <ProtectedRoute path="/users/:userId" component={ MainShowContainer } />
   </div>
 );
 

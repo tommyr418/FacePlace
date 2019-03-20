@@ -1,11 +1,14 @@
 import React from 'react';
 
-const MainFooter = ({ currentUser }) => {
+import './footer.css';
+
+const Footer = ({ currentUser }) => {
   if (currentUser) {
     return null;
   }
   return (
-    <footer>
+    <div
+      className="footer">
       <nav>
         <a href="https://github.com/tommyr418"
           target="_blank">
@@ -31,8 +34,8 @@ const MainFooter = ({ currentUser }) => {
           <span className="label">Portfolio</span>
         </a>
       </nav>
-    </footer>
+    </div>
   );
 };
 
-export default MainFooter;
+export default Footer;

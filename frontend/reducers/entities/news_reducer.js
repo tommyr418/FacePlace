@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_NEWS } from '../actions/news_actions';
+import { RECEIVE_CURRENT_NEWS } from '../../actions/news_actions';
 
 const NewsReducer = (state = {}, action) => {
   Object.freeze(state);
