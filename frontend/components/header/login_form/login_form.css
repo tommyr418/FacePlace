@@ -50,14 +50,37 @@
   justify-content: center;
   align-items: center;
   background-color: #be4b49;
-  border: 1px solid #8b0300;
   color: #fff;
-  height: 48px;
-  width: 313px;
+  height: 50px;
+  width: 315px;
   position: absolute;
   border-radius: 3px;
   top: 60px;
   left: 15px;
+}
+
+.login-form-error:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #be4b49;
+  position: absolute;
+  top: -10px;
+  left: 60px;
+}
+
+.login-form-error:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #be4b49;
+  position: absolute;
+  top: -10px;
+  right: 60px;;
 }
 
 .error {
