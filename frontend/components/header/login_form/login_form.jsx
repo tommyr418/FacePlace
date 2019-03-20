@@ -24,43 +24,33 @@ class LoginForm extends Component {
     });
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.errors.length > 0 &&
-      newProps.errors[0].responseJSON[0] === "Invalid Email or Password") {
+  componentDidUpdate(prevProps) {
+    const { errors } = this.props;
+    if (errors.length > prevProps.errors.length) {
       this.setState({
-        email: "",
-        password: "",
-        errors: "Invalid Email or Password",
+        errors: errors[0].text,
       });
     }
   }
 
-  removeErrors = () => {
-    setTimeout(() => {
-      this.setState({errors: ""});
-    }, 2500);
-  }
 
   render () {
-    if (this.state.errors) {
-      this.removeErrors();
-    }
     return (
       <form onSubmit={ this.handleSubmit } className="login-form">
-        { this.state.errors ?
-          <span id="login-error">{ this.state.errors }</span>
-          :
-          ""
+        { this.state.errors &&
+          <span className="login-form-error">{ this.state.errors }</span>
         }
 
-        <div>
+        <div
+          className="login-form-container">
           <label>Email</label>
           <input type="text"
             value={ this.state.email }
             onChange={ this.handleInputChange('email')}></input>
         </div>
 
-        <div>
+        <div
+          className="login-form-container">
           <label>Password</label>
           <input type="password"
             value={ this.state.password }

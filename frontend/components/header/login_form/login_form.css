@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.login-form div {
+.login-form-container {
   display: flex;
   flex-direction: column;
   margin: 0 10px;
@@ -37,7 +37,7 @@
   margin: 5px;
 }
 
-#login-error {
+.login-form-error {
   background-color: #bd4c4a;
   color: #fff;
   height: 14px;
