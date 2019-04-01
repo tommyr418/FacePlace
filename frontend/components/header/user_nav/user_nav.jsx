@@ -9,15 +9,11 @@ import { addFriend, updateRequest } from "../../../actions/friend_actions";
 import RequestDropdown from './request_dropdown/request_dropdown';
 
 class UserNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      requestsOpen: false,
-    };
-    this.toggleRequests = this.toggleRequests.bind(this);
-  }
+  state = {
+    requestsOpen: false,
+  };
 
-  toggleRequests(e) {
+  toggleRequests = (e) => {
     e.stopPropagation();
     this.setState({
       requestsOpen: !this.state.requestsOpen,
@@ -26,7 +22,7 @@ class UserNav extends React.Component {
 
   render() {
     return (
-      <nav id="user-nav">
+      <div id="user-nav">
 
         <Link to={`/users/${ this.props.currentUser.id }`}>
           <div id="header-image">
@@ -56,7 +52,7 @@ class UserNav extends React.Component {
         </a>
 
         <button onClick={ this.props.logout }>Logout</button>
-      </nav>
+      </div>
     );
   }
 }
