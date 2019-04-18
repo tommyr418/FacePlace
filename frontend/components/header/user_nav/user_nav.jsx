@@ -9,6 +9,7 @@ import { addFriend, updateRequest } from "../../../actions/friend_actions";
 import RequestDropdown from './request_dropdown/request_dropdown';
 
 class UserNav extends Component {
+
   state = {
     requestsOpen: false,
   };
