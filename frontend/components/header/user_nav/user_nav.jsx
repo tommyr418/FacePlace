@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import { fetchRequesters } from '../../../actions/user_actions';
 import { addFriend, updateRequest } from "../../../actions/friend_actions";
 import RequestDropdown from './request_dropdown/request_dropdown';
 
-class UserNav extends React.Component {
+class UserNav extends Component {
   state = {
     requestsOpen: false,
   };
@@ -21,14 +21,16 @@ class UserNav extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props;
+
     return (
       <div id="user-nav">
 
-        <Link to={`/users/${ this.props.currentUser.id }`}>
+        <Link to={`/users/${ currentUser.id }`}>
           <div id="header-image">
-            <img src={ this.props.currentUser.image_url }/>
+            <img src={ currentUser.image_url }/>
           </div>
-          <span>{ this.props.currentUser.fname }</span>
+          <span>{ currentUser.fname }</span>
         </Link>
 
         <Link to="/">
@@ -40,12 +42,9 @@ class UserNav extends React.Component {
 
           {
             this.state.requestsOpen ?
-            <RequestDropdown toggleRequests={ this.toggleRequests }
-              fetchRequesters={ this.props.fetchRequesters }
-              currentUser={ this.props.currentUser }
-              users={ this.props.users }
-              addFriend={ this.props.addFriend}
-              updateRequest={ this.props.updateRequest }/>
+            <RequestDropdown 
+              toggleRequests={ this.toggleRequests }
+              { ...this.props } />
             :
             null
           }
@@ -57,19 +56,22 @@ class UserNav extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => (
-  {
+const mapStateToProps = (state) => {
+  return {
     users: state.entities.users,
-  }
-);
+  };
+};
 
-const mapDispatchToProps = (dispatch) => (
-  {
+const mapDispatchToProps = (dispatch) => {
+  return {
     logout: () => dispatch(logout()),
     fetchRequesters: () => dispatch(fetchRequesters()),
     addFriend: friend => dispatch(addFriend(friend)),
     updateRequest: request => dispatch(updateRequest(request)),
-  }
-);
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserNav);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserNav);
