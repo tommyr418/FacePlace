@@ -35,7 +35,6 @@ class LoginForm extends Component {
     }
   }
 
-
   render () {
     return (
       <form onSubmit={ this.handleSubmit } className="login-form">

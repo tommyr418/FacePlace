@@ -25,10 +25,10 @@ class UserNav extends Component {
     const { currentUser } = this.props;
 
     return (
-      <div id="user-nav">
+      <div className="user-nav">
 
         <Link to={`/users/${ currentUser.id }`}>
-          <div id="header-image">
+          <div className="header-image">
             <img src={ currentUser.image_url }/>
           </div>
           <span>{ currentUser.fname }</span>
@@ -42,12 +42,10 @@ class UserNav extends Component {
           <i className="fa fa-users" aria-hidden="true"></i>
 
           {
-            this.state.requestsOpen ?
+            this.state.requestsOpen &&
             <RequestDropdown 
               toggleRequests={ this.toggleRequests }
               { ...this.props } />
-            :
-            null
           }
         </a>
 
