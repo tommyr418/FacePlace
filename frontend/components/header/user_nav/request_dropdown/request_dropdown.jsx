@@ -1,23 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
 
-class RequestDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.addFriend = this.addFriend.bind(this);
-    this.rejectFriend = this.rejectFriend.bind(this);
-  }
-
-  handleClickOutside(e) {
-    this.props.toggleRequests(e);
-  }
+class RequestDropdown extends Component {
 
   componentDidMount() {
     this.props.fetchRequesters();
   }
 
-  addFriend(e) {
+  handleClickOutside = (e) => {
+    this.props.toggleRequests(e);
+  }
+
+  addFriend = (e) => {
     this.props.addFriend({
       friender_id: e.currentTarget.getAttribute("data-requesterid"),
       friendee_id: this.props.currentUser.id,
@@ -28,7 +22,7 @@ class RequestDropdown extends React.Component {
     });
   }
 
-  rejectFriend(e) {
+  rejectFriend = (e) => {
     this.props.updateRequest({
       id: e.currentTarget.getAttribute("data-requestid"),
       status: "completed"

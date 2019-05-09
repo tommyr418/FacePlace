@@ -1,11 +1,11 @@
-#user-nav {
+.user-nav {
   display: flex;
   align-items: center;
   margin: auto 35px;
   color: white;
 }
 
-#user-nav a {
+.user-nav a {
   display: flex;
   align-items: center;
   float: left;
@@ -21,15 +21,15 @@
   cursor: pointer;
 }
 
-#user-nav i {
+.user-nav i {
   font-size: 18px;
 }
 
-#user-nav a:hover {
+.user-nav a:hover {
   background-color: #415e9a;
 }
 
-#user-nav button {
+.user-nav button {
   height: 22px;
   background-color: #4267b2;
   color: white;
@@ -37,17 +37,17 @@
   cursor: pointer;
 }
 
-#user-nav button:hover {
+.user-nav button:hover {
   background-color: #415e9a;
 }
 
-#header-image {
+.header-image {
   width: 25px;
   height: 25px;
   margin-right: 10px;
 }
 
-#header-image img {
+.header-image img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
