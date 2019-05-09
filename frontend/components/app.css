@@ -34,6 +34,16 @@ a {
   border-radius: 50%;
 }
 
+.blue-button {
+  color: white;
+  background-color: #4267b2;
+  border: 1px solid #29487d;
+}
+
+.blue-button:hover {
+  background-color: #415e9a;
+}
+
 /* Reuseable Classes End */
 .app {
   background-color: #e9ebee;
@@ -120,16 +130,6 @@ a {
   background-color: #4267b2;
   color: white;
   border: 1px solid #29487d;
-}
-
-.dropdown-content {
-  background-color: #fefefe;
-  padding: 20px;
-  border: 1px solid #888;
-  border: 1px solid #dddfe2;
-  border-radius: 2px;
-  z-index: 1;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
 
 .search {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import enhanceWithClickOutside from 'react-click-outside';
+
+import './request_dropdown.css';
 
 class RequestDropdown extends Component {
 
@@ -39,8 +42,14 @@ class RequestDropdown extends Component {
 
     if (this.props.currentUser.pending_requests.length === 0){
       return (
-        <div className="dropdown-content"
-          id="friend-requests">
+        <div className="request-dropdown">
+          <div
+            className="request-dropdown-title">
+            <span>Friend Requests</span>
+            <Link to="/">
+              See your friends
+          </Link>
+          </div>
           <span>
             No new requests
           </span>
@@ -59,24 +68,32 @@ class RequestDropdown extends Component {
           </div>
           <div>
             <button
+              className="blue-button"
               onClick={ this.addFriend }
               data-requesterid={ id }
               data-requestid={ request.id }>
-              confirm
+              Confirm
             </button>
             <button
               onClick={ this.rejectFriend }
               data-requestid={ request.id }>
-              ignore
+              Delete
             </button>
           </div>
         </li>
       );
     });
+
     return (
-      <div className="dropdown-content"
-        id="friend-requests">
-        <span>Friend Requests</span>
+      <div className="request-dropdown">
+        <div
+          className="request-dropdown-title">
+          <span>Friend Requests</span>
+          <Link to="/">
+            See your friends
+          </Link>
+        </div>
+
         <ul>
           { requests }
         </ul>

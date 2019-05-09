@@ -30,8 +30,8 @@ class UserNav extends Component {
         <Link to={`/users/${ currentUser.id }`}>
           <div className="header-image">
             <img
-            className="circular"
-            src={ currentUser.image_url } />
+              className="circular"
+              src={ currentUser.image_url } />
           </div>
           <span>{ currentUser.fname }</span>
         </Link>
@@ -42,16 +42,18 @@ class UserNav extends Component {
 
         <a onClick={ this.toggleRequests }>
           <i className="fa fa-users" aria-hidden="true"></i>
-
-          {
-            this.state.requestsOpen &&
-            <RequestDropdown 
-              toggleRequests={ this.toggleRequests }
-              { ...this.props } />
-          }
         </a>
 
-        <button onClick={ this.props.logout }>Logout</button>
+        {
+          this.state.requestsOpen &&
+          <RequestDropdown 
+            toggleRequests={ this.toggleRequests }
+            { ...this.props } />
+        }
+
+        <button
+          className="blue-button"
+          onClick={ this.props.logout }>Logout</button>
       </div>
     );
   }
