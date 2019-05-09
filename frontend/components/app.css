@@ -61,6 +61,7 @@ a {
 .news-feed {
   display: flex;
   justify-content: center;
+  background-color: #e9ebee;
   padding-top: 50px;
 }
 
