@@ -29,7 +29,9 @@ class UserNav extends Component {
 
         <Link to={`/users/${ currentUser.id }`}>
           <div className="header-image">
-            <img src={ currentUser.image_url }/>
+            <img
+            className="circular"
+            src={ currentUser.image_url } />
           </div>
           <span>{ currentUser.fname }</span>
         </Link>

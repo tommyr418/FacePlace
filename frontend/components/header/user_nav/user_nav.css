@@ -1,32 +1,25 @@
 .user-nav {
   display: flex;
   align-items: center;
-  margin: auto 35px;
   color: white;
+  font-size: 13px;
 }
 
 .user-nav a {
   display: flex;
   align-items: center;
-  float: left;
-  font-size: 13px;
   height: 28px;
   padding: 0 10px;
-  vertical-align: middle;
-  text-align: center;
-  white-space: nowrap;
   color: #fff;
-  text-decoration: none;
   position: relative;
-  cursor: pointer;
-}
-
-.user-nav i {
-  font-size: 18px;
 }
 
 .user-nav a:hover {
   background-color: #415e9a;
+}
+
+.user-nav i {
+  font-size: 18px;
 }
 
 .user-nav button {
@@ -34,7 +27,6 @@
   background-color: #4267b2;
   color: white;
   border: 1px solid #29487d;
-  cursor: pointer;
 }
 
 .user-nav button:hover {
@@ -50,5 +42,4 @@
 .header-image img {
   width: 25px;
   height: 25px;
-  border-radius: 50%;
 }

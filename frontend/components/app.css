@@ -25,10 +25,18 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
+/* Reuseable Classes Start */
+
+.circular {
+  border-radius: 50%;
+}
+
+/* Reuseable Classes End */
 .app {
-  background-color: #edf0f5;
+  background-color: #e9ebee;
   font-family: arial;
   height: 100vh;
   display: flex;
