@@ -2,48 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#friend-requests {
-  position: absolute;
-  top: 36px;
-  right: -70px;
-  width: 433px;
-  color: #375998;
-}
-
-#friend-requests ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#friend-requests li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px;
-  padding: 10px 30px;
-  border: 1px solid #dddfe2;
-}
-
-#friend-requests img {
-  height: 50px;
-  width: 50px;
-}
-
-#friend-requests button{
-  margin: 5px;
-  cursor: pointer;
-}
-
-#friend-requests div{
-  display: flex;
-  align-items: center;
-}
-
-#friend-requests span {
-  margin: 0 10px;
-}
-
 #friends-list {
   display: flex;
   width: inherit;

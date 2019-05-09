@@ -25,10 +25,28 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
+/* Reuseable Classes Start */
+
+.circular {
+  border-radius: 50%;
+}
+
+.blue-button {
+  color: white;
+  background-color: #4267b2;
+  border: 1px solid #29487d;
+}
+
+.blue-button:hover {
+  background-color: #415e9a;
+}
+
+/* Reuseable Classes End */
 .app {
-  background-color: #edf0f5;
+  background-color: #e9ebee;
   font-family: arial;
   height: 100vh;
   display: flex;
@@ -43,6 +61,7 @@ a {
 .news-feed {
   display: flex;
   justify-content: center;
+  background-color: #e9ebee;
   padding-top: 50px;
 }
 
@@ -112,16 +131,6 @@ a {
   background-color: #4267b2;
   color: white;
   border: 1px solid #29487d;
-}
-
-.dropdown-content {
-  background-color: #fefefe;
-  padding: 20px;
-  border: 1px solid #888;
-  border: 1px solid #dddfe2;
-  border-radius: 2px;
-  z-index: 1;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
 
 .search {

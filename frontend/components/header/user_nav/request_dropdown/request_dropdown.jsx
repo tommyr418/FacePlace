@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import enhanceWithClickOutside from 'react-click-outside';
 
-class RequestDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.addFriend = this.addFriend.bind(this);
-    this.rejectFriend = this.rejectFriend.bind(this);
-  }
+import './request_dropdown.css';
 
-  handleClickOutside(e) {
-    this.props.toggleRequests(e);
-  }
+class RequestDropdown extends Component {
 
   componentDidMount() {
     this.props.fetchRequesters();
   }
 
-  addFriend(e) {
+  handleClickOutside = (e) => {
+    this.props.toggleRequests(e);
+  }
+
+  addFriend = (e) => {
     this.props.addFriend({
       friender_id: e.currentTarget.getAttribute("data-requesterid"),
       friendee_id: this.props.currentUser.id,
@@ -28,7 +25,7 @@ class RequestDropdown extends React.Component {
     });
   }
 
-  rejectFriend(e) {
+  rejectFriend = (e) => {
     this.props.updateRequest({
       id: e.currentTarget.getAttribute("data-requestid"),
       status: "completed"
@@ -45,8 +42,14 @@ class RequestDropdown extends React.Component {
 
     if (this.props.currentUser.pending_requests.length === 0){
       return (
-        <div className="dropdown-content"
-          id="friend-requests">
+        <div className="request-dropdown">
+          <div
+            className="request-dropdown-title">
+            <span>Friend Requests</span>
+            <Link to="/">
+              See your friends
+          </Link>
+          </div>
           <span>
             No new requests
           </span>
@@ -65,24 +68,32 @@ class RequestDropdown extends React.Component {
           </div>
           <div>
             <button
+              className="blue-button"
               onClick={ this.addFriend }
               data-requesterid={ id }
               data-requestid={ request.id }>
-              confirm
+              Confirm
             </button>
             <button
               onClick={ this.rejectFriend }
               data-requestid={ request.id }>
-              ignore
+              Delete
             </button>
           </div>
         </li>
       );
     });
+
     return (
-      <div className="dropdown-content"
-        id="friend-requests">
-        <span>Friend Requests</span>
+      <div className="request-dropdown">
+        <div
+          className="request-dropdown-title">
+          <span>Friend Requests</span>
+          <Link to="/">
+            See your friends
+          </Link>
+        </div>
+
         <ul>
           { requests }
         </ul>

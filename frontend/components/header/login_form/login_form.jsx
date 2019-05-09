@@ -6,6 +6,7 @@ import './login_form.css';
 import { login } from '../../../actions/session_actions';
 
 class LoginForm extends Component {
+  
   state = {
     email: "",
     password: "",
@@ -33,7 +34,6 @@ class LoginForm extends Component {
       });
     }
   }
-
 
   render () {
     return (
@@ -68,16 +68,19 @@ class LoginForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => (
-  {
+const mapStateToProps = (state) => {
+  return {
     errors: state.errors.session,
-  }
-);
+  };
+};
 
-const mapDispatchToProps = (dispatch) => (
-  {
+const mapDispatchToProps = (dispatch) => {
+  return {
     login: (user) => dispatch(login(user)),
-  }
-);
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);

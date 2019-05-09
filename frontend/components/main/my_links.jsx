@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const MyLinks = ({ currentUser }) => (
   <div id="my-links">
     <Link to={`/users/${ currentUser.id }`}>
-      <div id="header-image">
+      <div className="header-image">
         <img src={ currentUser.image_url }/>
       </div>
       <span>{ currentUser.fname } { currentUser.lname}</span>

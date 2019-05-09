@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import './header.css';
 import LoginForm from './login_form/login_form';
@@ -9,6 +8,8 @@ import SearchBar from './search_bar/search_bar';
 import LogoLink from './logo_link/logo_link';
 
 const Header = (props) => {
+  const { currentUser, history } = props;
+
   if(props.currentUser){
     return (
       <div className="header header-logged-in">
@@ -16,10 +17,10 @@ const Header = (props) => {
           <div className="header-logged-in-div-left">
             <LogoLink />
 
-            <SearchBar history={ props.history }/>
+            <SearchBar history={ history }/>
           </div>
 
-          <UserNav currentUser={ props.currentUser }/>
+          <UserNav currentUser={ currentUser }/>
         </div>
       </div>
     );
@@ -36,11 +37,11 @@ const Header = (props) => {
   }
 };
 
-const mapStateToProps = (state) => (
-  {
+const mapStateToProps = (state) => {
+  return {
     currentUser: state.session.currentUser,
-  }
-);
+  };
+};
 
 export default connect(
   mapStateToProps,
