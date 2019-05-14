@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
-  background-color: #edf0f5;
+  background-color: #e9ebee;
   width: 100%;
   min-height: 500px;
 }
