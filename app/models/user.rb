@@ -70,13 +70,8 @@ class User < ApplicationRecord
            foreign_key: :author_id,
            class_name: :Comment
 
-  has_attached_file :profile_pic,
-                    default_url: "default-profile-picture.png"
-  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
-
-  has_attached_file :cover_photo,
-                    default_url: ""
-  validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/
+  has_one_attached :profile_pic
+  has_one_attached :cover_photo
 
   def friends
     sent_friends.pluck(:friendee_id)

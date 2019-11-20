@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_214822) do
+ActiveRecord::Schema.define(version: 2019_11_20_222109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,10 +60,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_214822) do
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["wall_id"], name: "index_posts_on_wall_id"
   end
@@ -89,14 +85,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_214822) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_pic_file_name"
-    t.string "profile_pic_content_type"
-    t.integer "profile_pic_file_size"
-    t.datetime "profile_pic_updated_at"
-    t.string "cover_photo_file_name"
-    t.string "cover_photo_content_type"
-    t.integer "cover_photo_file_size"
-    t.datetime "cover_photo_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["fname"], name: "index_users_on_fname"
     t.index ["lname"], name: "index_users_on_lname"
