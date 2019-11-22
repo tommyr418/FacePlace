@@ -13,121 +13,89 @@ homer = User.new(email: "homer@yahoo.com", password: "homersimpson",
                    fname: "Homer", lname: "Simpson", birthdate: "04/17/1970",
                    sex: "male")
 
-file = File.open('app/assets/images/homer.jpg')
-homer.profile_pic = file
 homer.save!
 
 jon = User.new(email: "jon@yahoo.com", password: "jontargaryen",
                    fname: "Jon", lname: "Snow", birthdate: "04/18/1980",
                    sex: "male")
 
-file = File.open('app/assets/images/jon.jpeg')
-jon.profile_pic = file
 jon.save!
 
 marge = User.new(email: "marge@yahoo.com", password: "margesimpson",
                  fname: "Marge", lname: "Simpson", birthdate: "10/10/1973",
                  sex: "female")
 
-file = File.open('app/assets/images/marge.png')
-marge.profile_pic = file
 marge.save!
 
 bart = User.new(email: "bart@yahoo.com", password: "bartsimpson", fname: "Bart",
             lname: "Simpson", birthdate: "12/30/1992", sex: "male")
 
-file = File.open('app/assets/images/bart.png')
-bart.profile_pic = file
 bart.save!
 
 lisa =  User.new(email: "lisa@yahoo.com", password: "lisasimpson", fname: "Lisa",
             lname: "Simpson", birthdate: "01/18/1994", sex: "female")
 
-file = File.open('app/assets/images/lisa.png')
-lisa.profile_pic = file
 lisa.save!
 
 ned = User.new(email: "ned@yahoo.com", password: "nedflanders", fname: "Ned",
             lname: "Flanders", birthdate: "12/25/1945", sex: "male")
 
-file = File.open('app/assets/images/ned.png')
-ned.profile_pic = file
 ned.save!
 
 maude = User.new(email: "maude@yahoo.com", password: "maudeflanders", fname: "Maude",
             lname: "Flanders", birthdate: "12/02/1952", sex: "female")
 
-file = File.open('app/assets/images/maude.png')
-maude.profile_pic = file
 maude.save!
 
 moe = User.new(email: "moe@yahoo.com", password: "moesizlack", fname: "Moe",
             lname: "Sizlack", birthdate: "07/12/1959", sex: "male")
 
-file = File.open('app/assets/images/moe.jpg')
-moe.profile_pic = file
 moe.save!
 
 barney = User.new(email: "barney@yahoo.com", password: "barneygumble",
             fname: "Barney",
             lname: "Gumble", birthdate: "05/14/1965", sex: "male")
 
-file = File.open('app/assets/images/barney.png')
-barney.profile_pic = file
 barney.save!
 
 lenny = User.new(email: "lenny@yahoo.com", password: "lennyleonard", fname: "Lenny",
             lname: "Leonard", birthdate: "11/27/1970", sex: "male")
 
-file = File.open('app/assets/images/lenny.jpg')
-lenny.profile_pic = file
 lenny.save!
 
 carl = User.new(email: "carl@yahoo.com", password: "carlcarlsom", fname: "Carl",
             lname: "Carlson", birthdate: "11/14/1971", sex: "male")
 
-file = File.open('app/assets/images/carl.png')
-carl.profile_pic = file
 carl.save!
 
 burns = User.new(email: "mrburns@yahoo.com", password: "charlesburns",
             fname: "Charles",
             lname: "Burns", birthdate: "02/28/1899", sex: "male")
 
-file = File.open('app/assets/images/mrburns.png')
-burns.profile_pic = file
 burns.save!
 
 daenerys = User.new(email: "daenerys@yahoo.com", password: "dtargaryen",
             fname: "Daenerys",
             lname: "Targaryen", birthdate: "08/28/1989", sex: "female")
 
-file = File.open('app/assets/images/daenerys.jpg')
-daenerys.profile_pic = file
 daenerys.save!
 
 arya = User.new(email: "arya@yahoo.com", password: "aryastark",
             fname: "Arya",
             lname: "Stark", birthdate: "01/23/1996", sex: "female")
 
-file = File.open('app/assets/images/arya.jpg')
-arya.profile_pic = file
 arya.save!
 
 bran = User.new(email: "bran@yahoo.com", password: "branstark",
             fname: "Bran",
             lname: "Stark", birthdate: "07/10/1994", sex: "male")
 
-file = File.open('app/assets/images/bran.jpg')
-bran.profile_pic = file
 bran.save!
 
 sansa = User.new(email: "sansa@yahoo.com", password: "sansastark",
             fname: "Sansa",
             lname: "Stark", birthdate: "4/10/1990", sex: "female")
 
-file = File.open('app/assets/images/sansa.jpg')
-sansa.profile_pic = file
 sansa.save!
 
 
