@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require("webpack");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var plugins = [];
 var devPlugins = [];
@@ -10,9 +11,13 @@ var prodPlugins = [
       'NODE_ENV': JSON.stringify('production')
     }
   }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: true
+  new UglifyJsPlugin({
+    uglifyOptions: {
+      warnings: false,
+      ie8: false,
+      output: {
+        comments: false
+      }
     }
   })
 ];
